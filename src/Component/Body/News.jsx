@@ -4,9 +4,11 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 
-import News1 from '../../assets/news/News1.jpg';
-import News3 from '../../assets/news/News3.jpg';
-import News4 from '../../assets/news/News4.jpg';
+import News1 from '../../assets/News/News1.jpg';
+import News3 from '../../assets/News/News3.jpg';
+import News4 from '../../assets/News/News4.jpg';
+
+
 
 const News = () => {
   const navigate = useNavigate();
