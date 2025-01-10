@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Breadcrumb from "./Breadcrumb"; 
 import FacultyPP from "../../assets/FacultyPP.jpeg";
 
-const Faculty = () => {
+const Faculty = ({ activeDepartmentName }) => {
   const facultyMembers = [
     {
       id: "faculty-1",
@@ -46,10 +46,10 @@ const Faculty = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       {/* Breadcrumb */}
-      <Breadcrumb currentPage="Faculty" />
+      <Breadcrumb currentPage={activeDepartmentName} />
 
       {/* Centered Heading */}
-      <h2 className="text-3xl font-bold text-center mb-12">Faculty Members</h2>
+      <h2 className="text-3xl font-bold text-center mb-12">{activeDepartmentName}</h2>
 
       {/* Grid layout for faculty cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
