@@ -24,13 +24,13 @@ const Message = () => {
   ];
 
   return (
-    <div className="w-full bg-blue-600 bg-opacity-90 font-sans">
+    <div className="w-full bg-blue-600 bg-opacity-30 font-sans">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {leaders.map((leader, index) => (
             <div
               key={index}
-              className="flex flex-col md:flex-row items-center bg-white bg-opacity-10 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+              className="flex flex-col md:flex-row items-center bg-blue-600 bg-opacity-100 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
             >
               <div className="flex-shrink-0">
                 <img
@@ -42,6 +42,7 @@ const Message = () => {
               <div className="flex-grow md:ml-6 mt-6 md:mt-0 text-center md:text-left">
                 <h2 className="text-xl font-bold text-white mb-4">
                   {leader.title}
+                  <div className="mt-1 ml-0 w-[30%] h-1 bg-orange-400 rounded"></div>
                 </h2>
                 <p className="text-white text-sm leading-relaxed mb-4">
                   {leader.message}
@@ -66,6 +67,3 @@ const Message = () => {
 };
 
 export default Message;
-
-
-

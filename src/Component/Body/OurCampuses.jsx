@@ -65,7 +65,7 @@ const CarouselSection = () => {
   };
 
   return (
-    <section className="py-12 bg-gray-100">
+    <section className="py-12 bg-gray-50">
       <h2 className="text-4xl font-extrabold text-center text-blue-900 mb-8 mt-10 font-sans">
         Our Campuses
         <div className="mt-2 mx-auto w-20 h-1 bg-blue-600 rounded"></div>
@@ -82,7 +82,6 @@ const CarouselSection = () => {
                 }`}
               >
                 <div className="relative">
-                  {/* Image section with reduced height */}
                   <img
                     src={image.src}
                     alt={image.alt}
@@ -91,20 +90,22 @@ const CarouselSection = () => {
                     }`}
                   />
                 </div>
-                {/* Text section with stronger white background */}
+                
                 <div
-                  className={`absolute bottom-0 left-0 bg-white text-black text-sm px-3 py-2 rounded-b-lg transition-opacity duration-300 ${
-                    index === activeIndex ? "opacity-100" : "opacity-75"
-                  }`}
-                  style={{
-                    width: "100%",
-                    backgroundColor: "rgba(255, 255, 255, 1)", // Strong white background
-                  }}
-                >
-                  <p>{image.text}</p>
-                </div>
-              </div>
-            </div>
+  className={`absolute bottom-0 left-0 bg-white text-black text-sm font-bold px-3 py-2 rounded-b-lg transition-opacity duration-300 ${
+    index === activeIndex ? "opacity-100" : "opacity-75"
+  }`}
+  style={{
+    width: "100%",
+    backgroundColor: "rgba(255, 255, 255, 1)", 
+  }}
+>
+  <div className="flex justify-center items-center w-full h-full">
+    <p>{image.text}</p>
+  </div>
+</div>
+</div>
+           </div>
           ))}
         </Slider>
       </div>

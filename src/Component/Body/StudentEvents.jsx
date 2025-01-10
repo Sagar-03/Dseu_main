@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 import activity1 from "/src/assets/Activities/Activities1.jpeg";
 import activity2 from "/src/assets/Activities/Activities2.jpeg";
@@ -9,6 +8,9 @@ import activity5 from "/src/assets/Activities/Activities5.jpeg";
 import activity6 from "/src/assets/Activities/Activities6.jpeg";
 import activity7 from "/src/assets/Activities/Activities7.jpeg";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+
 const EventsAndActivities = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -17,7 +19,7 @@ const EventsAndActivities = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => 
+      setCurrentSlide((prev) =>
         prev === carouselImages.length - 1 ? 0 : prev + 1
       );
     }, 3000);
@@ -27,12 +29,12 @@ const EventsAndActivities = () => {
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-     
+        {/* Carousel Section */}
         <div className="space-y-4">
           <h2 className="text-2xl font-bold text-blue-800 border-l-4 border-blue-800 pl-3">
             STUDENT EVENTS & ACTIVITIES
           </h2>
-          <div className="relative overflow-hidden rounded-lg h-[400px]"> 
+          <div className="relative overflow-hidden rounded-lg h-[400px]">
             {carouselImages.map((img, index) => (
               <div
                 key={index}
@@ -51,7 +53,7 @@ const EventsAndActivities = () => {
           </div>
         </div>
 
-      
+        {/* Grid Section */}
         <div className="space-y-4">
           <h2 className="text-2xl font-bold text-blue-800 border-l-4 border-blue-800 pl-3">
             VOICE OF DSEU
@@ -61,14 +63,28 @@ const EventsAndActivities = () => {
               <button
                 key={index}
                 className="relative overflow-hidden rounded-lg group h-[190px]"
-                onClick={() => console.log(`Clicked image ${index + 1}`)}
+                onClick={() =>
+                  window.open("https://youtube.com", "_blank")
+                } // Redirect to YouTube
               >
                 <img
                   src={img}
                   alt={`Grid image ${index + 1}`}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Overlay with Heading, Subheading, and Arrow */}
+                <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end pl-4 pr-4">
+                  <div className="text-white absolute bottom-0 left-0 mb-2 ml-2">
+                    <h3 className="font-semibold text-lg">Video Title</h3>
+                    <p className="text-sm">Subheading text</p>
+                  </div>
+                  <div className="absolute bottom-0 left-36  mb-2 mr-2">
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      className="text-white text-2xl"
+                    />
+                  </div>
+                </div>
               </button>
             ))}
           </div>

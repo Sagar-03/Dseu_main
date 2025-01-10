@@ -27,7 +27,7 @@ const Partners = () => {
     { id: 8, image: 'Apollo-MedSkills-High-Res-min.jpg', name: 'Apollo', link: 'https://www.apollohospitals.com/delhi/' },
   ];
 
-  const partnersInNewTab = ['Starbucks', 'Infosys','HDFC Bank','Apollo', 'Mercedes-Benz', 'Tech Mahindra','Aditya-Birla','NBCC'];
+  const partnersInNewTab = ['Starbucks', 'Infosys', 'HDFC Bank', 'Apollo', 'Mercedes-Benz', 'Tech Mahindra', 'Aditya-Birla', 'NBCC'];
 
   const CustomPrevArrow = ({ onClick }) => (
     <button onClick={onClick} className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-full z-10 p-2 bg-white rounded-full shadow-lg hover:bg-gray-100">
@@ -69,12 +69,13 @@ const Partners = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto py-8 bg-gray-50 overflow-hidden">
+    <div className="w-full bg-gray-50 overflow-hidden">
+    <div className="max-w-7xl mx-auto py-8">
       <h2 className="text-4xl font-extrabold text-center text-blue-900 mb-8">
         Our Partners
         <div className="mt-2 mx-auto w-20 h-1 bg-blue-600 rounded"></div>
       </h2>
-      <div className="relative px-8">
+      <div className="relative px-4 md:px-8">
         <div className="py-4">
           <Slider {...settings}>
             {partners.map((partner) => (
@@ -82,8 +83,8 @@ const Partners = () => {
                 <div
                   onClick={() => handlePartnerClick(partner.link, partner.name)}
                   className="bg-white rounded-lg shadow-md p-4 h-36 flex items-center justify-center
-                            transition-transform transform duration-300 hover:scale-110 hover:shadow-2xl cursor-pointer
-                            hover:bg-gradient-to-br from-white to-blue-50"
+                            transition-transform transform duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer
+                            hover:bg-gradient-to-br from-gray-100 to-blue-50 "
                 >
                   <img
                     src={getImageUrl(partner.image)}
@@ -97,10 +98,9 @@ const Partners = () => {
         </div>
       </div>
     </div>
+  </div>
+  
   );
 };
 
 export default Partners;
-
-
-

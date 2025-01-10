@@ -32,7 +32,7 @@ const HomeBody = () => {
   };
 
   return (
-    <div className="relative w-full h-[50vh] md:h-[60vh] lg:h-[80vh]">
+    <div className="relative w-full h-[50vh] md:h-[60vh] lg:h-[80vh] border-b border-gray-300">
       <div className="relative w-full h-full overflow-hidden">
         {slides.map((slide, index) => (
           <div

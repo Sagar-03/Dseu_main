@@ -16,7 +16,7 @@ const AnnouncementStrip = () => {
   return (
     <div className="flex bg-white border-y border-gray-200">
       
-      <div className="bg-blue-600 text-white flex items-center px-4">
+      <div className="bg-blue-600 text-white flex items-center px-1 mt-1 mb-0.5">
         <span className="text-lg font-bold">Announcements</span>
       </div>
        <div className="h-10 flex items-center overflow-hidden relative w-full">
