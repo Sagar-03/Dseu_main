@@ -126,7 +126,7 @@ const navItems = [
 const headings = [
   {
     title: "Delhi Skill and Entrepreneurship University",
-    subtitle: "NCT of Delhi",
+    subtitle: "Govt. of NCT of Delhi",
   },
   {
     title: "दिल्ली कौशल एवं उद्यमिता विश्वविद्यालय",
