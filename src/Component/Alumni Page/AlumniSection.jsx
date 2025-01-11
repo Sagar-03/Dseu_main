@@ -12,13 +12,13 @@ const AlumniSection = () => {
         className="relative bg-cover bg-center h-[70vh] flex flex-col justify-center items-center text-white text-center p-4"
         style={{ backgroundImage: `url(${bannerImage})` }}
       >
-        <h1 className="text-4xl font-bold mb-2 tracking-wide uppercase">Welcome Home!</h1>
-        <p className="text-xl font-bold">Strengthening Our Alumni Legacy</p>
+        <h1 className="text-6xl font-bold mb-2 tracking-wide uppercase">Welcome Home!</h1>
+        <p className="text-2xl font-bold">Strengthening Our Alumni Legacy</p>
       </div>
 
       <section className="flex flex-col lg:flex-row items-center justify-between p-10 pb-16 bg-gray-50 flex-wrap">
         <div className="flex-1 min-w-[300px] mr-5 mb-8 lg:mb-0">
-          <h2 className="text-3xl font-bold text-[#003e70] mb-5">Strengthening Our Alumni Legacy</h2>
+          <h2 className="text-4xl font-bold text-[#003e70] mb-5">Strengthening Our Alumni Legacy</h2>
           <p className="italic text-[#003e70] mb-5">"A university's greatest strength lies in the success of its alumni."</p>
           <p className="text-[#003e70] text-base leading-relaxed mb-4 w-full sm:w-[90%]">
             Through the Alumni Association, DSEU aims to foster strong connections, celebrate achievements, and create opportunities for collaboration that empower both alumni and current students.

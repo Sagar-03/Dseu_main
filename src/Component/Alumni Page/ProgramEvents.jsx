@@ -36,7 +36,7 @@ const ProgramEvents = () => {
       {events.map((event, index) => (
         <div
           key={index}
-          className="flex flex-wrap items-center bg-white rounded-lg shadow-md p-4 mb-4 h-auto sm:h-[150px]"
+          className="flex flex-wrap items-center bg-white rounded-lg shadow-md p-4 mb-4 h-auto sm:h-[180px]"
         >
           <div className="w-full sm:w-[150px] h-[150px] bg-gray-300 mb-4 sm:mb-0 sm:mr-4"></div>
           <div className="mr-4 flex flex-col items-start justify-start">
