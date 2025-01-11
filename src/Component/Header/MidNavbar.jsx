@@ -1,9 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Search, Menu, ChevronDown, X } from 'lucide-react';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import Vector from '../../assets/DSEULogo/Vector.svg';
+
+const handleLocationClick = (e) => {
+  e.preventDefault();
+  window.open('https://www.google.com/maps/place/Delhi+Skill+and+Entrepreneurship+University/@28.5824457,77.0600919,17z/data=!3m1!4b1!4m6!3m5!1s0x390d1b1939555555:0x5cb3da8201a9355b!8m2!3d28.5824457!4d77.0626668!16s%2Fg%2F11jyk9d7qs?entry=ttu&g_ep=EgoyMDI1MDEwOC4wIKXMDSoJLDEwMjExMjMzSAFQAw%3D%3D', '_blank');
+};
+
+
 
 const navItems = [
   {
@@ -131,6 +138,7 @@ const headings = [
   },
 ];
 
+
 const SearchModal = ({ isOpen, onClose }) => {
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -162,11 +170,16 @@ const SearchModal = ({ isOpen, onClose }) => {
 };
 
 const ResponsiveHeader = () => {
+  const navigate = useNavigate(); // Added missing useNavigate hook
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [mobileExpandedItems, setMobileExpandedItems] = useState([]);
   const [currentHeading, setCurrentHeading] = useState(0);
+
+  const handleHomeRedirect = () => {
+    navigate('/');
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -176,113 +189,111 @@ const ResponsiveHeader = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const toggleMobileItem = (itemName) => {
-    setMobileExpandedItems((prev) =>
-      prev.includes(itemName)
-        ? prev.filter((item) => item !== itemName)
-        : [...prev, itemName]
-    );
-  };
-
   const handleMobileMenuClick = () => {
-    setIsMobileMenuOpen(false); 
+    setIsMobileMenuOpen(false);
   };
 
   return (
     <div className="w-full">
-{/* Desktop Header */}
-<div className="hidden md:block bg-white py-4">
-  <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-    <div className="flex items-center space-x-6">
-      <Link to="/" className="flex-shrink-0">
-        <img src={Vector} alt="DSEU Logo" className="h-28" />
-      </Link>
-      <div className="overflow-hidden">
-        <motion.div
-          key={currentHeading}
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
-          transition={{ duration: 0.5 }}
-          className="py-1"
-        >
-          <div
-            className={`text-2xl font-bold text-blue-600 ${
-              headings[currentHeading].title === "Crafting Excellence" ? 'font-pacifico' : 'font-inter'
-            }`}
-          >
-            {headings[currentHeading].title}
+      {/* Desktop Header */}
+      <div className="hidden md:block bg-white py-4">
+        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
+          <div className="flex items-center space-x-6">
+            <div onClick={handleHomeRedirect} className="flex-shrink-0 cursor-pointer">
+              <img src={Vector} alt="DSEU Logo" className="h-28" />
+            </div>
+            <div className="overflow-hidden cursor-pointer" onClick={handleHomeRedirect}>
+              <motion.div
+                key={currentHeading}
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.5 }}
+                className="py-1"
+              >
+                <div
+                  className={`text-2xl font-bold ${
+                    headings[currentHeading]?.title === "Crafting Excellence" ? 'font-pacifico' : 'font-inter'
+                  }`}
+                  style={{ color: '#005CB9' }}
+                >
+                  {headings[currentHeading]?.title}
+                </div>
+                <div
+                  className={`text-lg font-medium -mt-1 ${
+                    headings[currentHeading]?.title === "Crafting Excellence" ? 'font-pacifico' : 'font-inter'
+                  }`}
+                  style={{ color: '#FF9300' }}
+                >
+                  {headings[currentHeading]?.subtitle}
+                </div>
+              </motion.div>
+            </div>
           </div>
-          <div
-            className={`text-lg text-orange-500 font-medium -mt-1 ${
-              headings[currentHeading].title === "Crafting Excellence" ? 'font-pacifico' : 'font-inter'
-            }`}
+          <div 
+            className="flex items-center space-x-2 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors"
+            onClick={handleLocationClick}
           >
-            {headings[currentHeading].subtitle}
+            <FaMapMarkerAlt className="text-4xl text-orange-500" />
+            <div>
+              <div className="font-medium font-inter">
+                Delhi Skill and Entrepreneurship University
+              </div>
+              <div className="text-gray-600">
+                Sector-9, Dwarka New Delhi-110077
+              </div>
+            </div>
           </div>
-        </motion.div>
-      </div>
-    </div>
-    <div className="flex items-center space-x-2">
-      <FaMapMarkerAlt className="text-4xl text-orange-500" />
-      <div>
-        <div className="font-medium font-inter">
-          Delhi Skill and Entrepreneurship University
-        </div>
-        <div className="text-gray-600">
-          Sector-9, Dwarka New Delhi-110077
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-
 
       {/* Mobile Header */}
-<div className="md:hidden bg-white shadow-md rounded-b-3xl">
-  <div className="px-4 py-3 flex justify-between items-center">
-    <Link to="/" className="flex items-center space-x-2">
-      <img src={Vector} alt="DSEU Logo" className="h-16" />
-      <motion.div
-        key={currentHeading}
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 20 }}
-        transition={{ duration: 0.5 }}
-        className="py-1"
-      >
-        <div
-          className={`text-2xl font-bold text-blue-600 ${
-            headings[currentHeading].title === "Crafting Excellence" ? 'font-pacifico' : 'font-inter'
-          }`}
-        >
-          {headings[currentHeading].title}
+      <div className="md:hidden bg-white shadow-md rounded-b-3xl">
+        <div className="px-4 py-3 flex justify-between items-center">
+          <div onClick={handleHomeRedirect} className="flex items-center space-x-2 cursor-pointer">
+            <img src={Vector} alt="DSEU Logo" className="h-16" />
+            <motion.div
+              key={currentHeading}
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.5 }}
+              className="py-1"
+            >
+              <div
+                className={`text-2xl font-bold ${
+                  headings[currentHeading]?.title === "Crafting Excellence" ? 'font-pacifico' : 'font-inter'
+                }`}
+                style={{ color: '#005CB9' }}
+              >
+                {headings[currentHeading]?.title}
+              </div>
+              <div
+                className={`text-lg font-medium -mt-1 ${
+                  headings[currentHeading]?.title === "Crafting Excellence" ? 'font-pacifico' : 'font-inter'
+                }`}
+                style={{ color: '#FF9300' }}
+              >
+                {headings[currentHeading]?.subtitle}
+              </div>
+            </motion.div>
+          </div>
+          <div className="flex items-center space-x-4">
+            <button onClick={handleLocationClick} className="text-orange-500">
+              <FaMapMarkerAlt className="h-6 w-6" />
+            </button>
+            <button onClick={() => setIsSearchOpen(true)} className="text-blue-600">
+              <Search className="h-6 w-6" />
+            </button>
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-blue-600"
+            >
+              <Menu className="h-6 w-6" />
+            </button>
+          </div>
         </div>
-        <div
-          className={`text-lg text-orange-500 font-medium -mt-1 ${
-            headings[currentHeading].title === "Crafting Excellence" ? 'font-pacifico' : 'font-inter'
-          }`}
-        >
-          {headings[currentHeading].subtitle}
-        </div>
-      </motion.div>
-    </Link>
-    <div className="flex items-center space-x-4">
-      <button onClick={() => setIsSearchOpen(true)} className="text-blue-600">
-        <Search className="h-6 w-6" />
-      </button>
-      <button
-        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className="text-blue-600"
-      >
-        <Menu className="h-6 w-6" />
-      </button>
-    </div>
-  </div>
-</div>
-
-
+      </div>
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white shadow-md rounded-b-3xl">
@@ -293,7 +304,7 @@ const ResponsiveHeader = () => {
                   <Link
                     to={item.path}
                     className="block text-lg font-medium text-[#005CB9] py-2"
-                    onClick={handleMobileMenuClick} // Close menu when clicked
+                    onClick={handleMobileMenuClick}
                   >
                     {item.name}
                     {item.dropdownItems && <ChevronDown className="ml-2 inline-block" />}
@@ -305,7 +316,7 @@ const ResponsiveHeader = () => {
                           key={subItem.name}
                           to={subItem.path}
                           className="block text-sm text-gray-700 py-2"
-                          onClick={handleMobileMenuClick} // Close menu when clicked
+                          onClick={handleMobileMenuClick}
                         >
                           {subItem.name}
                         </Link>
@@ -323,7 +334,7 @@ const ResponsiveHeader = () => {
       <div className="hidden md:block bg-blue-100 shadow-lg shadow-blue-500/50 rounded-3xl w-[96%] mx-auto my-4">
         <nav className="max-w-7xl mx-auto px-6">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-8">
+            <div className="flex items-center space-x-7 ">
               {navItems.map((item) => (
                 <div
                   key={item.name}
@@ -333,7 +344,7 @@ const ResponsiveHeader = () => {
                 >
                   <Link
                     to={item.path}
-                    className="group inline-flex items-center text-sm font-medium text-[#005CB9]"
+                    className="group inline-flex items-center text-base font-medium text-[#005CB9]"
                   >
                     {item.name}
                     {item.dropdownItems && <ChevronDown className="ml-0.5 h-3 w-3" />}
@@ -356,7 +367,7 @@ const ResponsiveHeader = () => {
             </div>
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="text-[#005CB9] hover:text-blue-900 p-2"
+              className="text-[#005CB9] hover:text-blue-900 p-4"
             >
               <Search className="h-5 w-5" />
             </button>
