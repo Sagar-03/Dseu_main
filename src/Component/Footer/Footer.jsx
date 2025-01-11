@@ -1,9 +1,10 @@
 import React from "react";
-import dseulogofullnew from "../../assets/DSEULogo/dseulogofullnew.svg";
+import Vector from "../../assets/DSEULogo/Vector.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPhone,
   faEnvelope,
+  faGlobe,
   faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -23,11 +24,19 @@ const Footer = () => {
         <div className="w-full md:w-1/3 text-center md:text-left mb-6 md:mb-0">
           <div className="flex flex-col md:flex-row items-center md:items-start">
             <img
-              src={dseulogofullnew}
+              src={Vector}
               alt="DSEU Logo"
               className="mb-4 md:mb-0 w-50 h-20"
             />
-            
+            <div className="ml-4 mt-2 flex flex-col justify-center">
+              
+              <p
+                className="text-lg font-semibold text-center md:text-left"
+                style={{ color: "#005CB9" }}
+              >
+                Delhi Skill and Entrepreneurship University
+              </p>
+            </div>
           </div>
           <p className="text-sm leading-5 mt-8">
             <FontAwesomeIcon
