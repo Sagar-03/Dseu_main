@@ -6,7 +6,7 @@ const DSEUSection = () => {
     <section className="flex justify-between bg-[#003366] text-white p-10 pl-[120px] rounded-lg flex-wrap">
       {/* Text Content */}
       <div className="flex-1 mr-[100px]">
-        <h1 className="text-[50px] font-bold text-[#F4981d] mb-[30px]">
+        <h1 className="text-[50px] font-bold text-[#F4981d] mb-[30px] ">
           DSEU on the Rise
         </h1>
         <p className="text-[16px] leading-[1.6] mb-[30px] w-[70%]">
