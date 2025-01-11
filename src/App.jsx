@@ -27,6 +27,11 @@ import Administration from "./Component/Body/Administration";
 // import BottomNavbar from "./Component/Header/BottomNavbar";
 import FacultyDesc from "./Component/Body/FacultyDesc";
 import AlumniSection from "./Component/Alumni Page/AlumniSection";
+import About from "./Component/NavItems/About";
+import VissionMission from "./Component/NavItems/Vission&Mission";
+import Entrepreneurship from "./Component/NavItems/Entrepreneurship";
+import Amenities from "./Component/NavItems/Amenities";
+
 
 function App() {
   return (
@@ -47,6 +52,7 @@ function App() {
               <OurPartners />
               <News />
               <EventsAndActivities />
+              
             </>
           }
         />
@@ -64,6 +70,10 @@ function App() {
         <Route path="/Administration/administrative" element={<Administration />} />
         <Route path="/faculty/:facultyId" element={<FacultyDesc />} />
         <Route path="/alumni" element={<AlumniSection />} />
+        <Route path="/about-us/About-the-College" element = {<About/>} />
+        <Route path="about-us/Vision-and-Mission" element={<VissionMission/>} />
+        <Route path="/entrepreneurship" element={<Entrepreneurship/>} />
+        <Route path="/amenities" element={<Amenities/>} />
       </Routes>
       <Footer />
     </BrowserRouter>
