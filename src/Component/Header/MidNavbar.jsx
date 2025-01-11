@@ -1,15 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Menu, ChevronDown, X } from 'lucide-react';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import Vector from '../../assets/DSEULogo/Vector.svg';
+import dseutext from '../../assets/DSEULogo/dseutext.svg';
+import Group24 from '../../assets/DSEULogo/Group24.svg';
+import Orange from '../../assets/DSEULogo/Orange.svg';
 
-const handleLocationClick = (e) => {
-  e.preventDefault();
-  window.open('https://www.google.com/maps/place/Delhi+Skill+and+Entrepreneurship+University/@28.5824457,77.0600919,17z/data=!3m1!4b1!4m6!3m5!1s0x390d1b1939555555:0x5cb3da8201a9355b!8m2!3d28.5824457!4d77.0626668!16s%2Fg%2F11jyk9d7qs?entry=ttu&g_ep=EgoyMDI1MDEwOC4wIKXMDSoJLDEwMjExMjMzSAFQAw%3D%3D', '_blank');
-};
 
+const carouselImages = [
+  {
+    src: dseutext, 
+    alt: "DSEU Image 1"
+  },
+  {
+    src: Group24, 
+    alt: "DSEU Image 2"
+  },
+  {
+    src: Orange, 
+    alt: "DSEU Image 3"
+  }
+];
 
 
 const navItems = [
@@ -123,22 +136,6 @@ const navItems = [
   },
 ];
 
-const headings = [
-  {
-    title: "Delhi Skill and Entrepreneurship University",
-    subtitle: "Govt. of NCT of Delhi",
-  },
-  {
-    title: "दिल्ली कौशल एवं उद्यमिता विश्वविद्यालय",
-    subtitle: "राष्ट्रीय राजधानी क्षेत्र दिल्ली",
-  },
-  {
-    title: "Crafting Excellence",
-    subtitle: "Skills • Innovation • Growth",
-  },
-];
-
-
 const SearchModal = ({ isOpen, onClose }) => {
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -170,20 +167,15 @@ const SearchModal = ({ isOpen, onClose }) => {
 };
 
 const ResponsiveHeader = () => {
-  const navigate = useNavigate(); // Added missing useNavigate hook
+  const navigate = useNavigate();
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [mobileExpandedItems, setMobileExpandedItems] = useState([]);
-  const [currentHeading, setCurrentHeading] = useState(0);
-
-  const handleHomeRedirect = () => {
-    navigate('/');
-  };
+  const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentHeading((prev) => (prev + 1) % headings.length);
+      setCurrentImage((prev) => (prev + 1) % carouselImages.length);
     }, 4000);
 
     return () => clearInterval(interval);
@@ -199,40 +191,38 @@ const ResponsiveHeader = () => {
       <div className="hidden md:block bg-white py-4">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center space-x-6">
-            <div onClick={handleHomeRedirect} className="flex-shrink-0 cursor-pointer">
+            <div onClick={() => navigate('/')} className="flex-shrink-0 cursor-pointer">
               <img src={Vector} alt="DSEU Logo" className="h-28" />
             </div>
-            <div className="overflow-hidden cursor-pointer" onClick={handleHomeRedirect}>
-              <motion.div
-                key={currentHeading}
-                initial={{ opacity: 0, y: -50 }}
+            <div className="relative h-32 w-64 overflow-hidden rounded-lg">
+            <AnimatePresence mode="wait">
+            <motion.div
+                key={currentImage}
+                initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
+                exit={{ opacity: 0, y: -100 }}
                 transition={{ duration: 0.5 }}
-                className="py-1"
+                className="relative h-full w-full"
               >
-                <div
-                  className={`text-2xl font-bold ${
-                    headings[currentHeading]?.title === "Crafting Excellence" ? 'font-pacifico' : 'font-inter'
-                  }`}
-                  style={{ color: '#005CB9' }}
-                >
-                  {headings[currentHeading]?.title}
-                </div>
-                <div
-                  className={`text-lg font-medium -mt-1 ${
-                    headings[currentHeading]?.title === "Crafting Excellence" ? 'font-pacifico' : 'font-inter'
-                  }`}
-                  style={{ color: '#FF9300' }}
-                >
-                  {headings[currentHeading]?.subtitle}
-                </div>
+                <img
+                  src={carouselImages[currentImage].src}
+                  alt={carouselImages[currentImage].alt}
+                  className="w-full h-full object-contain"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'contain',
+                    objectPosition: 'left',
+                  }}
+                />
               </motion.div>
-            </div>
+            </AnimatePresence>
+          </div>
+
           </div>
           <div 
             className="flex items-center space-x-2 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors"
-            onClick={handleLocationClick}
+            onClick={() => window.open('https://www.google.com/maps/place/Delhi+Skill+and+Entrepreneurship+University/@28.5824457,77.0600919,17z/data=!3m1!4b1!4m6!3m5!1s0x390d1b1939555555:0x5cb3da8201a9355b!8m2!3d28.5824457!4d77.0626668!16s%2Fg%2F11jyk9d7qs?entry=ttu&g_ep=EgoyMDI1MDEwOC4wIKXMDSoJLDEwMjExMjMzSAFQAw%3D%3D', '_blank')}
           >
             <FaMapMarkerAlt className="text-4xl text-orange-500" />
             <div>
@@ -247,53 +237,47 @@ const ResponsiveHeader = () => {
         </div>
       </div>
 
-      {/* Mobile Header */}
+      {/* Mobile Header with Carousel */}
       <div className="md:hidden bg-white shadow-md rounded-b-3xl">
-        <div className="px-4 py-3 flex justify-between items-center">
-          <div onClick={handleHomeRedirect} className="flex items-center space-x-2 cursor-pointer">
+        <div className="px-4 py-3">
+          <div className="flex items-center justify-between mb-3">
             <img src={Vector} alt="DSEU Logo" className="h-16" />
-            <motion.div
-              key={currentHeading}
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-              transition={{ duration: 0.5 }}
-              className="py-1"
-            >
-              <div
-                className={`text-2xl font-bold ${
-                  headings[currentHeading]?.title === "Crafting Excellence" ? 'font-pacifico' : 'font-inter'
-                }`}
-                style={{ color: '#005CB9' }}
+            <div className="flex items-center space-x-4">
+              <button onClick={() => window.open('https://www.google.com/maps?q=DSEU', '_blank')} className="text-orange-500">
+                <FaMapMarkerAlt className="h-6 w-6" />
+              </button>
+              <button onClick={() => setIsSearchOpen(true)} className="text-blue-600">
+                <Search className="h-6 w-6" />
+              </button>
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="text-blue-600"
               >
-                {headings[currentHeading]?.title}
-              </div>
-              <div
-                className={`text-lg font-medium -mt-1 ${
-                  headings[currentHeading]?.title === "Crafting Excellence" ? 'font-pacifico' : 'font-inter'
-                }`}
-                style={{ color: '#FF9300' }}
-              >
-                {headings[currentHeading]?.subtitle}
-              </div>
-            </motion.div>
+                <Menu className="h-6 w-6" />
+              </button>
+            </div>
           </div>
-          <div className="flex items-center space-x-4">
-            <button onClick={handleLocationClick} className="text-orange-500">
-              <FaMapMarkerAlt className="h-6 w-6" />
-            </button>
-            <button onClick={() => setIsSearchOpen(true)} className="text-blue-600">
-              <Search className="h-6 w-6" />
-            </button>
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-blue-600"
-            >
-              <Menu className="h-6 w-6" />
-            </button>
+          <div className="relative h-32 w-full overflow-hidden rounded-lg">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentImage}
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+                transition={{ duration: 0.5 }}
+                className="relative h-full w-full"
+              >
+                <img 
+                  src={carouselImages[currentImage].src}
+                  alt={carouselImages[currentImage].alt}
+                  className="w-full h-full object-cover shadow-md"
+                />
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </div>
+
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white shadow-md rounded-b-3xl">
@@ -334,7 +318,7 @@ const ResponsiveHeader = () => {
       <div className="hidden md:block bg-blue-100 shadow-lg shadow-blue-500/50 rounded-3xl w-[96%] mx-auto my-4">
         <nav className="max-w-7xl mx-auto px-6">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-7 ">
+            <div className="flex items-center space-x-7">
               {navItems.map((item) => (
                 <div
                   key={item.name}
