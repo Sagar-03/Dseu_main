@@ -1,4 +1,7 @@
 import React from "react";
+import bluestar from '../../assets/alumni/blueStar.png';
+import TCS from '../../assets/alumni/TCS.png';
+import MCdermott from '../../assets/alumni/MCdermott.png';
 
 const ProgramEvents = () => {
   const events = [
@@ -7,24 +10,27 @@ const ProgramEvents = () => {
       month: "JAN",
       location: "Lighthouse Point, FL | Social",
       title:
-        "Holiday Cheer and Jazz with the Harvard Din & Tonics at the Club's Annual Holiday Party!",
-      organization: "Harvard Club of Broward County",
+        "Celebrating Achievements with BlueStar: A Night of Networking and Fun!",
+      organization: "BlueStar Alumni Network",
+      image: bluestar, // Specify image for this event
     },
     {
-      date: "07",
+      date: "14",
       month: "JAN",
-      location: "Lighthouse Point, FL | Social",
+      location: "Miami, FL | Networking",
       title:
-        "Holiday Cheer and Jazz with the Harvard Din & Tonics at the Club's Annual Holiday Party!",
-      organization: "Harvard Club of Broward County",
+        "Tech Innovators Meetup: Future Insights Powered by TCS",
+      organization: "TCS Global Network",
+      image: TCS, // Specify image for this event
     },
     {
-      date: "07",
+      date: "21",
       month: "JAN",
-      location: "Lighthouse Point, FL | Social",
+      location: "Fort Lauderdale, FL | Conference",
       title:
-        "Holiday Cheer and Jazz with the Harvard Din & Tonics at the Club's Annual Holiday Party!",
-      organization: "Harvard Club of Broward County",
+        "MCdermott Presents: Exploring AI and Machine Learning in the Real World",
+      organization: "MCdermott Technology Group",
+      image: MCdermott, // Specify image for this event
     },
   ];
 
@@ -38,7 +44,9 @@ const ProgramEvents = () => {
           key={index}
           className="flex flex-wrap items-center bg-white rounded-lg shadow-md p-4 mb-4 h-auto sm:h-[180px]"
         >
-          <div className="w-full sm:w-[150px] h-[150px] bg-gray-300 mb-4 sm:mb-0 sm:mr-4"></div>
+          <div className="w-full sm:w-[150px] h-[150px] bg-gray-300 mb-4 sm:mb-0 sm:mr-4">
+            <img src={event.image} className="w-full h-full object-cover" alt="" />
+          </div>
           <div className="mr-4 flex flex-col items-start justify-start">
             <p className="text-xl font-bold text-black leading-[1.15] text-left">
               <span className="text-sm text-[#333] leading-[1] font-normal">{event.month}</span>
