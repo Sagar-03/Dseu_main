@@ -136,99 +136,6 @@ const navItems = [
   },
 ];
 
-const SidebarNav = ({ isOpen, onClose, navItems }) => {
-  const [openDropdown, setOpenDropdown] = useState(null);
-
-  return (
-    <AnimatePresence>
-      {isOpen && (
-        <>
-          {/* Overlay */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.5 }}
-            exit={{ opacity: 0 }}
-            onClick={onClose}
-            className="fixed inset-0 bg-black z-40"
-          />
-          
-          {/* Sidebar */}
-          <motion.div
-            initial={{ x: '-100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '-100%' }}
-            transition={{ type: 'spring', damping: 20 }}
-            className="fixed top-0 left-0 h-full w-80 bg-white shadow-xl z-50 overflow-y-auto"
-          >
-            <div className="p-4 border-b flex justify-between items-center">
-              <img src={DSEULOGOTHICK} alt="DSEU Logo" className="h-12" />
-              <button onClick={onClose} className="p-2 hover:bg-gray-100 rounded-full">
-                <X className="w-6 h-6 text-gray-500" />
-              </button>
-            </div>
-
-            <nav className="p-4">
-              {navItems.map((item) => (
-                <div key={item.name} className="mb-2">
-                  <div
-                    onClick={() => {
-                      if (!item.dropdownItems) {
-                        onClose();
-                      } else {
-                        setOpenDropdown(openDropdown === item.name ? null : item.name);
-                      }
-                    }}
-                    className="flex justify-between items-center py-3 px-2 rounded-lg hover:bg-blue-50 cursor-pointer"
-                  >
-                    <Link
-                      to={item.path}
-                      className="flex-grow text-[#005CB9] font-medium"
-                      onClick={() => !item.dropdownItems && onClose()}
-                    >
-                      {item.name}
-                    </Link>
-                    {item.dropdownItems && (
-                      <ChevronDown
-                        className={`ml-2 transition-transform duration-200 ${
-                          openDropdown === item.name ? 'rotate-180' : ''
-                        }`}
-                      />
-                    )}
-                  </div>
-                  
-                  <AnimatePresence>
-                    {item.dropdownItems && openDropdown === item.name && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        className="overflow-hidden"
-                      >
-                        <div className="pl-4 py-2 space-y-2">
-                          {item.dropdownItems.map((subItem) => (
-                            <Link
-                              key={subItem.name}
-                              to={subItem.path}
-                              className="block py-2 px-3 text-gray-600 hover:bg-blue-50 rounded-lg text-sm"
-                              onClick={onClose}
-                            >
-                              {subItem.name}
-                            </Link>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ))}
-            </nav>
-          </motion.div>
-        </>
-      )}
-    </AnimatePresence>
-  );
-};
-
 const SearchModal = ({ isOpen, onClose }) => {
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -339,17 +246,17 @@ const ResponsiveHeader = () => {
                 <div className="relative h-24 w-32 overflow-hidden rounded-lg">
                   <AnimatePresence mode="wait">
                     <motion.div
-                       key={currentImage}
-                       initial={{ opacity: 0, y: 100 }}
-                       animate={{ opacity: 1, y: 0 }}
-                       exit={{ opacity: 0, y: -100 }}
-                       transition={{ duration: 0.5 }}
+                      key={currentImage}
+                      initial={{ opacity: 0, x: 100 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -100 }}
+                      transition={{ duration: 1 }}
                       className="relative h-full w-full"
                     >
                       <img 
                         src={carouselImages[currentImage].src}
                         alt={carouselImages[currentImage].alt}
-                        className="w-full h-full object-contain"
+                        className="w-full h-full object-contain shadow-md"
                       />
                     </motion.div>
                   </AnimatePresence>
@@ -369,7 +276,7 @@ const ResponsiveHeader = () => {
                   <Search className="h-6 w-6" />
                 </button>
                 <button 
-                  onClick={() => setIsMobileMenuOpen((prev) => !prev)} 
+                  onClick={() => setIsMobileMenuOpen((prev)=>!prev)} 
                   className="text-blue-600"
                 >
                   {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -377,14 +284,38 @@ const ResponsiveHeader = () => {
               </div>
             </div>
           </div>
-     
-      {/* Sidebar Navigation */}
-<SidebarNav
-  isOpen={isMobileMenuOpen}
-  onClose={() => setIsMobileMenuOpen(false)}
-  navItems={navItems}
-/>
-
+      {/* Mobile Navigation Menu */}
+      {isMobileMenuOpen && (
+    <div className="bg-white px-4 py-2 shadow-md rounded-b-3xl">
+      <nav className="space-y-4">
+        {navItems.map((item) => (
+          <div key={item.name}>
+            <div
+                    to={item.path} 
+              className="block text-lg font-medium text-[#005CB9] py-2"
+              onClick={() => {handleMobileMenuClick}}
+            >
+              {item.name}
+              {item.dropdownItems && <ChevronDown className="ml-2 inline-block" />}
+            </div>
+            {item.dropdownItems && (
+              <div className="pl-4">
+                {item.dropdownItems.map((subItem) => (
+                  <div 
+                    
+                    className="block text-sm text-gray-700 py-2"
+                    onClick={() => setIsMobileMenuOpen((prev)=>!prev)}
+                  >
+                    {subItem.name}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </nav>
+    </div>
+  )}
 </div>
       {/* Desktop Navigation Bar */}
       <div className="hidden md:block bg-blue-100 shadow-lg shadow-blue-500/50 rounded-3xl w-[96%] mx-auto my-4">
