@@ -42,7 +42,7 @@ const Message = () => {
               <div className="flex-grow md:ml-6 mt-6 md:mt-0 text-center md:text-left">
                 <h2 className="text-xl font-bold text-white mb-4">
                   {leader.title}
-                  <div className="mt-1 ml-0 w-[30%] h-1 bg-orange-400 rounded"></div>
+                  <div className="mt-1 ml-10 lg:ml-0 w-[30%] h-1 bg-orange-400 rounded"></div>
                 </h2>
                 <p className="text-white text-sm leading-relaxed mb-4">
                   {leader.message}

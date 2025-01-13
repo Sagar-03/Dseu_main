@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 
 const Card = () => {
   const cards = [
@@ -52,27 +52,6 @@ const Card = () => {
     },
   ];
 
-  const [visibleCards, setVisibleCards] = useState([]);
-  const cardRefs = useRef([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const updatedVisibility = entries.map((entry, index) =>
-          entry.isIntersecting ? index : null
-        );
-        setVisibleCards(updatedVisibility.filter((i) => i !== null));
-      },
-      { threshold: 1.0 } // Fully visible
-    );
-
-    cardRefs.current.forEach((ref) => ref && observer.observe(ref));
-
-    return () => {
-      cardRefs.current.forEach((ref) => ref && observer.unobserve(ref));
-    };
-  }, []);
-
   return (
     <div className="container mx-auto px-4 py-4">
       <h2 className="text-4xl font-extrabold text-center text-blue-900 mb-8 mt-10 font-sans">
@@ -84,7 +63,6 @@ const Card = () => {
         {cards.map((card, index) => (
           <div
             key={index}
-            ref={(el) => (cardRefs.current[index] = el)}
             className="bg-blue-50 rounded-lg shadow-lg overflow-hidden flex flex-col"
             style={{ height: "400px" }}
           >
@@ -92,27 +70,27 @@ const Card = () => {
               {card.title}
             </h3>
             <div className="relative flex-grow overflow-hidden group">
-              <div
-                className={`p-2 ${
-                  visibleCards.includes(index) ? "animate-scroll" : ""
-                }`}
-              >
+              <div className="p-2 animate-scroll">
                 <ul className="space-y-2">
-                  {[...card.content, ...card.content].map((item, idx) => (
+                  {[...card.content, ...card.content, ...card.content].map((item, idx) => (
                     <li
                       key={idx}
-                      className="hover:bg-blue-100 rounded py-1 px-2 transition-colors"
+                      className="hover:bg-blue-100 rounded py-1 px-2 transition-colors duration-200"
                     >
-                      <a href="#" className="text-gray-700 hover:text-blue-900">
+                      <a 
+                        href="#" 
+                        className="text-gray-700 hover:text-blue-900 block w-full touch-pan-y"
+                      >
                         {item}
                       </a>
                     </li>
                   ))}
                 </ul>
               </div>
+              <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-blue-50 to-transparent pointer-events-none"></div>
             </div>
-            <div className="p-2">
-              <button className="w-full py-3 bg-blue-900 text-yellow-400 rounded text-lg hover:bg-yellow-400 hover:text-blue-900 transition-colors font-medium">
+            <div className="p-2 mt-auto">
+              <button className="w-full py-3 bg-blue-900 text-yellow-400 rounded text-lg hover:bg-yellow-400 hover:text-blue-900 transition-colors duration-300 font-medium">
                 {card.buttonText}
               </button>
             </div>
@@ -129,16 +107,28 @@ const style = `
       transform: translateY(0);
     }
     100% {
-      transform: translateY(-100%);
+      transform: translateY(-66.666%);
     }
   }
 
   .animate-scroll {
-    animation: scroll 10s linear infinite;
+    animation: scroll 30s linear infinite;
   }
 
   .group:hover .animate-scroll {
     animation-play-state: paused;
+  }
+
+  @media (pointer: coarse) {
+    .group:active .animate-scroll {
+      animation-play-state: paused;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .animate-scroll {
+      animation-duration: 25s;
+    }
   }
 `;
 
