@@ -3,8 +3,8 @@ import React from "react";
 const Administration = () => {
   return (
     <div className="p-4 md:p-8 lg:p-16 bg-[#ffffff]">
-      <h1 className="text-xl sm:text-2xl lg:text-3xl font-semibold p-3">ADMINISTRATIVE</h1>
-      <div className="bg-[#003E70] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 p-5">
+      <h1 className="text-xl sm:text-2xl lg:text-3xl font-semibold p-3">ADMINISTRATION</h1>
+      <div className="bg-[#FFB73342] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 p-5">
         <div className="bg-[#FFB733] w-full text-center py-2 px-4">
           Board of Governors
         </div>
