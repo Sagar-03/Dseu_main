@@ -3,8 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Menu, ChevronDown, X } from 'lucide-react';
 import { FaMapMarkerAlt } from 'react-icons/fa';
-import DSEULOGOTHICK from '../../assets/DSEULogo/DSEULOGOTHICK.svg';
-import DSEUTEXTFINAL from '../../assets/DSEULogo/DSEUTEXTFINAL.svg';
+import Vector from '../../assets/DSEULogo/Vector.svg';
+import dseutext from '../../assets/DSEULogo/dseutext.svg';
 import Group24 from '../../assets/DSEULogo/Group24.svg';
 import Orange from '../../assets/DSEULogo/Orange.svg';
 import { path } from 'framer-motion/client';
@@ -12,7 +12,7 @@ import { path } from 'framer-motion/client';
 
 const carouselImages = [
   {
-    src: DSEUTEXTFINAL, 
+    src: dseutext, 
     alt: "DSEU Image 1"
   },
   {
@@ -192,7 +192,7 @@ const ResponsiveHeader = () => {
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center space-x-6">
             <div onClick={() => navigate('/')} className="flex-shrink-0 cursor-pointer">
-              <img src={DSEULOGOTHICK} alt="DSEU Logo" className="h-28" />
+              <img src={Vector} alt="DSEU Logo" className="h-28" />
             </div>
             <div className="relative h-32 w-64 overflow-hidden rounded-lg">
             <AnimatePresence mode="wait">
