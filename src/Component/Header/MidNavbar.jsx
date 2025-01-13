@@ -7,7 +7,7 @@ import DSEULOGOTHICK from '../../assets/DSEULogo/DSEULOGOTHICK.svg';
 import DSEUTEXTFINAL from '../../assets/DSEULogo/DSEUTEXTFINAL.svg';
 import Group24 from '../../assets/DSEULogo/Group24.svg';
 import Orange from '../../assets/DSEULogo/Orange.svg';
-import { path } from 'framer-motion/client';
+
 
 
 const carouselImages = [
@@ -239,50 +239,51 @@ const ResponsiveHeader = () => {
 
       {/* Mobile Header with Carousel */}
       <div className="md:hidden bg-white shadow-md rounded-b-3xl">
-  <div className="px-4 py-3">
-    <div className="flex items-center justify-between mb-3">
-      <img src={Vector} alt="DSEU Logo" className="h-16" />
-      <div className="flex items-center space-x-4">
-        <button 
-          onClick={() => window.open('https://www.google.com/maps?q=DSEU', '_blank')} 
-          className="text-orange-500"
-        >
-          <FaMapMarkerAlt className="h-6 w-6" />
-        </button>
-        <button 
-          onClick={() => setIsSearchOpen(true)} 
-          className="text-blue-600"
-        >
-          <Search className="h-6 w-6" />
-        </button>
-        <button 
-          onClick={() => setIsMobileMenuOpen((prev) => !prev)} 
-          className="text-blue-600"
-        >
-          {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
-      </div>
-    </div>
-
-    <div className="relative h-32 w-full overflow-hidden rounded-lg">
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentImage}
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -100 }}
-          transition={{ duration: 1 }}
-          className="relative h-full w-full"
-        >
-          <img 
-            src={carouselImages[currentImage].src}
-            alt={carouselImages[currentImage].alt}
-            className="w-full h-full object-cover shadow-md"
-          />
-        </motion.div>
-      </AnimatePresence>
-    </div>
-  </div>
+          <div className="px-4 py-3">
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center space-x-4">
+                <img src={DSEULOGOTHICK} alt="DSEU Logo" className="h-16" />
+                <div className="relative h-24 w-32 overflow-hidden rounded-lg">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={currentImage}
+                      initial={{ opacity: 0, x: 100 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -100 }}
+                      transition={{ duration: 1 }}
+                      className="relative h-full w-full"
+                    >
+                      <img 
+                        src={carouselImages[currentImage].src}
+                        alt={carouselImages[currentImage].alt}
+                        className="w-full h-full object-contain shadow-md"
+                      />
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+              </div>
+              <div className="flex items-center space-x-4">
+                <button 
+                  onClick={() => window.open('https://www.google.com/maps?q=DSEU', '_blank')} 
+                  className="text-orange-500"
+                >
+                  <FaMapMarkerAlt className="h-6 w-6" />
+                </button>
+                <button 
+                  onClick={() => setIsSearchOpen(true)} 
+                  className="text-blue-600"
+                >
+                  <Search className="h-6 w-6" />
+                </button>
+                <button 
+                  onClick={() => setIsMobileMenuOpen((prev) => !prev)} 
+                  className="text-blue-600"
+                >
+                  {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                </button>
+              </div>
+            </div>
+          </div>
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
     <div className="bg-white px-4 py-2 shadow-md rounded-b-3xl">
