@@ -284,38 +284,14 @@ const ResponsiveHeader = () => {
               </div>
             </div>
           </div>
-      {/* Mobile Navigation Menu */}
-      {isMobileMenuOpen && (
-    <div className="bg-white px-4 py-2 shadow-md rounded-b-3xl">
-      <nav className="space-y-4">
-        {navItems.map((item) => (
-          <div key={item.name}>
-            <div
-                    to={item.path} 
-              className="block text-lg font-medium text-[#005CB9] py-2"
-              onClick={() => {handleMobileMenuClick}}
-            >
-              {item.name}
-              {item.dropdownItems && <ChevronDown className="ml-2 inline-block" />}
-            </div>
-            {item.dropdownItems && (
-              <div className="pl-4">
-                {item.dropdownItems.map((subItem) => (
-                  <div 
-                    
-                    className="block text-sm text-gray-700 py-2"
-                    onClick={() => setIsMobileMenuOpen((prev)=>!prev)}
-                  >
-                    {subItem.name}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        ))}
-      </nav>
-    </div>
-  )}
+     
+      {/* Sidebar Navigation */}
+<SidebarNav
+  isOpen={isMobileMenuOpen}
+  onClose={() => setIsMobileMenuOpen(false)}
+  navItems={navItems}
+/>
+
 </div>
       {/* Desktop Navigation Bar */}
       <div className="hidden md:block bg-blue-100 shadow-lg shadow-blue-500/50 rounded-3xl w-[96%] mx-auto my-4">
