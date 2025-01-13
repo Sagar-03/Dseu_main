@@ -33,7 +33,7 @@ const images = [
 
 const CustomArrow = ({ onClick, direction }) => (
   <div
-    className={`absolute top-1/2 transform -translate-y-1/2 ${direction === "prev" ? "left-1" : "right-1"} z-10 bg-black text-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer`}
+    className={`absolute top-1/2 transform -translate-y-1/2 ${direction === "prev" ? "-left-2 lg:left-1" : "-right-2 lg:right-1"} z-10 bg-white text-black rounded-full w-10 h-10 flex items-center justify-center cursor-pointer opacity-65`}
     onClick={onClick}
   >
     {direction === "prev" ? "<" : ">"}
