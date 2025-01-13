@@ -7,6 +7,7 @@ import Vector from '../../assets/DSEULogo/Vector.svg';
 import dseutext from '../../assets/DSEULogo/dseutext.svg';
 import Group24 from '../../assets/DSEULogo/Group24.svg';
 import Orange from '../../assets/DSEULogo/Orange.svg';
+import { path } from 'framer-motion/client';
 
 
 const carouselImages = [
@@ -92,15 +93,14 @@ const navItems = [
           { name: 'Under Graduate', path: '/Courses/UG' },
           { name: 'Post Graduate', path: '/Courses/PG' },
           { name: 'Diploma', path: '/Courses/Diploma' },
+          { name: 'Certificate Courses', path: '/Courses/Certificate-Courses'}
       ],
   },
   {
       name: 'Admission',
       path: '/admission',
       dropdownItems: [
-          { name: 'Facilities', path: '/admission/facilities' },
-          { name: 'Partners', path: '/admission/partners' },
-          { name: 'Events', path: '/admission/events' },
+          { name: 'Overview of Admissions', path: '/admission/overview-of-admissions' },
       ],
   },
   {
@@ -108,18 +108,23 @@ const navItems = [
       path: '/administration',
       dropdownItems: [
           { name: 'Administrative', path: '/administration/administrative' },
-          { name: 'Events', path: '/administration/events' },
-          { name: 'Calendar', path: '/administration/calendar' },
+          { name: 'Governing Bodies', path: '/administration/Governing-Bodies' },
+          { name: 'Other Academic Units', path: '/administration/Other-Academic-Units' },
+          { name: 'Support Services', path: '/administration/Support-Services'},
       ],
   },
   {
       name: 'Amenities',
       path: '/amenities',
-      dropdownItems: [
-          { name: 'Awards', path: '/amenities/awards' },
-          { name: 'Honors', path: '/amenities/honors' },
-          { name: 'Rankings', path: '/amenities/rankings' },
-      ],
+      dropdownItems:[
+        { name: 'Facilities', path: '/amenities/Facilities'},
+        { name: 'Computer Centre', path: '/amenities/Computer-Centre'},
+        { name: 'Placement', path: '/amenities/Placement'},
+        { name: 'Medical Services', path: '/amenities/Medical-Services'},
+        { name: 'Hostels', path: '/amenities/Hostels'},
+        { name: 'Sports', path: '/amenities/Sports'},
+        { name: 'Library', path: '/amenities/Library'},
+      ]
   },
   {
       name: 'Alumni',
@@ -128,11 +133,6 @@ const navItems = [
   {
       name: 'Entrepreneurship',
       path: '/entrepreneurship',
-      dropdownItems: [
-          { name: 'About', path: '/entrepreneurship/about' },
-          { name: 'Leadership', path: '/entrepreneurship/leadership' },
-          { name: 'Contact', path: '/entrepreneurship/contact' },
-      ],
   },
 ];
 
@@ -207,10 +207,10 @@ const ResponsiveHeader = () => {
                 <img
                   src={carouselImages[currentImage].src}
                   alt={carouselImages[currentImage].alt}
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain mt-5"
                   style={{
                     width: '100%',
-                    height: '100%',
+                    height: '70%',
                     objectFit: 'contain',
                     objectPosition: 'left',
                   }}
@@ -239,81 +239,84 @@ const ResponsiveHeader = () => {
 
       {/* Mobile Header with Carousel */}
       <div className="md:hidden bg-white shadow-md rounded-b-3xl">
-        <div className="px-4 py-3">
-          <div className="flex items-center justify-between mb-3">
-            <img src={Vector} alt="DSEU Logo" className="h-16" />
-            <div className="flex items-center space-x-4">
-              <button onClick={() => window.open('https://www.google.com/maps?q=DSEU', '_blank')} className="text-orange-500">
-                <FaMapMarkerAlt className="h-6 w-6" />
-              </button>
-              <button onClick={() => setIsSearchOpen(true)} className="text-blue-600">
-                <Search className="h-6 w-6" />
-              </button>
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-blue-600"
-              >
-                <Menu className="h-6 w-6" />
-              </button>
-            </div>
-          </div>
-          <div className="relative h-32 w-full overflow-hidden rounded-lg">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentImage}
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -100 }}
-                transition={{ duration: 0.5 }}
-                className="relative h-full w-full"
-              >
-                <img 
-                  src={carouselImages[currentImage].src}
-                  alt={carouselImages[currentImage].alt}
-                  className="w-full h-full object-cover shadow-md"
-                />
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        </div>
+  <div className="px-4 py-3">
+    <div className="flex items-center justify-between mb-3">
+      <img src={Vector} alt="DSEU Logo" className="h-16" />
+      <div className="flex items-center space-x-4">
+        <button 
+          onClick={() => window.open('https://www.google.com/maps?q=DSEU', '_blank')} 
+          className="text-orange-500"
+        >
+          <FaMapMarkerAlt className="h-6 w-6" />
+        </button>
+        <button 
+          onClick={() => setIsSearchOpen(true)} 
+          className="text-blue-600"
+        >
+          <Search className="h-6 w-6" />
+        </button>
+        <button 
+          onClick={() => setIsMobileMenuOpen((prev) => !prev)} 
+          className="text-blue-600"
+        >
+          {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
       </div>
+    </div>
 
+    <div className="relative h-32 w-full overflow-hidden rounded-lg">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentImage}
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -100 }}
+          transition={{ duration: 1 }}
+          className="relative h-full w-full"
+        >
+          <img 
+            src={carouselImages[currentImage].src}
+            alt={carouselImages[currentImage].alt}
+            className="w-full h-full object-cover shadow-md"
+          />
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  </div>
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white shadow-md rounded-b-3xl">
-          <nav className="px-4 py-2">
-            <div className="space-y-4">
-              {navItems.map((item) => (
-                <div key={item.name}>
-                  <Link
-                    to={item.path}
-                    className="block text-lg font-medium text-[#005CB9] py-2"
-                    onClick={handleMobileMenuClick}
+    <div className="bg-white px-4 py-2 shadow-md rounded-b-3xl">
+      <nav className="space-y-4">
+        {navItems.map((item) => (
+          <div key={item.name}>
+            <Link 
+              to={item.path}
+              className="block text-lg font-medium text-[#005CB9] py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              {item.name}
+              {item.dropdownItems && <ChevronDown className="ml-2 inline-block" />}
+            </Link>
+            {item.dropdownItems && (
+              <div className="pl-4">
+                {item.dropdownItems.map((subItem) => (
+                  <Link 
+                    key={subItem.name}
+                    to={subItem.path}
+                    className="block text-sm text-gray-700 py-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    {item.name}
-                    {item.dropdownItems && <ChevronDown className="ml-2 inline-block" />}
+                    {subItem.name}
                   </Link>
-                  {item.dropdownItems && (
-                    <div className="pl-4">
-                      {item.dropdownItems.map((subItem) => (
-                        <Link
-                          key={subItem.name}
-                          to={subItem.path}
-                          className="block text-sm text-gray-700 py-2"
-                          onClick={handleMobileMenuClick}
-                        >
-                          {subItem.name}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </nav>
-        </div>
-      )}
-
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </nav>
+    </div>
+  )}
+</div>
       {/* Desktop Navigation Bar */}
       <div className="hidden md:block bg-blue-100 shadow-lg shadow-blue-500/50 rounded-3xl w-[96%] mx-auto my-4">
         <nav className="max-w-7xl mx-auto px-6">

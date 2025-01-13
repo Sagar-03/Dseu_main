@@ -33,7 +33,7 @@ const images = [
 
 const CustomArrow = ({ onClick, direction }) => (
   <div
-    className={`absolute top-1/2 transform -translate-y-1/2 ${direction === "prev" ? "left-4" : "right-4"} z-10 bg-black text-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer`}
+    className={`absolute top-1/2 transform -translate-y-1/2 ${direction === "prev" ? "left-1" : "right-1"} z-10 bg-black text-white rounded-full w-10 h-10 flex items-center justify-center cursor-pointer`}
     onClick={onClick}
   >
     {direction === "prev" ? "<" : ">"}
@@ -65,12 +65,12 @@ const CarouselSection = () => {
   };
 
   return (
-    <section className="py-12 bg-gray-50">
+    <section className="py-12 bg-gray-100">
       <h2 className="text-4xl font-extrabold text-center text-blue-900 mb-8 mt-10 font-sans">
         Our Campuses
         <div className="mt-2 mx-auto w-20 h-1 bg-blue-600 rounded"></div>
       </h2>
-      <div className="max-w-7xl mx-auto relative">
+      <div className="max-w-7xl mx-7 lg:mx-auto relative">
         <Slider {...settings}>
           {images.map((image, index) => (
             <div key={index} className="px-6">
@@ -82,6 +82,7 @@ const CarouselSection = () => {
                 }`}
               >
                 <div className="relative">
+                  {/* Image section with reduced height */}
                   <img
                     src={image.src}
                     alt={image.alt}
@@ -90,22 +91,20 @@ const CarouselSection = () => {
                     }`}
                   />
                 </div>
-                
+                {/* Text section with stronger white background */}
                 <div
-  className={`absolute bottom-0 left-0 bg-white text-black text-sm font-bold px-3 py-2 rounded-b-lg transition-opacity duration-300 ${
-    index === activeIndex ? "opacity-100" : "opacity-75"
-  }`}
-  style={{
-    width: "100%",
-    backgroundColor: "rgba(255, 255, 255, 1)", 
-  }}
->
-  <div className="flex justify-center items-center w-full h-full">
-    <p>{image.text}</p>
-  </div>
-</div>
-</div>
-           </div>
+                  className={`absolute bottom-0 left-0 flex justify-center font-bold bg-white text-black text-sm px-3 py-2 rounded-b-lg transition-opacity duration-300 ${
+                    index === activeIndex ? "opacity-100" : "opacity-75"
+                  }`}
+                  style={{
+                    width: "100%",
+                    backgroundColor: "rgba(255, 255, 255, 1)", // Strong white background
+                  }}
+                >
+                  <p>{image.text}</p>
+                </div>
+              </div>
+            </div>
           ))}
         </Slider>
       </div>
@@ -114,7 +113,3 @@ const CarouselSection = () => {
 };
 
 export default CarouselSection;
-
-
-
-    

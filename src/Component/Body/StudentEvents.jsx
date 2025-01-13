@@ -78,7 +78,7 @@ const EventsAndActivities = () => {
                     <h3 className="font-semibold text-lg">Video Title</h3>
                     <p className="text-sm">Subheading text</p>
                   </div>
-                  <div className="absolute bottom-0 left-36  mb-2 mr-2">
+                  <div className="absolute bottom-0 left-36  mb-5 mr-2">
                     <FontAwesomeIcon
                       icon={faArrowRight}
                       className="text-white text-2xl"

@@ -101,7 +101,7 @@ const StudyProgramsSection = () => {
                   <button
                     key={program}
                     onClick={() => setSelectedProgram(program)}
-                    className={`pb-2 px-4 text-sm font-medium transition-colors duration-300 ${
+                    className={`pb-2 lg:px-4 text-xs inset-1 lg:text-sm font-medium transition-colors duration-300 ${
                       selectedProgram === program
                         ? "text-blue-600 border-b-2 border-blue-600"
                         : "text-gray-600 hover:text-blue-600"

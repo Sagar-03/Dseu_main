@@ -17,14 +17,14 @@ const Partners = () => {
   };
 
   const partners = [
-    { id: 1, image: 'infosys.png', name: 'Infosys', link: 'https://www.infosys.com/' },
-    { id: 2, image: 'HDFC-BANK-LOGO.png', name: 'HDFC Bank', link: 'https://www.hdfcbank.com/' },
-    { id: 3, image: 'mercedes-benz-logo.jpg', name: 'Mercedes-Benz', link: 'https://www.mercedes-benz.co.in' },
-    { id: 4, image: 'Starbucks_Corporation.png', name: 'Starbucks', link: 'https://www.starbucks.in' },
-    { id: 5, image: 'Tech-Mahindra-Logo.png', name: 'Tech Mahindra', link: 'https://www.techmahindra.com' },
-    { id: 6, image: 'NBCC.png', name: 'NBCC', link: 'https://nbccindia.in/index' },
-    { id: 7, image: 'Aditya_Birla_Fashion_and_Retail.svg_-min.png', name: 'Aditya-Birla', link: 'https://www.adityabirla.com' },
-    { id: 8, image: 'Apollo-MedSkills-High-Res-min.jpg', name: 'Apollo', link: 'https://www.apollohospitals.com/delhi/' },
+    { id: 1, image: 'infosys.png', name: 'Infosys',  },
+    { id: 2, image: 'HDFC-BANK-LOGO.png', name: 'HDFC Bank', },
+    { id: 3, image: 'mercedes-benz-logo.jpg', name: 'Mercedes-Benz', },
+    { id: 4, image: 'Starbucks_Corporation.png', name: 'Starbucks',  },
+    { id: 5, image: 'Tech-Mahindra-Logo.png', name: 'Tech Mahindra',  },
+    { id: 6, image: 'NBCC.png', name: 'NBCC',  },
+    { id: 7, image: 'Aditya_Birla_Fashion_and_Retail.svg_-min.png', name: 'Aditya-Birla', },
+    { id: 8, image: 'Apollo-MedSkills-High-Res-min.jpg', name: 'Apollo',  },
   ];
 
   const partnersInNewTab = ['Starbucks', 'Infosys', 'HDFC Bank', 'Apollo', 'Mercedes-Benz', 'Tech Mahindra', 'Aditya-Birla', 'NBCC'];

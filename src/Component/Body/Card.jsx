@@ -129,7 +129,7 @@ const style = `
       transform: translateY(0);
     }
     100% {
-      transform: translateY(-50%);
+      transform: translateY(-100%);
     }
   }
 
