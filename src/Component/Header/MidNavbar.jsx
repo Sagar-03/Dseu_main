@@ -327,7 +327,7 @@ const ResponsiveHeader = () => {
 
       {/* Mobile Header with Carousel */}
       <div className="md:hidden bg-white shadow-md rounded-b-3xl">
-          <div className="px-4 py-3">
+          <div className="px-2 ">
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center space-x-4">
                 <img src={DSEULOGOTHICK} alt="DSEU Logo" className="h-16" />
