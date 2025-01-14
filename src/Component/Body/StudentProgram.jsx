@@ -6,6 +6,7 @@ import achievement2 from "/src/assets/achievements/Achievements2.jpeg";
 import achievement3 from "/src/assets/achievements/Achievements3.jpeg";
 import achievement4 from "/src/assets/achievements/Achievements4.jpeg";
 import achievement5 from "/src/assets/achievements/Achievements5.jpeg";
+import study  from "/src/assets/achievements/study.jpg";
 
 const programs = {
   DIPLOMA: [
@@ -117,18 +118,25 @@ const StudyProgramsSection = () => {
               </h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                {programs[selectedProgram].map((program) => (
-                  <div
-                    key={program.code}
-                    className="bg-white rounded-lg shadow-sm p-4 hover:shadow-lg transition-shadow duration-300 cursor-pointer h-28"
-                  >
-                    <div className="h-full flex flex-col justify-between">
-                      <h3 className="text-lg font-bold">{program.code}</h3>
-                      <p className="text-xs text-gray-600">{program.name}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+  {programs[selectedProgram].map((program) => (
+    <div
+      key={program.code}
+      className="relative bg-cover bg-center rounded-lg shadow-sm p-8 hover:shadow-lg transition-shadow duration-300 cursor-pointer h-28"
+      style={{
+        backgroundImage: `url(${study})`,
+      }}
+    >
+      <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+
+      <div className="relative z-10 h-full flex flex-col justify-center items-center">
+        <h3 className="text-lg font-bold text-white text-center">{program.code}</h3>
+        <p className="text-xs text-white text-center">{program.name}</p>
+      </div>
+    </div>
+  ))}
+</div>
+
+
             </div>
           </div>
         </div>

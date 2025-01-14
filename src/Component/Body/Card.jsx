@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const Card = () => {
   const cards = [
@@ -77,11 +77,12 @@ const Card = () => {
                       key={idx}
                       className="hover:bg-blue-100 rounded py-1 px-2 transition-colors duration-200"
                     >
-                      <a 
-                        href="#" 
-                        className="text-gray-700 hover:text-blue-900 block w-full touch-pan-y"
+                      <a
+                        href="#"
+                        className="text-gray-700 hover:text-blue-900 flex items-center w-full"
                       >
                         {item}
+                        <span className="ml-2 animated-label">NEW</span>
                       </a>
                     </li>
                   ))}
@@ -111,6 +112,12 @@ const style = `
     }
   }
 
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
   .animate-scroll {
     animation: scroll 30s linear infinite;
   }
@@ -129,6 +136,16 @@ const style = `
     .animate-scroll {
       animation-duration: 25s;
     }
+  }
+
+  .animated-label {
+    font-size: 12px;
+    font-weight: bold;
+    background: linear-gradient(90deg, rgb(255, 0, 0), rgb(0, 255, 0), rgb(0, 0, 255), rgb(255, 0, 255));
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 3s infinite linear;
   }
 `;
 

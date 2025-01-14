@@ -411,49 +411,50 @@ const ResponsiveHeader = () => {
 
 </div>
       {/* Desktop Navigation Bar */}
-      <div className="hidden md:block bg-blue-100 shadow-lg shadow-blue-500/50 rounded-3xl w-[96%] mx-auto my-4">
-        <nav className="max-w-7xl mx-auto px-6">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-7">
-              {navItems.map((item) => (
-                <div
-                  key={item.name}
-                  className="relative group"
-                  onMouseEnter={() => setOpenDropdown(item.name)}
-                  onMouseLeave={() => setOpenDropdown(null)}
-                >
-                  <Link
-                    to={item.path}
-                    className="group inline-flex items-center text-base font-medium text-[#005CB9]"
-                  >
-                    {item.name}
-                    {item.dropdownItems && <ChevronDown className="ml-0.5 h-3 w-3" />}
-                  </Link>
-                  {item.dropdownItems && openDropdown === item.name && (
-                    <div className="absolute top-full left-0 bg-white shadow-lg rounded-md py-2 min-w-[180px] z-50">
-                      {item.dropdownItems.map((subItem) => (
-                        <Link
-                          key={subItem.name}
-                          to={subItem.path}
-                          className="block px-4 py-2 text-sm text-gray-800 hover:bg-blue-100"
-                        >
-                          {subItem.name}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-            <button
-              onClick={() => setIsSearchOpen(true)}
-              className="text-[#005CB9] hover:text-blue-900 p-4"
+      <div className="hidden md:block bg-blue-100 shadow-lg shadow-blue-500/50 rounded-3xl w-[96%] mx-auto my-4 sticky top-0 z-50">
+  <nav className="max-w-7xl mx-auto px-6">
+    <div className="flex justify-between items-center h-16">
+      <div className="flex items-center space-x-7">
+        {navItems.map((item) => (
+          <div
+            key={item.name}
+            className="relative group"
+            onMouseEnter={() => setOpenDropdown(item.name)}
+            onMouseLeave={() => setOpenDropdown(null)}
+          >
+            <Link
+              to={item.path}
+              className="group inline-flex items-center text-base font-medium text-[#005CB9]"
             >
-              <Search className="h-5 w-5" />
-            </button>
+              {item.name}
+              {item.dropdownItems && <ChevronDown className="ml-0.5 h-3 w-3" />}
+            </Link>
+            {item.dropdownItems && openDropdown === item.name && (
+              <div className="absolute top-full left-0 bg-white shadow-lg rounded-md py-2 min-w-[180px] z-50">
+                {item.dropdownItems.map((subItem) => (
+                  <Link
+                    key={subItem.name}
+                    to={subItem.path}
+                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-blue-100"
+                  >
+                    {subItem.name}
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
-        </nav>
+        ))}
       </div>
+      <button
+        onClick={() => setIsSearchOpen(true)}
+        className="text-[#005CB9] hover:text-blue-900 p-4"
+      >
+        <Search className="h-5 w-5" />
+      </button>
+    </div>
+  </nav>
+</div>
+
 
       <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </div>
