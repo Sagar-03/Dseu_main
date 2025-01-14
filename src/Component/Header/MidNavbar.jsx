@@ -133,13 +133,26 @@ const navItems = [
       path: '/entrepreneurship',
   },
 ];
+
+
 const SidebarNav = ({ isOpen, onClose, navItems }) => {
   const [openDropdown, setOpenDropdown] = useState(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   return (
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Overlay */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.5 }}
@@ -147,7 +160,7 @@ const SidebarNav = ({ isOpen, onClose, navItems }) => {
             onClick={onClose}
             className="fixed inset-0 bg-black z-40"
           />
-          
+
           {/* Sidebar */}
           <motion.div
             initial={{ x: '-100%' }}
@@ -158,8 +171,11 @@ const SidebarNav = ({ isOpen, onClose, navItems }) => {
           >
             <div className="p-4 border-b flex justify-between items-center">
               <img src={DSEULOGOTHICK} alt="DSEU Logo" className="h-12" />
-              <button onClick={onClose} className="p-2 hover:bg-gray-100 rounded-full">
-                <X className="w-6 h-6 text-gray-500" />
+              <button
+                onClick={onClose}
+                className="p-2 hover:bg-gray-100 rounded-full"
+              >
+               
               </button>
             </div>
             <nav className="p-4">
@@ -190,7 +206,7 @@ const SidebarNav = ({ isOpen, onClose, navItems }) => {
                       />
                     )}
                   </div>
-                  
+
                   <AnimatePresence>
                     {item.dropdownItems && openDropdown === item.name && (
                       <motion.div
@@ -223,6 +239,7 @@ const SidebarNav = ({ isOpen, onClose, navItems }) => {
     </AnimatePresence>
   );
 };
+
 
 const SearchModal = ({ isOpen, onClose }) => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -326,11 +343,17 @@ const ResponsiveHeader = () => {
       </div>
 
       {/* Mobile Header with Carousel */}
-      <div className="md:hidden bg-white shadow-md rounded-b-3xl">
+      <div className="md:hidden bg-white shadow-md rounded-b-1xl">
           <div className="px-2 ">
-            <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center justify-between mb-1">
               <div className="flex items-center space-x-4">
-                <img src={DSEULOGOTHICK} alt="DSEU Logo" className="h-16" />
+                <img src={DSEULOGOTHICK} alt="DSEU Logo" className="h-16"
+                onClick={() => {
+                  navigate('/');
+                  window.location.href = '/';
+                }}
+                style={{ cursor: 'pointer' }}
+              /> 
                 <div className="relative h-24 w-32 overflow-hidden rounded-lg">
                   <AnimatePresence mode="wait">
                     <motion.div
@@ -340,7 +363,13 @@ const ResponsiveHeader = () => {
                      exit={{ opacity: 0, y: -100 }}
                      transition={{ duration: 0.5 }}
                       className="relative h-full w-full"
+                      onClick={() => {
+                        navigate('/');
+                        window.location.href = '/';
+                      }}
+                      style={{ cursor: 'pointer' }}
                     >
+                    
                       <img 
                         src={carouselImages[currentImage].src}
                         alt={carouselImages[currentImage].alt}
