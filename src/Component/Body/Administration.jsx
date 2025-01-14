@@ -1,58 +1,107 @@
 import React from "react";
+import VC from '../../assets/VCsir.jpg'
+import DG from '../../assets/DG.jpg'
+import Registrar from '../../assets/Registrar.png'
 
 const Administration = () => {
+  const adminButtons = [
+    "Board of Governors",
+    "Finance Committee", 
+    "Deans",
+    "Heads",
+    "Presidents",
+    "Wardens",
+    "Assistant Wardens",
+    "JR/DR/AR",
+  ];
+
+  // Separate array for centered buttons
+  const centeredButtons = [
+    "Administration Units",
+    "Building & Works Committee"
+  ];
+
+  const leaders = [
+    {
+      name: "Shri Vinai Kumar Saxena",
+      position: "Hon'ble Chancellor & Lt. Governor",
+      image: DG,
+      email: "Email"
+    },
+    {
+      name: "Prof. Ashok Kumar Nagawat",
+      position: "Vice-Chancellor, DSEU",
+      image: VC,
+      email: "Email"
+    },
+    {
+      name: "Dr. Gagan Dhawan",
+      position: "Registrar, DSEU",
+      image: Registrar,
+      email: "Email"
+    }
+  ];
+
   return (
-    <div className="p-4 md:p-8 lg:p-16 bg-[#ffffff]">
-      <h1 className="text-xl sm:text-2xl lg:text-3xl font-semibold p-3">ADMINISTRATION</h1>
-      <div className="bg-[#FFB73342] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 p-5">
-        <div className="bg-[#FFB733] w-full text-center py-2 px-4">
-          Board of Governors
+    <div className="max-w-6xl mx-auto p-6">
+      {/* Header */}
+      <h1 className="text-2xl font-bold text-blue-900 mb-6 border-l-4 border-blue-600 pl-3">
+        ADMINISTRATION
+      </h1>
+
+      {/* Admin Buttons Grid */}
+      <div className="bg-orange-50 p-6 rounded-lg mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+          {adminButtons.map((button, index) => (
+            <button
+              key={index}
+              className="bg-orange-300 hover:bg-orange-400 text-black py-2 px-4 rounded-md text-sm transition-colors duration-200"
+            >
+              {button}
+            </button>
+          ))}
         </div>
-        <div className="bg-[#FFB733] w-full text-center py-2 px-4">
-          Finance Committee
-        </div>
-        <div className="bg-[#FFB733] w-full text-center py-2 px-4">Deans</div>
-        <div className="bg-[#FFB733] w-full text-center py-2 px-4">Heads</div>
-        <div className="bg-[#FFB733] w-full text-center py-2 px-4">
-          Presidents, Pic’s & Chairperson
-        </div>
-        <div className="bg-[#FFB733] w-full text-center py-2 px-4">Wardens</div>
-        <div className="bg-[#FFB733] w-full text-center py-2 px-4">
-          Assistant Wardens
-        </div>
-        <div className="bg-[#FFB733] w-full text-center py-2 px-4">JR/DR/AR</div>
-        <div className="bg-[#FFB733] w-full text-center py-2 px-4">
-          Administration Units
-        </div>
-        <div className="bg-[#FFB733] w-full text-center py-2 px-4">
-          Building and Works Committee
+        {/* Centered buttons container */}
+        <div className="flex flex-col md:flex-row justify-center gap-4">
+          {centeredButtons.map((button, index) => (
+            <button
+              key={index}
+              className="bg-orange-300 hover:bg-orange-400 text-black py-2 px-4 rounded-md text-sm transition-colors duration-200"
+            >
+              {button}
+            </button>
+          ))}
         </div>
       </div>
-      <div className="bg-[#D9D9D9] p-5 mt-3 rounded-2xl space-y-7">
-        <div className="bg-[#005CB9] flex flex-col sm:flex-row items-center py-6 px-4">
-          <img src={"./assets/Chancellor.png"} className="w-32 h-32 sm:w-40 sm:h-40" />
-          <div className="p-4 text-xl text-center sm:text-left">
-            <div className="font-bold">Shri Vinai Kumar Saxena</div>
-            <div>Chancellor & Lt. Governor, DSEU</div>
-            <div>Email</div>
+
+      {/* Profile Cards */}
+      <div className="space-y-6">
+        {leaders.map((leader, index) => (
+          <div 
+            key={index}
+            className="bg-blue-300 rounded-lg overflow-hidden"
+          >
+            <div className="flex flex-col md:flex-row items-center p-6 gap-6">
+              <div className="w-32 h-32 md:w-40 md:h-40 bg-white rounded-lg overflow-hidden flex-shrink-0">
+                <img
+                  src={leader.image}
+                  alt={leader.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="flex flex-col space-y-1">
+                <h2 className="text-xl font-bold">{leader.name}</h2>
+                <p className="text-black">{leader.position}</p>
+                <p className="text-black cursor-pointer hover:underline">
+                  {leader.email}
+                </p>
+                <button className="bg-orange-300 hover:bg-orange-400 text-black px-4 py-1 rounded-md w-fit mt-2 text-sm transition-colors duration-200">
+                  Know More
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="bg-[#005CB9] flex flex-col sm:flex-row items-center py-6 px-4">
-          <img src={"./assets/VC.svg"} className="w-32 h-32 sm:w-40 sm:h-40" />
-          <div className="p-4 text-xl text-center sm:text-left">
-            <div className="font-bold">Prof. Ashok Kumar Nagawat</div>
-            <div>Vice-Chancellor, DSEU</div>
-            <div>Email</div>
-          </div>
-        </div>
-        <div className="bg-[#005CB9] flex flex-col sm:flex-row items-center py-6 px-4">
-          <img src={"./assets/Registrar.svg"} className="w-32 h-32 sm:w-40 sm:h-40" />
-          <div className="p-4 text-xl text-center sm:text-left">
-            <div className="font-bold">Dr. Gagan Dhawan</div>
-            <div>Registrar, DSEU</div>
-            <div>Email</div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
