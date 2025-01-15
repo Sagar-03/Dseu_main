@@ -1,7 +1,7 @@
 # DSEU Website
 
 <div align="center">
-  <img src="./src/assets/DSEULogo/DSEULOGOTHICK.svg" alt="DSEU Logo" width="200"/>
+  <img src="./src/assets/DSEULogo/DSEULOGOTHICK.svg" alt="DSEU Logo" width="100"/>
   <h3>Delhi Skill and Entrepreneurship University</h3>
   <p>Empowering through Skills, Innovating through Education</p>
 </div>
