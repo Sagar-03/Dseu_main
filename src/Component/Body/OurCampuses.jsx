@@ -12,22 +12,22 @@ const images = [
   {
     src: Shakarpur,
     alt: "Card 1",
-    text: "This is Shakarpur Campus",
+    text: " Shakarpur Campus",
   },
   {
     src: shakarpur2,
     alt: "Card 2",
-    text: "This is Shakarpur 2 Campus",
+    text: "Shakarpur 2 Campus",
   },
   {
     src: MayurVihar,
     alt: "Card 3",
-    text: "This is Mayur Vihar Campus",
+    text: " Mayur Vihar Campus",
   },
   {
     src: VivekVihar,
     alt: "Card 4",
-    text: "This is Vivek Vihar Campus",
+    text: " Vivek Vihar Campus",
   },
 ];
 
@@ -93,12 +93,12 @@ const CarouselSection = () => {
                 </div>
                 {/* Text section with stronger white background */}
                 <div
-                  className={`absolute bottom-0 left-0 flex justify-center font-bold bg-white text-black text-sm px-3 py-2 rounded-b-lg transition-opacity duration-300 ${
+                  className={`absolute bottom-0 left-0 flex justify-center font-bold bg-white text-black text-sm px-3 py-4 overflow-hidden rounded-b-lg transition-opacity duration-300 ${
                     index === activeIndex ? "opacity-100" : "opacity-75"
                   }`}
                   style={{
                     width: "100%",
-                    backgroundColor: "rgba(255, 255, 255, 1)", // Strong white background
+                    backgroundColor: "rgba(255, 255, 255, 1)", 
                   }}
                 >
                   <p>{image.text}</p>
