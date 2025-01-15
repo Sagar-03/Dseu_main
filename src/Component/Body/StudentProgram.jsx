@@ -126,9 +126,9 @@ const StudyProgramsSection = () => {
         backgroundImage: `url(${study})`,
       }}
     >
-      <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+      <div className="absolute inset-0 bg-black opacity-50 rounded-lg " ></div>
 
-      <div className="relative z-10 h-full flex flex-col justify-center items-center">
+      <div className="relative z-10 h-full flex flex-col justify-center items-center ">
         <h3 className="text-lg font-bold text-white text-center">{program.code}</h3>
         <p className="text-xs text-white text-center">{program.name}</p>
       </div>
