@@ -61,7 +61,6 @@ function App() {
               <OurPartners />
               <News />
               <EventsAndActivities />
-              <JobPortal/>
             </>
           }
         />
@@ -79,6 +78,7 @@ function App() {
         <Route path="/Administration/administrative" element={<Administration />} />
         <Route path="/faculty/:facultyId" element={<FacultyDesc />} />
         <Route path="/alumni" element={<AlumniSection />} />
+        <Route path="/administration/recruitment" element={<JobPortal/>} />
         <Route path="/about-us/About-the-College" element = {<About/>} />
         <Route path="about-us/Vision-and-Mission" element={<VissionMission/>} />
         <Route path="about-us/Policy" element={<Policy/>} />
