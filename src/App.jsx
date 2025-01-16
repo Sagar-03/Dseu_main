@@ -31,6 +31,13 @@ import About from "./Component/NavItems/About";
 import VissionMission from "./Component/NavItems/Vission&Mission";
 import Entrepreneurship from "./Component/NavItems/Entrepreneurship";
 import Amenities from "./Component/NavItems/Amenities";
+import Policy from "./Component/Policy/Policy";
+import AcademicGuidelines from "./Component/Policy/AcademicGuidelines";
+import AdmissionsPolicy from "./Component/Policy/AdmissionsPolicy";
+import AntiRaggingPolicy from "./Component/Policy/AntiRaggingPolicy";
+import CodeOfConduct from "./Component/Policy/CodeOfConduct";
+import Facilities from "./Component/Policy/Facilities";
+import SupportServices from "./Component/Policy/SupportServices";
 
 
 function App() {
@@ -72,6 +79,14 @@ function App() {
         <Route path="/alumni" element={<AlumniSection />} />
         <Route path="/about-us/About-the-College" element = {<About/>} />
         <Route path="about-us/Vision-and-Mission" element={<VissionMission/>} />
+        <Route path="about-us/Policy" element={<Policy/>} />
+        <Route path="about-us/policy/academic-policy" element={<AcademicGuidelines/>} />
+        <Route path="about-us/policy/anti-ragging-policy" element={<AntiRaggingPolicy/>} />
+        <Route path="about-us/policy/admission-policy" element={<AdmissionsPolicy/>} />
+        <Route path="about-us/policy/facilities" element={<Facilities/>} />
+        <Route path="about-us/policy/support-services" element={<SupportServices/>} />
+        <Route path="about-us/policy/code-of-conduct" element={<CodeOfConduct/>} />
+        
         <Route path="/entrepreneurship" element={<Entrepreneurship/>} />
         <Route path="/amenities" element={<Amenities/>} />
       </Routes>

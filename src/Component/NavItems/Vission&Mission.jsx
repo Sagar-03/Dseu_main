@@ -5,10 +5,10 @@ const VissionMission = () => {
     <>
       <div className="w-4/5 p-4 mx-auto my-8 rounded-lg text-gray-800">
         <div className="text-left">
-          <h2 className="text-3xl mb-2">Vision</h2>
-          <div className="flex items-center mt-[-5px] w-[120px]">
+          <h2 className="text-3xl mb-2 font-bold">Vision</h2>
+          <div className="flex items-center mt-[-5px] w-[75px]">
             <div className="h-[2px] bg-blue-900 flex-1"></div>
-            <div className="h-[5px] w-[50px] bg-blue-900 rounded-[10px]"></div>
+            <div className="h-[5px] w-[30px] bg-blue-900 rounded-[10px]"></div>
             <div className="h-[2px] bg-blue-900 flex-1"></div>
           </div>
           <div className="my-2"></div>
@@ -57,7 +57,7 @@ const VissionMission = () => {
         
 
         <div className="text-left">
-          <h2 className="text-3xl mb-2">Mission</h2>
+          <h2 className="text-3xl mb-2 font-bold">Mission</h2>
           <div className="flex items-center mt-[-5px] w-[80px]">
             <div className="h-[2px] bg-blue-900 flex-1"></div>
             <div className="h-[5px] w-[30px] bg-blue-900 rounded-[10px]"></div>
