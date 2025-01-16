@@ -32,7 +32,6 @@ const navItems = [
   },
   {
       name: 'About Us',
-      path: '/about-us',
       dropdownItems: [
           {
               name: 'DSEU Memoir',
@@ -51,7 +50,6 @@ const navItems = [
                   { name: 'Year-wise', path: '/about-us/Annual-Report/Year-wise' },
               ],
           },
-          { name: 'Governing Bodies', path: '/about-us/Governing-Bodies' },
           { name: 'Handbook (Brochure)', path: '/about-us/Handbook' },
           {
               name: 'About the College',
@@ -67,7 +65,6 @@ const navItems = [
   },
   {
       name: 'Academics',
-      path: '/academics',
       dropdownItems: [
           { name: 'Programs', path: '/academics/programs' },
           { name: 'Departments', path: '/academics/departments' },
@@ -76,7 +73,6 @@ const navItems = [
   },
   {
       name: 'Campuses',
-      path: '/campus',
       dropdownItems: [
           { name: 'North', path: '/campus/north' },
           { name: 'South', path: '/campus/south' },
@@ -86,7 +82,6 @@ const navItems = [
   },
   {
       name: 'Courses',
-      path: '/courses',
       dropdownItems: [
           { name: 'Under Graduate', path: '/Courses/UG' },
           { name: 'Post Graduate', path: '/Courses/PG' },
@@ -96,14 +91,12 @@ const navItems = [
   },
   {
       name: 'Admission',
-      path: '/admission',
       dropdownItems: [
           { name: 'Overview of Admissions', path: '/admission/overview-of-admissions' },
       ],
   },
   {
       name: 'Administration',
-      path: '/administration',
       dropdownItems: [
           { name: 'Administrative', path: '/administration/administrative' },
           { name: 'Governing Bodies', path: '/administration/Governing-Bodies' },
@@ -430,18 +423,27 @@ const ResponsiveHeader = () => {
               {item.dropdownItems && <ChevronDown className="ml-0.5 h-3 w-3" />}
             </Link>
             {item.dropdownItems && openDropdown === item.name && (
-              <div className="absolute top-full left-0 bg-white shadow-lg rounded-md py-2 min-w-[180px] z-50">
-                {item.dropdownItems.map((subItem) => (
-                  <Link
-                    key={subItem.name}
-                    to={subItem.path}
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-blue-100"
-                  >
-                    {subItem.name}
-                  </Link>
-                ))}
-              </div>
-            )}
+  <div className="absolute top-full left-0 bg-white shadow-lg rounded-md min-w-[200px] z-50">
+    {/* Heading */}
+    <div className="bg-blue-700 text-white text-center font-semibold p-2 rounded-t-md">
+      {item.name}
+    </div>
+    {/* Dropdown Content with Inner Border */}
+    <div className="relative p-2 bg-white rounded-b-md">
+      <div className="absolute inset-1 border-2 border-blue-500 rounded-md pointer-events-none"></div>
+      {item.dropdownItems.map((subItem) => (
+        <Link
+          key={subItem.name}
+          to={subItem.path}
+          className="block px-4 py-2 text-sm text-gray-800 hover:bg-blue-100 text-center relative"
+        >
+          {subItem.name}
+        </Link>
+      ))}
+    </div>
+  </div>
+)}
+
           </div>
         ))}
       </div>

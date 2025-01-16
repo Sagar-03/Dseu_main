@@ -1,3 +1,5 @@
+
+import JobPortal from "./Component/Body/JobPortal";
 import React from "react";
 import MidNavbar from "./Component/Header/MidNavbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -59,7 +61,7 @@ function App() {
               <OurPartners />
               <News />
               <EventsAndActivities />
-              
+              <JobPortal/>
             </>
           }
         />
