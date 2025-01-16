@@ -50,7 +50,6 @@ const navItems = [
                   { name: 'Year-wise', path: '/about-us/Annual-Report/Year-wise' },
               ],
           },
-          { name: 'Governing Bodies', path: '/about-us/Governing-Bodies' },
           { name: 'Handbook (Brochure)', path: '/about-us/Handbook' },
           {
               name: 'About the College',
