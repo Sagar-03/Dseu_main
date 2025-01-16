@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import MidNavbar from "./Component/Header/MidNavbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeBody from "./Component/Body/Banner";
@@ -31,6 +31,7 @@ import About from "./Component/NavItems/About";
 import VissionMission from "./Component/NavItems/Vission&Mission";
 import Entrepreneurship from "./Component/NavItems/Entrepreneurship";
 import Amenities from "./Component/NavItems/Amenities";
+import JobPortal from "./Component/Body/JobPortal";
 
 
 function App() {
@@ -52,7 +53,7 @@ function App() {
               <OurPartners />
               <News />
               <EventsAndActivities />
-              
+              <JobPortal/>
             </>
           }
         />
