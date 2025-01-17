@@ -16,8 +16,9 @@ const AnnouncementStrip = () => {
   return (
     <div className="flex bg-white border-y border-gray-200">
       
-      <div className="bg-blue-600 text-white flex w-28 lg:w-auto items-center px-4">
-        <span className="text-[10px] lg:text-xs font-bold">Announcements</span>
+      <div className="bg-blue-600 text-white flex w-28 lg:w-auto items-center px-5">
+      <span className=" text-[12px] ml-[-10px] sm:text-[10px] lg:text-[14px] font-bold">Announcements</span>
+
       </div>
        <div className="h-10 flex items-center overflow-hidden relative w-full">
         <div className="animate-marquee inline-flex items-center absolute whitespace-nowrap">
@@ -55,7 +56,7 @@ const style = `
   }
 
   .animate-marquee {
-    animation: marquee 30s linear infinite;
+    animation: marquee 35s linear infinite;
   }
 
   /* Pause animation on hover */

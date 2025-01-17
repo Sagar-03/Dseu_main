@@ -99,7 +99,7 @@ const navItems = [
       name: 'Administration',
       dropdownItems: [
           { name: 'Administrative', path: '/administration/administrative' },
-          { name: 'Governing Bodies', path: '/administration/Governing-Bodies' },
+          { name: 'Recruitment', path: '/administration/recruitment' },
           { name: 'Other Academic Units', path: '/administration/Other-Academic-Units' },
           { name: 'Support Services', path: '/administration/Support-Services'},
       ],

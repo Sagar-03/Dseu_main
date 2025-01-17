@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-import Fifth from '../../assets/fifth.jpg';
+// import banner1 from "../../assets/WhatsApp Image 2024-12-29 at 16.38.40.jpeg"
 import Banner12 from '../../assets/Banner-12.png';
 import Image6 from '../../assets/6.jpg';
 import Image7 from '../../assets/7.png';
@@ -10,7 +10,7 @@ const HomeBody = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const slides = [
-    { image: Fifth },
+    // { image: banner1 },
     { image: Banner12 },
     { image: Image6 },
     { image: Image7 },
@@ -32,7 +32,7 @@ const HomeBody = () => {
   };
 
   return (
-    <div className="relative w-full h-[30vh] md:h-[60vh] lg:h-[80vh]">
+    <div className="relative w-full h-[20vh] sm:h-[40vh] md:h-[60vh] lg:h-[80vh]">
       <div className="relative w-full h-full overflow-hidden">
         {slides.map((slide, index) => (
           <div
