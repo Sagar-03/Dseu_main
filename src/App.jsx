@@ -40,6 +40,7 @@ import AntiRaggingPolicy from "./Component/Policy/AntiRaggingPolicy";
 import CodeOfConduct from "./Component/Policy/CodeOfConduct";
 import Facilities from "./Component/Policy/Facilities";
 import SupportServices from "./Component/Policy/SupportServices";
+import ViceChancellorMessage from "./Component/Body/ViceChancellorMessage";
 
 
 function App() {
@@ -61,7 +62,6 @@ function App() {
               <OurPartners />
               <News />
               <EventsAndActivities />
-              <JobPortal/>
             </>
           }
         />
@@ -88,7 +88,7 @@ function App() {
         <Route path="about-us/policy/facilities" element={<Facilities/>} />
         <Route path="about-us/policy/support-services" element={<SupportServices/>} />
         <Route path="about-us/policy/code-of-conduct" element={<CodeOfConduct/>} />
-        
+        <Route path="/vice-chancellor" element={<ViceChancellorMessage/>} />
         <Route path="/entrepreneurship" element={<Entrepreneurship/>} />
         <Route path="/amenities" element={<Amenities/>} />
       </Routes>
