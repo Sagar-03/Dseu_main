@@ -70,23 +70,25 @@ const Card = () => {
               {card.title}
             </h3>
             <div className="relative flex-grow overflow-hidden group">
-              <div className="p-2 animate-scroll">
-                <ul className="space-y-2">
-                  {[...card.content, ...card.content, ...card.content].map((item, idx) => (
-                    <li
-                      key={idx}
-                      className="hover:bg-blue-100 rounded py-1 px-2 transition-colors duration-200"
-                    >
-                      <a
-                        href="#"
-                        className="text-gray-700 hover:text-blue-900 flex items-center w-full"
+              <div className="absolute inset-0 flex flex-col-reverse">
+                <div className="p-2 animate-scroll">
+                  <ul className="space-y-2">
+                    {[...card.content, ...card.content].map((item, idx) => (
+                      <li
+                        key={idx}
+                        className="hover:bg-blue-100 rounded py-1 px-2 transition-colors duration-200"
                       >
-                        {item}
-                        <span className="ml-2 animated-label">NEW</span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+                        <a
+                          href="#"
+                          className="text-gray-700 hover:text-blue-900 flex items-center w-full"
+                        >
+                          {item}
+                          <span className="ml-2 animated-label">NEW</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
               <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-blue-50 to-transparent pointer-events-none"></div>
             </div>
@@ -105,10 +107,10 @@ const Card = () => {
 const style = `
   @keyframes scroll {
     0% {
-      transform: translateY(0);
+      transform: translateY(100%); /* Start at the bottom */
     }
     100% {
-      transform: translateY(-66.666%);
+      transform: translateY(-100%); /* Move to the top */
     }
   }
 

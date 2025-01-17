@@ -1,5 +1,4 @@
 import React from "react";
-import logoF from "../../assets/logoF.png";
 import dseulogo from "../../assets/dseulogofullnew.svg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
