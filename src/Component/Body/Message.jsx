@@ -39,15 +39,17 @@ const Message = () => {
                   className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-white"
                 />
               </div>
-              <div className="flex-grow md:ml-6 mt-6 md:mt-0 text-center md:text-left">
-                <h2 className="text-xl font-bold text-white mb-4">
+              <div className="flex-grow md:ml-6 md:mt-0 text-center md:text-left">
+                <h2 className="text-xl font-extrabold text-center text-white mb-4  font-sans">
                   {leader.title}
-                  <div className="mt-1 ml-10 lg:ml-0 w-[30%] h-1 bg-orange-400 rounded"></div>
+                  <div className="mt-1 mx-auto w-[125px] h-1 bg-orange-400 rounded"></div>
                 </h2>
                 <p className="text-white text-sm leading-relaxed mb-4">
                   {leader.message}
                 </p>
-                <div className="text-white font-semibold mb-4">~{leader.name}</div>
+                <div className="text-white font-semibold mb-4">
+                  ~{leader.name}
+                </div>
                 <a
                   href={leader.link}
                   target="_blank"
