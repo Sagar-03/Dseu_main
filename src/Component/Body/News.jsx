@@ -8,8 +8,6 @@ import News1 from '../../assets/News/News1.jpg';
 import News3 from '../../assets/News/News3.jpg';
 import News4 from '../../assets/News/News4.jpg';
 
-
-
 const News = () => {
   const navigate = useNavigate();
 
