@@ -41,7 +41,7 @@ import CodeOfConduct from "./Component/Policy/CodeOfConduct";
 import Facilities from "./Component/Policy/Facilities";
 import SupportServices from "./Component/Policy/SupportServices";
 import ViceChancellorMessage from "./Component/Body/ViceChancellorMessage";
-
+import ResearchDev from "./Component/Body/ResearchDev";
 
 function App() {
   return (
@@ -92,6 +92,7 @@ function App() {
         <Route path="/vice-chancellor" element={<ViceChancellorMessage/>} />
         <Route path="/entrepreneurship" element={<Entrepreneurship/>} />
         <Route path="/amenities/Facilities" element={<Amenities/>} />
+        <Route path="/research/*" element={<ResearchDev/>} />
       </Routes>
       <Footer />
     </BrowserRouter>

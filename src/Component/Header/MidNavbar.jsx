@@ -117,6 +117,15 @@ const navItems = [
     name: "Entrepreneurship",
     path: "/entrepreneurship",
   },
+  {
+    name: "Research",
+    dropdownItems: [
+      {
+        name: "Research and Development",
+        path: "/research",
+      },
+    ],
+  },
 ];
 
 const SidebarNav = ({ isOpen, onClose, navItems }) => {
@@ -415,7 +424,7 @@ const ResponsiveHeader = () => {
       </div>
       {/* Desktop Navigation Bar */}
       <div className="hidden md:block bg-blue-100 shadow-lg shadow-blue-500/50 rounded-3xl w-[96%] mx-auto my-4 sticky top-0 z-50">
-        <nav className="max-w-7xl mx-auto px-6">
+        <nav className="max-w-7xl px-4 mx-auto">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-7">
               {navItems.map((item) => (
@@ -427,7 +436,7 @@ const ResponsiveHeader = () => {
                 >
                   <Link
                     to={item.path}
-                    className="group inline-flex items-center text-base font-medium text-[#005CB9]"
+                    className="group inline-flex items-center text-base font-medium text-[#005CB9] whitespace-nowrap"
                   >
                     {item.name}
                     {item.dropdownItems && (
