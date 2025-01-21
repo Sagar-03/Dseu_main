@@ -15,12 +15,12 @@ const AnnouncementStrip = () => {
 
   return (
     <div className="flex bg-white border-y border-gray-200">
-      
       <div className="bg-blue-600 text-white flex w-28 lg:w-auto items-center px-5">
-      <span className=" text-[12px] ml-[-10px] sm:text-[10px] lg:text-[14px] font-bold">Announcements</span>
-
+        <span className="text-[12px] ml-[-10px] sm:text-[10px] lg:text-[14px] font-bold">
+          Announcements
+        </span>
       </div>
-       <div className="h-10 flex items-center overflow-hidden relative w-full">
+      <div className="h-10 flex items-center overflow-hidden relative w-full">
         <div className="animate-marquee inline-flex items-center absolute whitespace-nowrap">
           {[...Array(2)].map((_, duplicateIndex) => (
             <div key={duplicateIndex} className="inline-flex items-center">
@@ -32,6 +32,7 @@ const AnnouncementStrip = () => {
                 >
                   <ExternalLink className="w-4 h-4 mr-2" />
                   <span>{announcement.text}</span>
+                  <span className="new-badge ml-2">New</span>
                   {index !== announcements.length - 1 && (
                     <span className="mx-4 text-gray-400">|</span>
                   )}
@@ -62,6 +63,21 @@ const style = `
   /* Pause animation on hover */
   .animate-marquee:hover {
     animation-play-state: paused;
+  }
+
+  /* New badge styles with color animation */
+  @keyframes newBadgeColorChange {
+    0% { color: #ff6347; } /* Tomato */
+    25% { color: #ffa500; } /* Orange */
+    50% { color: #32cd32; } /* Lime Green */
+    75% { color: #1e90ff; } /* Dodger Blue */
+    100% { color: #ff6347; } /* Tomato */
+  }
+
+  .new-badge {
+    font-size: 12px;
+    font-weight: bold;
+    animation: newBadgeColorChange 2s infinite;
   }
 `;
 

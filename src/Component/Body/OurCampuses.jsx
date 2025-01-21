@@ -1,39 +1,44 @@
+import Shakarpur from "../../assets/Shakarpur.jpg";
+import shakarpur2 from "../../assets/shakarpur2.jpg";
+import MayurVihar from "../../assets/MayurVihar.jpg";
+import VivekVihar from "../../assets/VivekVihar.jpg";
 import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import Shakarpur from "../../assets/Shakarpur.jpg";
-import shakarpur2 from "../../assets/shakarpur2.jpg";
-import MayurVihar from "../../assets/MayurVihar.jpg";
-import VivekVihar from "../../assets/VivekVihar.jpg";
-
 const images = [
   {
     src: Shakarpur,
     alt: "Card 1",
-    text: " Shakarpur Campus",
+    text: " DSEU Shakarpur Campus",
+    address: "MB 153/B, opp. Madhuvan Park, Ganesh Nagar Extn - 2, Shakarpur, Delhi, 110092",
   },
   {
     src: shakarpur2,
     alt: "Card 2",
-    text: "Shakarpur 2 Campus",
+    text: "DSEU Shakarpur 2 Campus",
+    address: "MB 153/B, opp. Madhuvan Park, Ganesh Nagar Extn - 2, Shakarpur, Delhi, 110092",
   },
   {
     src: MayurVihar,
     alt: "Card 3",
-    text: " Mayur Vihar Campus",
+    text: "DSEU Mayur Vihar Campus",
+    address: "J77W+4VJ, Sanjay Lake View Apartments, Pocket 5, Mayur Vihar, New Delhi, Delhi 110091",
   },
   {
     src: VivekVihar,
     alt: "Card 4",
-    text: " Vivek Vihar Campus",
+    text: "DSEU Vivek Vihar Campus",
+    address: "ITI COLLEGE, Vivek Vihar Rd, Block C, Vivek Vihar Phase I, Vivek Vihar, Delhi, 110095",
   },
 ];
 
 const CustomArrow = ({ onClick, direction }) => (
   <div
-    className={`absolute top-1/2 transform -translate-y-1/2 ${direction === "prev" ? "-left-2 lg:left-1" : "-right-2 lg:right-1"} z-10 bg-white text-black rounded-full w-10 h-10 flex items-center justify-center cursor-pointer opacity-65`}
+    className={`absolute top-1/2 transform -translate-y-1/2 ${
+      direction === "prev" ? "-left-2 lg:left-1" : "-right-2 lg:right-1"
+    } z-10 bg-white text-black rounded-full w-10 h-10 flex items-center justify-center cursor-pointer opacity-65`}
     onClick={onClick}
   >
     {direction === "prev" ? "<" : ">"}
@@ -77,29 +82,30 @@ const CarouselSection = () => {
               <div
                 className={`relative overflow-hidden shadow-lg transition-transform duration-500 ${
                   index === activeIndex
-                    ? "transform scale-125 -translate-y-10 z-20 rounded-2xl"
-                    : "transform scale-90 rounded-lg"
+                    ? "transform scale-125 -translate-y-10 z-20"
+                    : "transform scale-90"
                 }`}
               >
-                <div className="relative">
-                  {/* Image section with reduced height */}
+                <div className="relative group">
                   <img
                     src={image.src}
                     alt={image.alt}
-                    className={`w-full h-[300px] object-cover transition-transform duration-500 hover:scale-105 hover:brightness-75 ${
-                      index === activeIndex ? "rounded-2xl" : "rounded-lg"
-                    }`}
+                    className={`w-full h-[300px] object-cover transition-transform duration-500 group-hover:scale-105 group-hover:brightness-50`}
                   />
+                  
+                  <div
+                    className="absolute bottom-0 left-0 right-0 flex flex-col items-start justify-start opacity-0 group-hover:opacity-100 transition-opacity duration-500 px-4 py-2"
+                    style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
+                  >
+                    <p className="text-white text-lg font-bold">{image.text}</p>
+                    <p className="text-white text-xs">{image.address}</p>
+                  </div>
                 </div>
-                {/* Text section with stronger white background */}
+               
                 <div
-                  className={`absolute bottom-0 left-0 flex justify-center font-bold bg-white text-black text-sm px-3 py-4 overflow-hidden rounded-b-lg transition-opacity duration-300 ${
+                  className={`flex justify-center font-bold bg-white text-black text-sm px-3 py-4 transition-opacity duration-300 ${
                     index === activeIndex ? "opacity-100" : "opacity-75"
                   }`}
-                  style={{
-                    width: "100%",
-                    backgroundColor: "rgba(255, 255, 255, 1)", 
-                  }}
                 >
                   <p>{image.text}</p>
                 </div>
