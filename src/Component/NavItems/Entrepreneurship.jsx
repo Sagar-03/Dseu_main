@@ -1,4 +1,6 @@
 import React from 'react';
+import Typing from 'react-typing-effect';
+import enter from '../../assets/enter.jpeg';
 
 const Entrepreneurship = () => {
   return (
@@ -6,10 +8,25 @@ const Entrepreneurship = () => {
       {/* Main Heading Section */}
       <div className="space-y-6">
         <h1 className="text-3xl md:text-4xl font-bold text-blue-800">
-          Nurturing entrepreneurial minds to revolutionize industries with passion
+          Nurturing entrepreneurial minds to revolutionize industries with{' '}
+          <Typing
+            speed={100}
+            eraseDelay={500}
+            typingDelay={500}
+            cursorRenderer={(cursor) => <h1>{cursor}</h1>}
+            text={[
+              'passion',
+              'innovation',
+              'creativity',
+              'leadership',
+              'vision',
+              'commitment',
+              'growth',
+            ]}
+          />
         </h1>
         
-        <div className="bg-gray-100 h-48 w-full rounded-lg" />
+        <div className="bg-cover bg-center h-48 w-full rounded-lg" style={{ backgroundImage: `url(${enter})` }} />
       </div>
 
       {/* Center Title */}
@@ -32,8 +49,8 @@ const Entrepreneurship = () => {
 
       {/* Grid Section */}
       <div className="grid grid-cols-2 gap-4">
-        <div className="bg-gray-100 h-32 rounded-lg" />
-        <div className="bg-gray-100 h-32 rounded-lg" />
+        <div className="bg-cover bg-center h-32 rounded-lg" style={{ backgroundImage: `url(${enter})` }} />
+        <div className="bg-cover bg-center h-32 rounded-lg" style={{ backgroundImage: `url(${enter})` }} />
       </div>
 
       {/* Know More Button */}
