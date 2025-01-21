@@ -1,17 +1,17 @@
 import React from 'react';
-import img1 from "../../assets/MayurVihar.jpg"; 
-import img2 from "../../assets/VivekVihar.jpg"; 
-import img3 from "../../assets/shakarpur2.jpg"; 
-import img4 from "../../assets/Shakarpur.jpg"; 
-import img5 from "../../assets/MayurVihar.jpg"; 
-import img6 from "../../assets/VivekVihar.jpg"; 
+import img1 from "../../assets/campuses/aryabhatt.png"; 
+import img2 from "../../assets/campuses/dwarka.png"; 
+import img3 from "../../assets/campuses/okhla2.png"; 
+import img4 from "../../assets/campuses/jaffarpur.png";  
+import img5 from "../../assets/campuses/siri.png"; 
+import img6 from "../../assets/campuses/rohini.png"; 
 
 const North = () => {
   const locations = [
     { 
       id: 1, 
       img: img1, 
-      name: "Mayur Vihar Institute",
+      name: "DSEU Jhandewalan Campus",
       type: "Engineering College",
       address: "Plot No. 12, Mayur Vihar Phase-1, Delhi-110091",
       email: "admissions@mvic.edu.in",
@@ -23,7 +23,7 @@ const North = () => {
     { 
       id: 2, 
       img: img2, 
-      name: "Vivek Vihar College of Arts",
+      name: "DSEU Narela Campus",
       type: "Arts & Humanities College",
       address: "Vivek Vihar Phase-2, Delhi-110095",
       email: "info@vvca.edu.in",
@@ -35,7 +35,7 @@ const North = () => {
     { 
       id: 3, 
       img: img3, 
-      name: "Shakarpur Business School",
+      name: "DSEU Jahangirpuri Campus",
       type: "Management Institute",
       address: "Main Road, Shakarpur, Delhi-110092",
       email: "admissions@sbs.edu.in",
@@ -43,14 +43,50 @@ const North = () => {
       website: "www.sbs.edu.in",
       courses: ["BBA", "MBA", "B.Com", "M.Com"],
       facilities: ["Conference Hall", "Digital Library", "Computer Labs", "Placement Cell"]
-    }
+    },
+    { 
+      id: 4, 
+      img: img4, 
+      name: "Aryabhatt DSEU Campus",
+      type: "Management Institute",
+      address: "Main Road, Shakarpur, Delhi-110092",
+      email: "admissions@sbs.edu.in",
+      phone: "+91-11-2512XXXX",
+      website: "www.sbs.edu.in",
+      courses: ["BBA", "MBA", "B.Com", "M.Com"],
+      facilities: ["Conference Hall", "Digital Library", "Computer Labs", "Placement Cell"]
+    },
+    { 
+      id: 5, 
+      img: img5, 
+      name: "DSEU Wazirpur Campus",
+      type: "Management Institute",
+      address: "Main Road, Shakarpur, Delhi-110092",
+      email: "admissions@sbs.edu.in",
+      phone: "+91-11-2512XXXX",
+      website: "www.sbs.edu.in",
+      courses: ["BBA", "MBA", "B.Com", "M.Com"],
+      facilities: ["Conference Hall", "Digital Library", "Computer Labs", "Placement Cell"]
+    },
+    { 
+      id: 6, 
+      img: img6, 
+      name: "Kasturba DSEU Campus",
+      type: "Management Institute",
+      address: "Main Road, Shakarpur, Delhi-110092",
+      email: "admissions@sbs.edu.in",
+      phone: "+91-11-2512XXXX",
+      website: "www.sbs.edu.in",
+      courses: ["BBA", "MBA", "B.Com", "M.Com"],
+      facilities: ["Conference Hall", "Digital Library", "Computer Labs", "Placement Cell"]
+    },
   ];
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-50">
       <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 underline decoration-2 decoration-black-500">
-          North Campus
+          DSEU North Campuses
         </h1>
 
         <div className="bg-blue-100 rounded-lg shadow-lg p-4 md:p-6 lg:p-8 mb-12 text-center">
@@ -79,9 +115,9 @@ const North = () => {
                   <h2 className="text-2xl font-bold text-gray-800 mb-2 transition-colors duration-300">
                     {location.name}
                   </h2>
-                  <p className="text-gray-600 font-semibold mb-4">
+                  {/* <p className="text-gray-600 font-semibold mb-4">
                     {location.type}
-                  </p>
+                  </p> */}
                   
                   <div className="space-y-3 w-full">
                     <div>

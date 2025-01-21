@@ -2,16 +2,20 @@ import React from 'react';
 import img1 from "../../assets/MayurVihar.jpg"; 
 import img2 from "../../assets/VivekVihar.jpg"; 
 import img3 from "../../assets/shakarpur2.jpg"; 
-import img4 from "../../assets/Shakarpur.jpg"; 
-import img5 from "../../assets/MayurVihar.jpg"; 
-import img6 from "../../assets/VivekVihar.jpg"; 
+import img4 from "../../assets/campuses/aryabhatt.png"; 
+import img5 from "../../assets/campuses/dwarka.png"; 
+import img6 from "../../assets/campuses/okhla2.png"; 
+import img7 from "../../assets/campuses/jaffarpur.png";  
+import img8 from "../../assets/campuses/siri.png"; 
+import img9 from "../../assets/campuses/rohini.png"; 
+import img10 from "../../assets/MayurVihar.jpg"; 
 
 const West = () => {
   const locations = [
     { 
       id: 1, 
-      img: img1, 
-      name: "Mayur Vihar Institute",
+      img: img5, 
+      name: "DSEU Dwarka Campus",
       type: "Engineering College",
       address: "Plot No. 12, Mayur Vihar Phase-1, Delhi-110091",
       email: "admissions@mvic.edu.in",
@@ -23,7 +27,7 @@ const West = () => {
     { 
       id: 2, 
       img: img2, 
-      name: "Vivek Vihar College of Arts",
+      name: "DSEU Pusa Campus-I",
       type: "Arts & Humanities College",
       address: "Vivek Vihar Phase-2, Delhi-110095",
       email: "info@vvca.edu.in",
@@ -35,7 +39,7 @@ const West = () => {
     { 
       id: 3, 
       img: img3, 
-      name: "Shakarpur Business School",
+      name: "DSEU Pusa Campus-II",
       type: "Management Institute",
       address: "Main Road, Shakarpur, Delhi-110092",
       email: "admissions@sbs.edu.in",
@@ -43,14 +47,98 @@ const West = () => {
       website: "www.sbs.edu.in",
       courses: ["BBA", "MBA", "B.Com", "M.Com"],
       facilities: ["Conference Hall", "Digital Library", "Computer Labs", "Placement Cell"]
-    }
+    },
+    { 
+      id: 4, 
+      img: img4, 
+      name: "DSEU Rajokri Campus",
+      type: "Management Institute",
+      address: "Main Road, Shakarpur, Delhi-110092",
+      email: "admissions@sbs.edu.in",
+      phone: "+91-11-2512XXXX",
+      website: "www.sbs.edu.in",
+      courses: ["BBA", "MBA", "B.Com", "M.Com"],
+      facilities: ["Conference Hall", "Digital Library", "Computer Labs", "Placement Cell"]
+    },
+    { 
+      id: 5, 
+      img: img7, 
+      name: "DSEU Jaffarpur Campus",
+      type: "Management Institute",
+      address: "Main Road, Shakarpur, Delhi-110092",
+      email: "admissions@sbs.edu.in",
+      phone: "+91-11-2512XXXX",
+      website: "www.sbs.edu.in",
+      courses: ["BBA", "MBA", "B.Com", "M.Com"],
+      facilities: ["Conference Hall", "Digital Library", "Computer Labs", "Placement Cell"]
+    },
+    { 
+      id: 6, 
+      img: img6, 
+      name: "DSEU Ranhola Campus",
+      type: "Management Institute",
+      address: "Main Road, Shakarpur, Delhi-110092",
+      email: "admissions@sbs.edu.in",
+      phone: "+91-11-2512XXXX",
+      website: "www.sbs.edu.in",
+      courses: ["BBA", "MBA", "B.Com", "M.Com"],
+      facilities: ["Conference Hall", "Digital Library", "Computer Labs", "Placement Cell"]
+    },
+    { 
+      id: 7, 
+      img: img1, 
+      name: "Meerabai DSEU Campus",
+      type: "Management Institute",
+      address: "Main Road, Shakarpur, Delhi-110092",
+      email: "admissions@sbs.edu.in",
+      phone: "+91-11-2512XXXX",
+      website: "www.sbs.edu.in",
+      courses: ["BBA", "MBA", "B.Com", "M.Com"],
+      facilities: ["Conference Hall", "Digital Library", "Computer Labs", "Placement Cell"]
+    },
+    { 
+      id: 8, 
+      img: img8, 
+      name: "Guru Nanak Dev DSEU Campus",
+      type: "Management Institute",
+      address: "Main Road, Shakarpur, Delhi-110092",
+      email: "admissions@sbs.edu.in",
+      phone: "+91-11-2512XXXX",
+      website: "www.sbs.edu.in",
+      courses: ["BBA", "MBA", "B.Com", "M.Com"],
+      facilities: ["Conference Hall", "Digital Library", "Computer Labs", "Placement Cell"]
+    },
+    { 
+      id: 9, 
+      img: img9, 
+      name: "DSEU Sultanpur Majra Campus",
+      type: "Management Institute",
+      address: "Main Road, Shakarpur, Delhi-110092",
+      email: "admissions@sbs.edu.in",
+      phone: "+91-11-2512XXXX",
+      website: "www.sbs.edu.in",
+      courses: ["BBA", "MBA", "B.Com", "M.Com"],
+      facilities: ["Conference Hall", "Digital Library", "Computer Labs", "Placement Cell"]
+    },
+    { 
+      id: 10, 
+      img: img2, 
+      name: "DSEU Dheerpur Campus",
+      type: "Management Institute",
+      address: "Main Road, Shakarpur, Delhi-110092",
+      email: "admissions@sbs.edu.in",
+      phone: "+91-11-2512XXXX",
+      website: "www.sbs.edu.in",
+      courses: ["BBA", "MBA", "B.Com", "M.Com"],
+      facilities: ["Conference Hall", "Digital Library", "Computer Labs", "Placement Cell"]
+    },
   ];
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-50">
       <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 underline decoration-2 decoration-black-500">
-          West Campus
+          DSEU West Campuses
         </h1>
 
         <div className="bg-blue-100 rounded-lg shadow-lg p-4 md:p-6 lg:p-8 mb-12 text-center">
@@ -79,9 +167,9 @@ const West = () => {
                   <h2 className="text-2xl font-bold text-gray-800 mb-2 transition-colors duration-300">
                     {location.name}
                   </h2>
-                  <p className="text-gray-600 font-semibold mb-4">
+                  {/* <p className="text-gray-600 font-semibold mb-4">
                     {location.type}
-                  </p>
+                  </p> */}
                   
                   <div className="space-y-3 w-full">
                     <div>
