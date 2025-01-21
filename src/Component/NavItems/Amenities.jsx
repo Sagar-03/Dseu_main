@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Seminar from '../../assets/Seminar-hall.jpg';
 
 const Amenities = () => {
   const [selectedFacility, setSelectedFacility] = useState('Seminar Halls');
@@ -12,21 +13,22 @@ const Amenities = () => {
     'Computer Labs',
     'Medical Rooms',
     'Stationary',
-    'Bank Facility'
+    'Bank Facility',
   ];
 
   const facilityContent = {
     'Seminar Halls': {
       title: 'Seminar Halls',
-      image: '/api/placeholder/800/400',
-      description: 'Our state-of-the-art Seminar Hall is the perfect venue for academic discussions, workshops, and thought-provoking events. Designed to foster collaboration and engagement, the hall is equipped with:',
+      image: Seminar,
+      description:
+        'Our state-of-the-art Seminar Hall is the perfect venue for academic discussions, workshops, and thought-provoking events. Designed to foster collaboration and engagement, the hall is equipped with:',
       features: [
         'Advanced Audio-Visual Equipment: High-definition projectors, surround sound systems, and wireless microphones ensure a seamless experience for speakers and audiences alike.',
         'Spacious Seating Arrangement: Comfortable seating with a capacity to accommodate [X] attendees, designed for optimal visibility and interaction.',
         'Modern Interiors: Aesthetic and functional design, featuring acoustic panels, ambient lighting, and a professional ambiance.',
-        'Smart Connectivity: High-speed internet and modern tech facilities to support virtual and hybrid sessions.'
+        'Smart Connectivity: High-speed internet and modern tech facilities to support virtual and hybrid sessions.',
       ],
-      footer: 'Visit us and experience a space where ideas come to life!'
+      footer: 'Visit us and experience a space where ideas come to life!',
     },
     // Add other facility content here...
   };
@@ -60,23 +62,31 @@ const Amenities = () => {
             <h2 className="text-xl font-semibold border-b pb-2 mb-4">
               {facilityContent[selectedFacility]?.title || selectedFacility}
             </h2>
-            
-            {/* Placeholder image */}
-            <div className="bg-gray-100 w-full h-64 rounded-lg mb-6" />
+
+            {/* Image Section */}
+            {facilityContent[selectedFacility]?.image && (
+              <img
+                src={facilityContent[selectedFacility].image}
+                alt={facilityContent[selectedFacility].title}
+                className="w-full h-64 object-cover rounded-lg mb-6"
+              />
+            )}
 
             {facilityContent[selectedFacility] ? (
               <>
                 <p className="text-gray-700 mb-4">
                   {facilityContent[selectedFacility].description}
                 </p>
-                
+
                 <ul className="space-y-3 mb-6">
-                  {facilityContent[selectedFacility].features.map((feature, index) => (
-                    <li key={index} className="flex items-start">
-                      <span className="mr-2">•</span>
-                      <span className="text-gray-700">{feature}</span>
-                    </li>
-                  ))}
+                  {facilityContent[selectedFacility].features.map(
+                    (feature, index) => (
+                      <li key={index} className="flex items-start">
+                        <span className="mr-2">•</span>
+                        <span className="text-gray-700">{feature}</span>
+                      </li>
+                    )
+                  )}
                 </ul>
 
                 <p className="text-gray-700 italic">

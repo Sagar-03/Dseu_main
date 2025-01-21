@@ -91,7 +91,7 @@ function App() {
         <Route path="about-us/policy/code-of-conduct" element={<CodeOfConduct/>} />
         <Route path="/vice-chancellor" element={<ViceChancellorMessage/>} />
         <Route path="/entrepreneurship" element={<Entrepreneurship/>} />
-        <Route path="/amenities" element={<Amenities/>} />
+        <Route path="/amenities/Facilities" element={<Amenities/>} />
       </Routes>
       <Footer />
     </BrowserRouter>
