@@ -82,20 +82,23 @@ const CarouselSection = () => {
               <div
                 className={`relative overflow-hidden shadow-lg transition-transform duration-500 ${
                   index === activeIndex
-                    ? "transform scale-125 -translate-y-10 z-20"
-                    : "transform scale-90"
+                    ? "transform scale-125 -translate-y-10 z-20 rounded-lg"
+                    : "transform scale-90 rounded-t-lg"
                 }`}
               >
-                <div className="relative group">
+                <div className="relative group h-64"> {/* Increased height */}
                   <img
                     src={image.src}
                     alt={image.alt}
-                    className={`w-full h-[300px] object-cover transition-transform duration-500 group-hover:scale-105 group-hover:brightness-50`}
+                    className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 group-hover:brightness-50 ${
+                      index === activeIndex
+                        ? "rounded-t-lg" // Apply rounded top corners to active image
+                        : "rounded-t-lg" // Apply rounded top corners to non-active images as well
+                    }`}
                   />
                   
                   <div
                     className="absolute bottom-0 left-0 right-0 flex flex-col items-start justify-start opacity-0 group-hover:opacity-100 transition-opacity duration-500 px-4 py-2"
-                    style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
                   >
                     <p className="text-white text-lg font-bold">{image.text}</p>
                     <p className="text-white text-xs">{image.address}</p>
@@ -103,7 +106,7 @@ const CarouselSection = () => {
                 </div>
                
                 <div
-                  className={`flex justify-center font-bold bg-white text-black text-sm px-3 py-4 transition-opacity duration-300 ${
+                  className={`flex justify-center font-bold bg-white text-black text-sm px-3 py-2 transition-opacity duration-300 ${
                     index === activeIndex ? "opacity-100" : "opacity-75"
                   }`}
                 >
@@ -117,5 +120,6 @@ const CarouselSection = () => {
     </section>
   );
 };
+
 
 export default CarouselSection;
