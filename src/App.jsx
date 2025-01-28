@@ -42,6 +42,11 @@ import Facilities from "./Component/Policy/Facilities";
 import SupportServices from "./Component/Policy/SupportServices";
 import ViceChancellorMessage from "./Component/Body/ViceChancellorMessage";
 import ResearchDev from "./Component/Body/ResearchDev";
+import CertificateCourses from "./Component/Courses/CertificateCourses";
+import BPIBS from "./Component/AllCampusesPage.jsx/BPIBS";
+import MayurVihar from "./Component/AllCampusesPage.jsx/MayurVihar";
+import ShakarpurDSEU from "./Component/AllCampusesPage.jsx/Shakarpur";
+import VivekVihar from "./Component/AllCampusesPage.jsx/VivekVihar";
 
 function App() {
   return (
@@ -71,6 +76,7 @@ function App() {
         <Route path="/campus/west" element={<West />} />
         <Route path="/courses/ug" element={<UGPrograms />} />
         <Route path="/courses/pg" element={<PGPrograms />} />
+        <Route path="/courses/Certificate-Courses" element={<CertificateCourses/>} />
         <Route path="/courses/diploma" element={<DiplomaPrograms />} />
         <Route path="/courses/diploma" element={<UGPrograms />} />
         <Route path="/academics/faculty" element={<ListOfFaculties />} />
@@ -93,6 +99,10 @@ function App() {
         <Route path="/entrepreneurship" element={<Entrepreneurship/>} />
         <Route path="/amenities/Facilities" element={<Amenities/>} />
         <Route path="/research/*" element={<ResearchDev/>} />
+        <Route path="/BPIBS"  element={<BPIBS/>} />
+        <Route path="/MayurVihar" element={<MayurVihar/>} />
+        <Route path="/shakarpur2" element={<ShakarpurDSEU/>} />
+        <Route path="/vivekvihar" element={<VivekVihar/>} />  
       </Routes>
       <Footer />
     </BrowserRouter>

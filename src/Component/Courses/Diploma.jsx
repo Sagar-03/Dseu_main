@@ -81,9 +81,9 @@ const DiplomaDetailsCard = ({ program, onClose }) => {
 const DiplomaPrograms = () => {
   const [selectedProgram, setSelectedProgram] = useState(null);
 
-  const programs = [
+  const diplomaPrograms  = [
     {
-      title: "Diploma in Computer Science",
+      title: "Diploma in Automobile Engineering ",
       code: "201100",
       campus: "BPIBS DSEU Campus-II",
       institute: "DSEU University India",
@@ -93,24 +93,316 @@ const DiplomaPrograms = () => {
       fee: "INR 50,000 per year",
     },
     {
+      title: "Diploma in Chemical Engineering ",
+      code: "",
+      campus: "BPIBS DSEU Campus-II",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "X Passed with min. 50%",
+      duration: "3 Years",
+      fee: "INR 50,000 per year",
+    },
+    {
+      title: "Diploma in Civil Engineering ",
+      code: "",
+      campus: "BPIBS DSEU Campus-II",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "X Passed with min. 50%",
+      duration: "3 Years",
+      fee: "INR 50,000 per year",
+    },
+    {
+      title: "Diploma in Computer Engineering",
+      code: "",
+      campus: "BPIBS DSEU Campus-II",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "X Passed with min. 50%",
+      duration: "3 Years",
+      fee: "INR 50,000 per year",
+    },
+    {
+      title: "Diploma in Electrical Engineering ",
+      code: "",
+      campus: "BPIBS DSEU Campus-II",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "X Passed with min. 50%",
+      duration: "3 Years",
+      fee: "INR 50,000 per year",
+    },
+    {
       title: "Diploma in Electronics Engineering",
-      code: "201101",
+      code: "",
+      campus: "BPIBS DSEU Campus-II",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "X Passed with min. 50%",
+      duration: "3 Years",
+      fee: "INR 50,000 per year",
+    },
+    {
+      title: "Diploma in Mechanical Engineering ",
+      code: "",
+      campus: "BPIBS DSEU Campus-II",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "X Passed with min. 50%",
+      duration: "3 Years",
+      fee: "INR 50,000 per year",
+    },
+    {
+      title: "Diploma in Petrochemicals ",
+      code: "",
+      campus: "BPIBS DSEU Campus-II",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "X Passed with min. 50%",
+      duration: "3 Years",
+      fee: "INR 50,000 per year",
+    },
+    {
+      title: "Diploma in Polymer Technology ",
+      code: "",
+      campus: "BPIBS DSEU Campus-II",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "X Passed with min. 50%",
+      duration: "3 Years",
+      fee: "INR 50,000 per year",
+    },
+    {
+      title: "  Diploma in Precision Engineering",
+      code: "",
+      campus: "BPIBS DSEU Campus-II",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "X Passed with min. 50%",
+      duration: "3 Years",
+      fee: "INR 50,000 per year",
+    },
+    {
+      title: "Diploma in Printing Technology ",
+      code: "",
+      campus: "BPIBS DSEU Campus-II",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "X Passed with min. 50%",
+      duration: "3 Years",
+      fee: "INR 50,000 per year",
+    },
+    {
+      title: " Diploma in Robotic and Process Automation",
+      code: "",
+      campus: "BPIBS DSEU Campus-II",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "X Passed with min. 50%",
+      duration: "3 Years",
+      fee: "INR 50,000 per year",
+    },
+    {
+      title: " Four Year UG Diploma in Tool and Die Making",
+      code: "",
+      campus: "BPIBS DSEU Campus-II",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "X Passed with min. 50%",
+      duration: "3 Years",
+      fee: "INR 50,000 per year",
+    },
+    {
+      title: " Diploma in Architecture ",
+      code: "",
+      campus: "BPIBS DSEU Campus-II",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "X Passed with min. 50%",
+      duration: "3 Years",
+      fee: "INR 50,000 per year",
+    },
+  ]
+
+  const ugDiplomaPrograms = [
+    {
+      title: "UG Diploma in Advanced Engineering",
+      code: "201103",
       campus: "BPIBS DSEU Campus-III",
       institute: "DSEU University India",
       university: "DSEU University India",
-      eligibility: "X Passed with min. 55%",
-      duration: "3 Years",
-      fee: "INR 55,000 per year",
+      eligibility: "XII Passed with min. 60%",
+      duration: "4 Years",
+      fee: "INR 75,000 per year",
     },
     {
-      title: "Diploma in Mechanical Engineering",
-      code: "201102",
-      campus: "BPIBS DSEU Campus-I",
+      title: "UG Diploma in Sports Fitness and Yoga Applications",
+      code: "201103",
+      campus: "BPIBS DSEU Campus-III",
       institute: "DSEU University India",
       university: "DSEU University India",
-      eligibility: "X Passed with min. 60%",
-      duration: "3 Years",
-      fee: "INR 60,000 per year",
+      eligibility: "XII Passed with min. 60%",
+      duration: "4 Years",
+      fee: "INR 75,000 per year",
+    }, {
+      title: "UG Diploma in Hospitality Operations",
+      code: "201103",
+      campus: "BPIBS DSEU Campus-III",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "XII Passed with min. 60%",
+      duration: "4 Years",
+      fee: "INR 75,000 per year",
+    },
+    {
+      title: "UG Diploma in Beauty and Wellness",
+      code: "201103",
+      campus: "BPIBS DSEU Campus-III",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "XII Passed with min. 60%",
+      duration: "4 Years",
+      fee: "INR 75,000 per year",
+    },
+    {
+      title: "UG Diploma in Electronics System Design & Manufacturing",
+      code: "201103",
+      campus: "BPIBS DSEU Campus-III",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "XII Passed with min. 60%",
+      duration: "4 Years",
+      fee: "INR 75,000 per year",
+    },
+    {
+      title: "UG Diploma in Video Production",
+      code: "201103",
+      campus: "BPIBS DSEU Campus-III",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "XII Passed with min. 60%",
+      duration: "4 Years",
+      fee: "INR 75,000 per year",
+    },
+    {
+      title: "UG Diploma in Precision Engineering ",
+      code: "201103",
+      campus: "BPIBS DSEU Campus-III",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "XII Passed with min. 60%",
+      duration: "4 Years",
+      fee: "INR 75,000 per year",
+    },
+    {
+      title: "UG Diploma in garment Manufacturing and Quality Assurance ",
+      code: "201103",
+      campus: "BPIBS DSEU Campus-III",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "XII Passed with min. 60%",
+      duration: "4 Years",
+      fee: "INR 75,000 per year",
+    },
+    {
+      title: "UG Diploma in Tool and Die Making ",
+      code: "201103",
+      campus: "BPIBS DSEU Campus-III",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "XII Passed with min. 60%",
+      duration: "4 Years",
+      fee: "INR 75,000 per year",
+    },
+    {
+      title: "UG Diploma in Food Production ",
+      code: "201103",
+      campus: "BPIBS DSEU Campus-III",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "XII Passed with min. 60%",
+      duration: "4 Years",
+      fee: "INR 75,000 per year",
+    },
+    {
+      title: "UG Diploma in Light Vehicles ",
+      code: "201103",
+      campus: "BPIBS DSEU Campus-III",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "XII Passed with min. 60%",
+      duration: "4 Years",
+      fee: "INR 75,000 per year",
+    },
+    {
+      title: "UG Diploma in Heavy Vehicles",
+      code: "201103",
+      campus: "BPIBS DSEU Campus-III",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "XII Passed with min. 60%",
+      duration: "4 Years",
+      fee: "INR 75,000 per year",
+    },
+    {
+      title: "UG Diploma in German Language",
+      code: "201103",
+      campus: "BPIBS DSEU Campus-III",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "XII Passed with min. 60%",
+      duration: "4 Years",
+      fee: "INR 75,000 per year",
+    },
+    {
+      title: "UG Diploma in Japanese Language",
+      code: "201103",
+      campus: "BPIBS DSEU Campus-III",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "XII Passed with min. 60%",
+      duration: "4 Years",
+      fee: "INR 75,000 per year",
+    },
+    {
+      title: "UG Diploma in French Language",
+      code: "201103",
+      campus: "BPIBS DSEU Campus-III",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "XII Passed with min. 60%",
+      duration: "4 Years",
+      fee: "INR 75,000 per year",
+    },
+    {
+      title: "UG Diploma in Computer System Operator",
+      code: "201103",
+      campus: "BPIBS DSEU Campus-III",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "XII Passed with min. 60%",
+      duration: "4 Years",
+      fee: "INR 75,000 per year",
+    },
+    {
+      title: "UG Diploma in Apparel Retail Management and Merchandising ",
+      code: "201103",
+      campus: "BPIBS DSEU Campus-III",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "XII Passed with min. 60%",
+      duration: "4 Years",
+      fee: "INR 75,000 per year",
+    },
+    {
+      title: "Diploma in Pharmacy",
+      code: "201103",
+      campus: "BPIBS DSEU Campus-III",
+      institute: "DSEU University India",
+      university: "DSEU University India",
+      eligibility: "XII Passed with min. 60%",
+      duration: "4 Years",
+      fee: "INR 75,000 per year",
     },
   ];
 
@@ -119,8 +411,9 @@ const DiplomaPrograms = () => {
       <div className="max-w-7xl mx-auto">
         <h1 className="text-3xl font-bold text-blue-900 mb-4">Diploma Programs</h1>
 
-        <div className="space-y-4">
-          {programs.map((program, index) => (
+        {/* Diploma Programs */}
+        <div className="space-y-4 mb-6">
+          {diplomaPrograms.map((program, index) => (
             <div
               key={index}
               className="border-l-4 border-yellow-500 bg-white p-4 shadow-md rounded-md cursor-pointer hover:shadow-lg hover:scale-105 hover:bg-blue-50 transition-all duration-300"
@@ -130,8 +423,23 @@ const DiplomaPrograms = () => {
             </div>
           ))}
         </div>
+
+        {/* UG Diploma Programs */}
+        <h2 className="text-3xl font-bold text-blue-900  mt-8 mb-8">UG Diploma Programs</h2>
+        <div className="space-y-4">
+          {ugDiplomaPrograms.map((program, index) => (
+            <div
+              key={index}
+              className="border-l-4 border-green-500 bg-white p-4 shadow-md rounded-md cursor-pointer hover:shadow-lg hover:scale-105 hover:bg-blue-50 transition-all duration-300"
+              onClick={() => setSelectedProgram(program)}
+            >
+              <p className="text-lg font-semibold text-gray-800">{program.title}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
+      {/* Program Details Modal */}
       {selectedProgram && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
           <DiplomaDetailsCard
