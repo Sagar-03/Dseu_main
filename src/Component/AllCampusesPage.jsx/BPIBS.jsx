@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import Shakarpur from "../../assets/Shakarpur.jpg";
+import FacultyProfile from "./FacultyProfile";
+import CoursesOffered from "./CoursesOffered";
+import Highlights from './Highlights';
 
 const BPIBS = () => {
   const [activeTab, setActiveTab] = useState('about');
@@ -11,18 +14,18 @@ const BPIBS = () => {
         "Our newly established DSEU Mayur Vihar Campus is a highly updated and modern version of all DSEU campuses. The world-class infrastructure at this campus provides an excellent environment for students to grow, develop and receive a quality education. In the eastern heart of Delhi, Mayur Vihar opens rooms to new opportunities in varied, exciting, and unique career prospects. Having colleges like Maharaja Agrasen College dedicated to Arts, the area builds a sense of community and knowledge sharing for students pursuing this program. Students from programs like Applied Arts can reap the full benefit while ensuring smooth and convenient connectivity across Delhi, Noida, and Gurugram via Pink line Metro and DTC Delhi City Buses. Moreover, this campus is well-connected to office hubs of Noida and major job hubs in central Delhi and Gurugram, giving a variety of career options to the students. Apart from that, the fantastic connectivity of this campus invites students from different cultures, making this campus a confluence of cultures and giving distinctive exposure to the students. Located near Akshardham temple, an eternal place known for its classic art and architecture, provides the right inspiration to creative students at the campus. Our Mayur Vihar campus connects to both New Delhi and Noida. That way, this campus gives an excellent chance for students to explore their talents and access diverse career options from Delhi and Uttar Pradesh."
     },
     head: {
-      title: "Campus Head",
-      content: "Information about the campus head would go here."
+    title: "Campus Head",
+    content: <FacultyProfile />
     },
     programs: {
       title: "Programs Offered",
       content:
-        "In the eastern heart of Delhi, Mayur Vihar opens rooms to new opportunities in varied, exciting, and unique career prospects. Having colleges like Maharaja Agrasen College dedicated to Arts, the area builds a sense of community and knowledge sharing for students pursuing this program."
+        <CoursesOffered />
     },
     highlights: {
       title: "Campus Highlights",
       content:
-        "Students from programs like Applied Arts can reap the full benefit while ensuring smooth and convenient connectivity across Delhi, Noida, and Gurugram via Pink line Metro and DTC Delhi City Buses. Moreover, this campus is well-connected to office hubs of Noida and major job hubs in central Delhi and Gurugram, giving a variety of career options to the students."
+        <Highlights />
     },
     location: {
       title: "Location",
@@ -41,10 +44,10 @@ const BPIBS = () => {
           backgroundPosition: "center"
         }}
       >
-        
+
         <div className="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
 
-       
+
         <h1 className="text-3xl font-bold text-white text-center z-10">
           BPIBS DSEU SHAKARPUR CAMPUS - 2
         </h1>
@@ -79,6 +82,7 @@ const BPIBS = () => {
             </p>
           </div>
         </div>
+        
       </div>
     </div>
   );

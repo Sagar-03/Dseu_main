@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import MayurVihar1 from "../../assets/MayurVihar.jpg";
+import FacultyProfile from "./FacultyProfile";
+import CoursesOffered from "./CoursesOffered";
+import Highlights from './Highlights';
 
 const MayurVihar = () => {
   const [activeTab, setActiveTab] = useState("about");
@@ -12,17 +15,17 @@ const MayurVihar = () => {
     },
     head: {
       title: "Campus Head",
-      content: "Information about the campus head would go here."
+      content: <FacultyProfile />
     },
     programs: {
       title: "Programs Offered",
       content:
-        "In the eastern heart of Delhi, Mayur Vihar opens rooms to new opportunities in varied, exciting, and unique career prospects. Having colleges like Maharaja Agrasen College dedicated to Arts, the area builds a sense of community and knowledge sharing for students pursuing this program."
+        <CoursesOffered />
     },
     highlights: {
       title: "Campus Highlights",
       content:
-        "Students from programs like Applied Arts can reap the full benefit while ensuring smooth and convenient connectivity across Delhi, Noida, and Gurugram via Pink line Metro and DTC Delhi City Buses. Moreover, this campus is well-connected to office hubs of Noida and major job hubs in central Delhi and Gurugram, giving a variety of career options to the students."
+        <Highlights />
     },
     location: {
       title: "Location",
@@ -87,3 +90,4 @@ const MayurVihar = () => {
 };
 
 export default MayurVihar;
+
