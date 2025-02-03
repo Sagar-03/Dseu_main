@@ -83,7 +83,7 @@ const PGPrograms = () => {
 
   const programs = [
     {
-      title: "M.Tech (Computer Science)",
+      title: "MBA International Business Management",
       code: "PG001",
       campus: "Central Campus",
       institute: "DSEU Graduate School of Technology",
@@ -92,17 +92,166 @@ const PGPrograms = () => {
       duration: "2 Years",
       fee: "2.5 Lacs per year",
     },
+    // {
+    //   title: "MBA (Finance)",
+    //   code: "PG002",
+    //   campus: "South Campus",
+    //   institute: "DSEU School of Management",
+    //   university: "DSEU University",
+    //   eligibility: "Bachelor's degree with 55% aggregate",
+    //   duration: "2 Years",
+    //   fee: "2.0 Lacs per year",
+    // },
     {
-      title: "MBA (Finance)",
-      code: "PG002",
-      campus: "South Campus",
-      institute: "DSEU School of Management",
+      title:"PG Diploma in Cyber Law (1 year program)",
+      code:"",
+      campus: "Central Campus",
+      institute: "DSEU Graduate School of Technology",
       university: "DSEU University",
-      eligibility: "Bachelor's degree with 55% aggregate",
+      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
       duration: "2 Years",
-      fee: "2.0 Lacs per year",
+      fee: "2.5 Lacs per year"
     },
-  
+    {
+      title:"MBA Entrepreneurship",
+      code:"",
+      campus: "Central Campus",
+      institute: "DSEU Graduate School of Technology",
+      university: "DSEU University",
+      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
+      duration: "2 Years",
+      fee: "2.5 Lacs per year"
+    },
+    {
+      title:"Master of Computer Application",
+      code:"",
+      campus: "Central Campus",
+      institute: "DSEU Graduate School of Technology",
+      university: "DSEU University",
+      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
+      duration: "2 Years",
+      fee: "2.5 Lacs per year"
+    },
+    {
+      title:"MBA Data Analytics",
+      code:"",
+      campus: "Central Campus",
+      institute: "DSEU Graduate School of Technology",
+      university: "DSEU University",
+      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
+      duration: "2 Years",
+      fee: "2.5 Lacs per year"
+    },
+    {
+      title:"MBA-Retail Management",
+      code:"",
+      campus: "Central Campus",
+      institute: "DSEU Graduate School of Technology",
+      university: "DSEU University",
+      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
+      duration: "2 Years",
+      fee: "2.5 Lacs per year"
+    },
+    {
+      title:"MTech Tool Engineering",
+      code:"",
+      campus: "Central Campus",
+      institute: "DSEU Graduate School of Technology",
+      university: "DSEU University",
+      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
+      duration: "2 Years",
+      fee: "2.5 Lacs per year"
+    },
+    {
+      title:"PG Diploma in Precision Engineering (1 year program)",
+      code:"",
+      campus: "Central Campus",
+      institute: "DSEU Graduate School of Technology",
+      university: "DSEU University",
+      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
+      duration: "2 Years",
+      fee: "2.5 Lacs per year"
+    },
+    {
+      title:"MBA Finance",
+      code:"",
+      campus: "Central Campus",
+      institute: "DSEU Graduate School of Technology",
+      university: "DSEU University",
+      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
+      duration: "2 Years",
+      fee: "2.5 Lacs per year"
+    },
+    {
+      title:"MBA Healthcare Facility Management",
+      code:"",
+      campus: "Central Campus",
+      institute: "DSEU Graduate School of Technology",
+      university: "DSEU University",
+      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
+      duration: "2 Years",
+      fee: "2.5 Lacs per year"
+    },
+    {
+      title:" MTech Computer Science Engineering- AI & ML",
+      code:"",
+      campus: "Central Campus",
+      institute: "DSEU Graduate School of Technology",
+      university: "DSEU University",
+      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
+      duration: "2 Years",
+      fee: "2.5 Lacs per year"
+    },
+    {
+      title:"MTech Electronics & Communication Engineering- IoT",
+      code:"",
+      campus: "Central Campus",
+      institute: "DSEU Graduate School of Technology",
+      university: "DSEU University",
+      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
+      duration: "2 Years",
+      fee: "2.5 Lacs per year"
+    },
+    {
+      title:"MTech Mechanical Engineering",
+      code:"",
+      campus: "Central Campus",
+      institute: "DSEU Graduate School of Technology",
+      university: "DSEU University",
+      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
+      duration: "2 Years",
+      fee: "2.5 Lacs per year"
+    },
+    {
+      title:"MBA Management Information System",
+      code:"",
+      campus: "Central Campus",
+      institute: "DSEU Graduate School of Technology",
+      university: "DSEU University",
+      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
+      duration: "2 Years",
+      fee: "2.5 Lacs per year"
+    },
+    {
+      title:"B.Lib. (1 year program)",
+      code:"",
+      campus: "Central Campus",
+      institute: "DSEU Graduate School of Technology",
+      university: "DSEU University",
+      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
+      duration: "2 Years",
+      fee: "2.5 Lacs per year"
+    },
+    {
+      title:"M.Sc Medical Laboratory Sciences",
+      code:"",
+      campus: "Central Campus",
+      institute: "DSEU Graduate School of Technology",
+      university: "DSEU University",
+      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
+      duration: "2 Years",
+      fee: "2.5 Lacs per year"
+    },
   ];
 
   return (

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { X } from "lucide-react";
+import { code } from "framer-motion/client";
 
 const CourseDetailsCard = ({ program, onClose }) => {
   const navigate = useNavigate();
@@ -56,8 +57,7 @@ const CourseDetailsCard = ({ program, onClose }) => {
           </div>
 
           <div>
-            <h2 className="text-black text-lg font-medium mb-2">Program Fee (Rs. in Lacs)</h2>
-            <p className="text-sm">1st Year Non Sponsored Semester Fee:</p>
+            <h2 className="text-black text-lg font-medium mb-2">Program Fee</h2>
             <p>{program.fee}</p>
           </div>
         </div>
@@ -83,65 +83,176 @@ const UGPrograms = () => {
 
   const programs = [
     {
-      title: "B.Sc (Data Analytics)",
+      title: "B.S. Automative Retail Management",
       code: "114500",
       campus: "BPIBS DSEU Campus-II",
       institute: "DSEU University India",
       university: "DSEU University India",
-      eligibility: "X & XII (min 50%) with min. 60% in PCM",
+      eligibility: " XII (senior secondary) Grade Pass or (ii) 10th+2-Yr NTC/NAC/CITS  (iii) 40 credits of NSQF level 4.0.",
       duration: "4 Years",
-      fee: "AED 58000 Or USD 15895 per year",
+      fee : " 25000 Tuition Fees per Semester",
+    },
+    // {
+    //   title: "BBA (Retail Mgmt)",
+    //   code: "114500",
+    //   campus: "BPIBS DSEU Campus-II",
+    //   institute: "DSEU University India",
+    //   university: "DSEU University India",
+    //   eligibility: "X & XII (min 50%) with min. 60% in PCM",
+    //   duration: "4 Years",
+    //   fee: "AED 58000 Or USD 15895 per year",
+    // },
+    // {
+    //   title: "B.Sc (Data Analytics)",
+    //   code: "114500",
+    //   campus: "BPIBS DSEU Campus-II",
+    //   institute: "DSEU University India",
+    //   university: "DSEU University India",
+    //   eligibility: "X & XII (min 50%) with min. 60% in PCM",
+    //   duration: "4 Years",
+    //   fee: "AED 58000 Or USD 15895 per year",
+    // },
+    // {
+    //   title: "BBA (Retail Mgmt)",
+    //   code: "114500",
+    //   campus: "BPIBS DSEU Campus-II",
+    //   institute: "DSEU University India",
+    //   university: "DSEU University India",
+    //   eligibility: "X & XII (min 50%) with min. 60% in PCM",
+    //   duration: "4 Years",
+    //   fee: "AED 58000 Or USD 15895 per year",
+    // },
+    // {
+    //   title: "B.Sc (Data Analytics)",
+    //   code: "114500",
+    //   campus: "BPIBS DSEU Campus-II",
+    //   institute: "DSEU University India",
+    //   university: "DSEU University India",
+    //   eligibility: "X & XII (min 50%) with min. 60% in PCM",
+    //   duration: "4 Years",
+    //   fee: "AED 58000 Or USD 15895 per year",
+    // },
+    // {
+    //   title: "BBA (Retail Mgmt)",
+    //   code: "114500",
+    //   campus: "BPIBS DSEU Campus-II",
+    //   institute: "DSEU University India",
+    //   university: "DSEU University India",
+    //   eligibility: "X & XII (min 50%) with min. 60% in PCM",
+    //   duration: "4 Years",
+    //   fee: "AED 58000 Or USD 15895 per year",
+    // },
+    // {
+    //   title: "BBA (Retail Mgmt)",
+    //   code: "114500",
+    //   campus: "BPIBS DSEU Campus-II",
+    //   institute: "DSEU University India",
+    //   university: "DSEU University India",
+    //   eligibility: "X & XII (min 50%) with min. 60% in PCM",
+    //   duration: "4 Years",
+    //   fee: "AED 58000 Or USD 15895 per year",
+    // },
+    {
+      title:"B.S. Banking, Financial Services and Insurance",
+      code:"114501",
+
     },
     {
-      title: "BBA (Retail Mgmt)",
-      code: "114500",
-      campus: "BPIBS DSEU Campus-II",
-      institute: "DSEU University India",
-      university: "DSEU University India",
-      eligibility: "X & XII (min 50%) with min. 60% in PCM",
-      duration: "4 Years",
-      fee: "AED 58000 Or USD 15895 per year",
+      title:"B.S. E-Commerce Operations and Digital Application",
+      code:""
     },
     {
-      title: "B.Sc (Data Analytics)",
-      code: "114500",
-      campus: "BPIBS DSEU Campus-II",
-      institute: "DSEU University India",
-      university: "DSEU University India",
-      eligibility: "X & XII (min 50%) with min. 60% in PCM",
-      duration: "4 Years",
-      fee: "AED 58000 Or USD 15895 per year",
+      title:"B.S. Retail Management",
+      code:""
     },
     {
-      title: "BBA (Retail Mgmt)",
-      code: "114500",
-      campus: "BPIBS DSEU Campus-II",
-      institute: "DSEU University India",
-      university: "DSEU University India",
-      eligibility: "X & XII (min 50%) with min. 60% in PCM",
-      duration: "4 Years",
-      fee: "AED 58000 Or USD 15895 per year",
+      title:"B.S. Supply Chain Management",
+      code:""
     },
     {
-      title: "B.Sc (Data Analytics)",
-      code: "114500",
-      campus: "BPIBS DSEU Campus-II",
-      institute: "DSEU University India",
-      university: "DSEU University India",
-      eligibility: "X & XII (min 50%) with min. 60% in PCM",
-      duration: "4 Years",
-      fee: "AED 58000 Or USD 15895 per year",
+      title:"B.S. Hospitality Management",
+      code:""
     },
     {
-      title: "BBA (Retail Mgmt)",
-      code: "114500",
-      campus: "BPIBS DSEU Campus-II",
-      institute: "DSEU University India",
-      university: "DSEU University India",
-      eligibility: "X & XII (min 50%) with min. 60% in PCM",
-      duration: "4 Years",
-      fee: "AED 58000 Or USD 15895 per year",
+      title:"B.S. Community Organisation and Development Practice",
+      code:""
     },
+    
+    {
+      title:"B.S. Digital marketing and DataAnalytics",
+      code:""
+    },
+
+     {
+      title:"B.S. Computer Applications",
+      code:""
+    }, {
+      title:"B.A. (Hons.) Spanish",
+      code:""
+    },
+    {
+      title:"B.S. Beauty Therapy",
+      code:""
+    },
+    {
+      title:"B.Sc. (Hons.) Mathematics",
+      code:""
+    },
+    {
+      title:"B.S. Office Management",
+      code:""
+    },
+
+    {
+      title:"B.A. (Hons) Fine Arts",
+      code:""
+    },
+
+    {
+      title:"B.S. Digital Media Design",
+      code:""
+    }, {
+      title:"B.S. Business Process Management ",
+      code:""
+    },
+    {
+      title:"B.S. Fashion Design ",
+      code:""
+    },
+    {
+      title:"B.S. Interior Design",
+      code:""
+    },
+
+    {
+      title:"B.S. Hospital Facility Management",
+      code:""
+    },
+    {
+      title:"B.S. Optometry ",
+      code:""
+    },
+    {
+      title:"B.S. Entrepreneurship",
+      code:""
+    }, {
+      title:"B.S. Dialysis Technology",
+      code:""
+    },
+    {
+      title:"B.S. Emergency Medical Technology",
+      code:""
+    },
+    {
+      title:"B.S. Medical Laboratory Sciences",
+      code:""
+    },
+    {
+      title:"B.S. Facility Management ",
+      code:""
+    },
+
+    
   ];
 
   return (

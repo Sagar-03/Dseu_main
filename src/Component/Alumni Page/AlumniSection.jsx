@@ -1,15 +1,7 @@
 import React from 'react';
-import DSEU from "../../assets/News/News1.jpg";
 import TopStories from './TopStories';
 import ProgramEvents from './ProgramEvents';
-import DSEUSection from './DSEUSection';
 import bannerImage from "../../assets/Image8.png"; 
-import blueStar from '../../assets/alumni/blueStar.png';
-import epic from '../../assets/alumni/epic.png';
-import MCdermott from '../../assets/alumni/MCdermott.png';
-import Oracle from '../../assets/alumni/Oracle.png';
-import TheSS from '../../assets/alumni/TheSS.png';
-import TCS from '../../assets/alumni/TCS.png';
 import alumni from '../../assets/alumni/alumni.png';
 
 const AlumniSection = () => {
