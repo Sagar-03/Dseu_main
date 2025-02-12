@@ -20,7 +20,7 @@ const images = [
     alt: "Card 2",
     text: "DSEU Shakarpur 2 Campus",
     address: "MB 153/B, opp. Madhuvan Park, Ganesh Nagar Extn - 2, Shakarpur, Delhi, 110092",
-    link: "/shakarpur2",
+    link: "/shakarpur",
   },
   {
     src: MayurVihar,
