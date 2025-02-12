@@ -1,5 +1,3 @@
-
-import JobPortal from "./Component/Body/JobPortal";
 import React from "react";
 import MidNavbar from "./Component/Header/MidNavbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -11,7 +9,6 @@ import Announcements from "./Component/Body/Announcements";
 import Card from "./Component/Body/Card";
 import News from "./Component/Body/News";
 import './App.css'; 
-
 import OurPartners from "./Component/Body/OurPartners";
 import DepartmentPage from "./Component/Body/DepartmentPage";
 import ListOfFaculties from "./Component/Body/ListOfFaculties"; 
@@ -26,7 +23,6 @@ import West from "./Component/Campuses/West";
 import PGPrograms from "./Component/Courses/PGProgram";
 import DiplomaPrograms from "./Component/Courses/Diploma";
 import Administration from "./Component/Body/Administration";
-// import BottomNavbar from "./Component/Header/BottomNavbar";
 import FacultyDesc from "./Component/Body/FacultyDesc";
 import AlumniSection from "./Component/Alumni Page/AlumniSection";
 import About from "./Component/NavItems/About";
@@ -34,6 +30,7 @@ import VissionMission from "./Component/NavItems/Vission&Mission";
 import Entrepreneurship from "./Component/NavItems/Entrepreneurship";
 import Amenities from "./Component/NavItems/Amenities";
 import Policy from "./Component/Policy/Policy";
+import JobPortal from "./Component/Body/JobPortal";
 import AcademicGuidelines from "./Component/Policy/AcademicGuidelines";
 import AdmissionsPolicy from "./Component/Policy/AdmissionsPolicy";
 import AntiRaggingPolicy from "./Component/Policy/AntiRaggingPolicy";
@@ -52,7 +49,6 @@ function App() {
   return (
     <BrowserRouter>
       <MidNavbar />
-      {/* <BottomNavbar /> */}
       <Routes>
         <Route
           path="/"

@@ -5,7 +5,7 @@ import enter from '../../assets/enter.jpeg';
 const Entrepreneurship = () => {
   return (
     <div className="max-w-4xl mx-auto p-6 space-y-8">
-      {/* Main Heading Section */}
+    
       <div className="space-y-6">
         <h1 className="text-3xl md:text-4xl font-bold text-blue-800">
           Nurturing entrepreneurial minds to revolutionize industries with{' '}
@@ -29,14 +29,14 @@ const Entrepreneurship = () => {
         <div className="bg-cover bg-center h-48 w-full rounded-lg" style={{ backgroundImage: `url(${enter})` }} />
       </div>
 
-      {/* Center Title */}
+      
       <div className="text-center">
         <h2 className="font-semibold text-lg">
           DSEU Innovation and Incubation Centre for Entrepreneurship (DIICE)
         </h2>
       </div>
 
-      {/* Introduction Text */}
+     
       <div className="space-y-4">
         <h3 className="font-semibold">Introduction</h3>
         <p className="text-gray-700 leading-relaxed">
@@ -47,13 +47,13 @@ const Entrepreneurship = () => {
         </p>
       </div>
 
-      {/* Grid Section */}
+    
       <div className="grid grid-cols-2 gap-4">
         <div className="bg-cover bg-center h-32 rounded-lg" style={{ backgroundImage: `url(${enter})` }} />
         <div className="bg-cover bg-center h-32 rounded-lg" style={{ backgroundImage: `url(${enter})` }} />
       </div>
 
-      {/* Know More Button */}
+     
       <div className="text-center">
         <button className="bg-yellow-500 text-white px-6 py-2 rounded-md hover:bg-yellow-600 transition-colors">
           Know More

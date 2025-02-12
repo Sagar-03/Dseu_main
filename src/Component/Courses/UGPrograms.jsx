@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { X } from "lucide-react";
-import { code } from "framer-motion/client";
 
 const CourseDetailsCard = ({ program, onClose }) => {
   const navigate = useNavigate();

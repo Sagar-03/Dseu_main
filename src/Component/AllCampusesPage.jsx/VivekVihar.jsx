@@ -33,7 +33,7 @@ const VivekVihar = () => {
 
   return (
     <div className="w-full max-w-6xl mx-auto p-4">
-      {/* Header with background image */}
+      
       <div
         className="w-full h-48 rounded-lg mb-6 flex items-center justify-center relative"
         style={{
@@ -49,9 +49,9 @@ const VivekVihar = () => {
         </h1>
       </div>
 
-      {/* Content Section */}
+      
       <div className="flex flex-col lg:flex-row gap-6">
-        {/* Sidebar */}
+        
         <div className="w-full lg:w-64 shrink-0">
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
             {Object.entries(content).map(([key, { title }]) => (
@@ -70,7 +70,7 @@ const VivekVihar = () => {
           </div>
         </div>
 
-        {/* Main Content */}
+        
         <div className="flex-1">
           <div className="bg-white rounded-lg shadow-md p-6">
             <h2 className="text-xl sm:text-2xl font-bold mb-4">

@@ -275,6 +275,7 @@ const ResponsiveHeader = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
+  const [isSticky, setIsSticky] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -284,9 +285,16 @@ const ResponsiveHeader = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const handleMobileMenuClick = () => {
-    setIsMobileMenuOpen(false);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      setIsSticky(scrollY > 100); // Show sticky header after 100px scroll
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
 
   return (
     <div className="w-full">
