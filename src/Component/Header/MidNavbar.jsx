@@ -23,6 +23,8 @@ const carouselImages = [
   },
 ];
 
+
+
 const navItems = [
   {
     name: "Home",
@@ -56,6 +58,8 @@ const navItems = [
       { name: "Programs", path: "/academics/programs" },
       { name: "Departments", path: "/academics/departments" },
       { name: "Faculty", path: "/academics/faculty" },
+      { name: "Faculty Login", path:"https://dseu.samarth.ac.in/index.php/site/login"},
+      { name: "Student Login", path:"https://dseu.samarth.edu.in/index.php/site/login"}
     ],
   },
   {
@@ -79,10 +83,11 @@ const navItems = [
   {
     name: "Admission",
     dropdownItems: [
-      {
-        name: "Overview of Admissions",
-        path: "/admission/overview-of-admissions",
-      },
+      
+        {name: "UG Admission",path: "https://dseuadm.samarth.edu.in/ug/index.php/"},
+       { name: "PG Admission", path:"https://dseuadm.samarth.edu.in/pg/index.php"},
+       { name: "Diploma Admission", path:"https://dseuadm.samarth.edu.in/"},
+      
     ],
   },
   {

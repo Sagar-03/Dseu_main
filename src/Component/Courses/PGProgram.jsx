@@ -4,10 +4,11 @@ import { X } from "lucide-react";
 
 const CourseDetailsCard = ({ program, onClose }) => {
   const navigate = useNavigate();
+  const pdfUrl = "/Admission_Brochure_PG__2024_2_6.pdf";
 
   const handleViewStructure = () => {
     onClose();
-    navigate(`/pg-course-structure/${program.code}`);
+    navigate(`/course-structure/${program.code}`);
     window.scrollTo(0, 0);
   };
 
@@ -16,7 +17,7 @@ const CourseDetailsCard = ({ program, onClose }) => {
       <div className="flex justify-between items-start mb-6">
         <div>
           <h1 className="text-blue-900 text-2xl font-bold mb-1">{program.title}</h1>
-          <p className="text-blue-900 text-lg">Program Code {program.code}</p>
+          <p className="text-blue-900 text-lg">Program Code: {program.code}</p>
         </div>
         <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
           <X size={24} />
@@ -29,35 +30,27 @@ const CourseDetailsCard = ({ program, onClose }) => {
             <h2 className="text-black text-lg font-medium mb-2">Campuses</h2>
             <p>{program.campus}</p>
           </div>
-
-          <div className="mb-6">
-            <h2 className="text-black text-lg font-medium mb-2">Institute</h2>
-            <p>{program.institute}</p>
-            <p className="text-blue-600 text-sm cursor-pointer hover:underline">
-              [Click Here] to visit this institute's website
-            </p>
-          </div>
-
           <div>
-            <h2 className="text-black text-lg font-medium mb-2">Eligibility</h2>
-            <p>{program.eligibility}</p>
+            <h2 className="text-black text-lg font-medium mb-2">Information Brochure</h2>
+            <a
+              href={pdfUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 text-sm cursor-pointer hover:underline"
+            >
+              📄 Click here to view the Admission Brochure
+            </a>
           </div>
         </div>
 
         <div>
-          <div className="mb-6">
-            <h2 className="text-black text-lg font-medium mb-2">University</h2>
-            <p>{program.university}</p>
-          </div>
-
           <div className="mb-6">
             <h2 className="text-black text-lg font-medium mb-2">Duration</h2>
             <p>{program.duration}</p>
           </div>
 
           <div>
-            <h2 className="text-black text-lg font-medium mb-2">Program Fee (Rs. in Lacs)</h2>
-            <p className="text-sm">1st Year Non Sponsored Semester Fee:</p>
+            <h2 className="text-black text-lg font-medium mb-2">Program Fee</h2>
             <p>{program.fee}</p>
           </div>
         </div>
@@ -83,176 +76,119 @@ const PGPrograms = () => {
 
   const programs = [
     {
-      title: "MBA International Business Management",
-      code: "PG001",
-      campus: "Central Campus",
-      institute: "DSEU Graduate School of Technology",
-      university: "DSEU University",
-      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
-      duration: "2 Years",
-      fee: "2.5 Lacs per year",
-    },
-    // {
-    //   title: "MBA (Finance)",
-    //   code: "PG002",
-    //   campus: "South Campus",
-    //   institute: "DSEU School of Management",
-    //   university: "DSEU University",
-    //   eligibility: "Bachelor's degree with 55% aggregate",
-    //   duration: "2 Years",
-    //   fee: "2.0 Lacs per year",
-    // },
-    {
-      title:"PG Diploma in Cyber Law (1 year program)",
-      code:"",
-      campus: "Central Campus",
-      institute: "DSEU Graduate School of Technology",
-      university: "DSEU University",
-      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
-      duration: "2 Years",
-      fee: "2.5 Lacs per year"
+      "title": "MBA International Business Management",
+      "code": "C03",
+      "campus": "DSEU PUSA-II Campus",
+      "duration": "2 Years",
+      "fee": "₹87,000 per semester"
     },
     {
-      title:"MBA Entrepreneurship",
-      code:"",
-      campus: "Central Campus",
-      institute: "DSEU Graduate School of Technology",
-      university: "DSEU University",
-      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
-      duration: "2 Years",
-      fee: "2.5 Lacs per year"
+      "title": "PG Diploma in Cyber Law (1 year program)",
+      "code": "E01",
+      "campus": "Ambedkar DSEU Shakarpur-I Campus",
+      "duration": "1 Year",
+      "fee": "₹25,000 per semester"
     },
     {
-      title:"Master of Computer Application",
-      code:"",
-      campus: "Central Campus",
-      institute: "DSEU Graduate School of Technology",
-      university: "DSEU University",
-      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
-      duration: "2 Years",
-      fee: "2.5 Lacs per year"
+      "title": "MBA Entrepreneurship",
+      "code": "E02",
+      "campus": "Bhai Parmanand DSEU Shakarpur-II",
+      "duration": "2 Years",
+      "fee": "₹87,000 per semester"
     },
     {
-      title:"MBA Data Analytics",
-      code:"",
-      campus: "Central Campus",
-      institute: "DSEU Graduate School of Technology",
-      university: "DSEU University",
-      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
-      duration: "2 Years",
-      fee: "2.5 Lacs per year"
+      "title": "Master of Computer Application",
+      "code": "E02",
+      "campus": "Bhai Parmanand DSEU Shakarpur-II",
+      "duration": "2 Years",
+      "fee": "₹87,000 per semester"
     },
     {
-      title:"MBA-Retail Management",
-      code:"",
-      campus: "Central Campus",
-      institute: "DSEU Graduate School of Technology",
-      university: "DSEU University",
-      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
-      duration: "2 Years",
-      fee: "2.5 Lacs per year"
+      "title": "MBA Data Analytics",
+      "code": "E02",
+      "campus": "Bhai Parmanand DSEU Shakarpur-II",
+      "duration": "2 Years",
+      "fee": "₹87,000 per semester"
     },
     {
-      title:"MTech Tool Engineering",
-      code:"",
-      campus: "Central Campus",
-      institute: "DSEU Graduate School of Technology",
-      university: "DSEU University",
-      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
-      duration: "2 Years",
-      fee: "2.5 Lacs per year"
+      "title": "MBA Retail Management",
+      "code": "E04",
+      "campus": "DSEU Vivek Vihar Campus",
+      "duration": "2 Years",
+      "fee": "₹87,000 per semester"
     },
     {
-      title:"PG Diploma in Precision Engineering (1 year program)",
-      code:"",
-      campus: "Central Campus",
-      institute: "DSEU Graduate School of Technology",
-      university: "DSEU University",
-      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
-      duration: "2 Years",
-      fee: "2.5 Lacs per year"
+      "title": "MTech Tool Engineering",
+      "code": "N05",
+      "campus": "DSEU Wazirpur-I Campus",
+      "duration": "2 Years",
+      "fee": "₹87,000 per semester"
     },
     {
-      title:"MBA Finance",
-      code:"",
-      campus: "Central Campus",
-      institute: "DSEU Graduate School of Technology",
-      university: "DSEU University",
-      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
-      duration: "2 Years",
-      fee: "2.5 Lacs per year"
+      "title": "PG Diploma in Precision Engineering (1 year program)",
+      "code": "N05",
+      "campus": "DSEU Wazirpur-I Campus",
+      "duration": "1 Year",
+      "fee": "₹50,000 per semester"
     },
     {
-      title:"MBA Healthcare Facility Management",
-      code:"",
-      campus: "Central Campus",
-      institute: "DSEU Graduate School of Technology",
-      university: "DSEU University",
-      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
-      duration: "2 Years",
-      fee: "2.5 Lacs per year"
+      "title": "MBA Finance",
+      "code": "W02",
+      "campus": "DSEU Dwarka Campus",
+      "duration": "2 Years",
+      "fee": "₹87,000 per semester"
     },
     {
-      title:" MTech Computer Science Engineering- AI & ML",
-      code:"",
-      campus: "Central Campus",
-      institute: "DSEU Graduate School of Technology",
-      university: "DSEU University",
-      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
-      duration: "2 Years",
-      fee: "2.5 Lacs per year"
+      "title": "MBA Healthcare Facility Management",
+      "code": "S01",
+      "campus": "CHAMPS Okhla-II",
+      "duration": "2 Years",
+      "fee": "₹87,000 per semester"
     },
     {
-      title:"MTech Electronics & Communication Engineering- IoT",
-      code:"",
-      campus: "Central Campus",
-      institute: "DSEU Graduate School of Technology",
-      university: "DSEU University",
-      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
-      duration: "2 Years",
-      fee: "2.5 Lacs per year"
+      "title": "MTech Computer Science Engineering - AI & ML",
+      "code": "S02",
+      "campus": "DSEU Okhla-I Campus",
+      "duration": "2 Years",
+      "fee": "₹87,000 per semester"
     },
     {
-      title:"MTech Mechanical Engineering",
-      code:"",
-      campus: "Central Campus",
-      institute: "DSEU Graduate School of Technology",
-      university: "DSEU University",
-      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
-      duration: "2 Years",
-      fee: "2.5 Lacs per year"
+      "title": "MTech Electronics & Communication Engineering - IoT",
+      "code": "S02",
+      "campus": "DSEU Okhla-I Campus",
+      "duration": "2 Years",
+      "fee": "₹87,000 per semester"
     },
     {
-      title:"MBA Management Information System",
-      code:"",
-      campus: "Central Campus",
-      institute: "DSEU Graduate School of Technology",
-      university: "DSEU University",
-      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
-      duration: "2 Years",
-      fee: "2.5 Lacs per year"
+      "title": "MTech Mechanical Engineering",
+      "code": "S02",
+      "campus": "DSEU Okhla-I Campus",
+      "duration": "2 Years",
+      "fee": "₹87,000 per semester"
     },
     {
-      title:"B.Lib. (1 year program)",
-      code:"",
-      campus: "Central Campus",
-      institute: "DSEU Graduate School of Technology",
-      university: "DSEU University",
-      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
-      duration: "2 Years",
-      fee: "2.5 Lacs per year"
+      "title": "MBA Management Information System",
+      "code": "S03",
+      "campus": "DSEU Okhla-II Campus",
+      "duration": "2 Years",
+      "fee": "₹87,000 per semester"
     },
     {
-      title:"M.Sc Medical Laboratory Sciences",
-      code:"",
-      campus: "Central Campus",
-      institute: "DSEU Graduate School of Technology",
-      university: "DSEU University",
-      eligibility: "Bachelor's degree in relevant field with 60% aggregate",
-      duration: "2 Years",
-      fee: "2.5 Lacs per year"
+      "title": "B.Lib. (1 year program)",
+      "code": "S04",
+      "campus": "Meerabai DSEU Maharani Bagh Campus",
+      "duration": "1 Year",
+      "fee": "₹50,000 per semester"
     },
-  ];
+    {
+      "title": "M.Sc Medical Laboratory Sciences",
+      "code": "W02",
+      "campus": "DSEU Dwarka Campus",
+      "duration": "2 Years",
+      "fee": "₹50,000 per semester"
+    }
+  ]
+  
 
   return (
     <div className="bg-gray-100 min-h-screen p-6">
@@ -274,10 +210,7 @@ const PGPrograms = () => {
 
       {selectedProgram && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <CourseDetailsCard
-            program={selectedProgram}
-            onClose={() => setSelectedProgram(null)}
-          />
+          <CourseDetailsCard program={selectedProgram} onClose={() => setSelectedProgram(null)} />
         </div>
       )}
     </div>
@@ -285,4 +218,3 @@ const PGPrograms = () => {
 };
 
 export default PGPrograms;
-

@@ -4,6 +4,7 @@ import { X } from "lucide-react";
 
 const DiplomaDetailsCard = ({ program, onClose }) => {
   const navigate = useNavigate();
+  const pdfUrl = "/Admission-Brochure-Diploma-2024.pdf";
 
   const handleViewStructure = () => {
     onClose();
@@ -29,35 +30,27 @@ const DiplomaDetailsCard = ({ program, onClose }) => {
             <h2 className="text-black text-lg font-medium mb-2">Campuses</h2>
             <p>{program.campus}</p>
           </div>
-
-          <div className="mb-6">
-            <h2 className="text-black text-lg font-medium mb-2">Institute</h2>
-            <p>{program.institute}</p>
-            <p className="text-blue-600 text-sm cursor-pointer hover:underline">
-              [Click Here] to visit this institute's website
-            </p>
-          </div>
-
           <div>
-            <h2 className="text-black text-lg font-medium mb-2">Eligibility</h2>
-            <p>{program.eligibility}</p>
+            <h2 className="text-black text-lg font-medium mb-2">Information Brochure</h2>
+            <a
+              href={pdfUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 text-sm cursor-pointer hover:underline"
+            >
+              📄 Click here to view the Admission Brochure
+            </a>
           </div>
         </div>
 
         <div>
-          <div className="mb-6">
-            <h2 className="text-black text-lg font-medium mb-2">University</h2>
-            <p>{program.university}</p>
-          </div>
-
           <div className="mb-6">
             <h2 className="text-black text-lg font-medium mb-2">Duration</h2>
             <p>{program.duration}</p>
           </div>
 
           <div>
-            <h2 className="text-black text-lg font-medium mb-2">Program Fee (Rs. in Lacs)</h2>
-            <p className="text-sm">1st Year Non Sponsored Semester Fee:</p>
+            <h2 className="text-black text-lg font-medium mb-2">Program Fee</h2>
             <p>{program.fee}</p>
           </div>
         </div>
@@ -78,6 +71,7 @@ const DiplomaDetailsCard = ({ program, onClose }) => {
   );
 };
 
+
 const DiplomaPrograms = () => {
   const [selectedProgram, setSelectedProgram] = useState(null);
 
@@ -90,7 +84,7 @@ const DiplomaPrograms = () => {
       university: "DSEU University India",
       eligibility: "X Passed with min. 50%",
       duration: "3 Years",
-      fee: "INR 50,000 per year",
+      fee: "₹10,000 per semester",
     },
     {
       title: "Diploma in Chemical Engineering ",
@@ -100,7 +94,7 @@ const DiplomaPrograms = () => {
       university: "DSEU University India",
       eligibility: "X Passed with min. 50%",
       duration: "3 Years",
-      fee: "INR 50,000 per year",
+      fee: "₹10,000 per semester",
     },
     {
       title: "Diploma in Civil Engineering ",
@@ -110,7 +104,7 @@ const DiplomaPrograms = () => {
       university: "DSEU University India",
       eligibility: "X Passed with min. 50%",
       duration: "3 Years",
-      fee: "INR 50,000 per year",
+      fee: "₹10,000 per semester",
     },
     {
       title: "Diploma in Computer Engineering",
@@ -120,7 +114,7 @@ const DiplomaPrograms = () => {
       university: "DSEU University India",
       eligibility: "X Passed with min. 50%",
       duration: "3 Years",
-      fee: "INR 50,000 per year",
+      fee: "₹10,000 per semester",
     },
     {
       title: "Diploma in Electrical Engineering ",
@@ -130,7 +124,7 @@ const DiplomaPrograms = () => {
       university: "DSEU University India",
       eligibility: "X Passed with min. 50%",
       duration: "3 Years",
-      fee: "INR 50,000 per year",
+      fee: "₹10,000 per semester",
     },
     {
       title: "Diploma in Electronics Engineering",
@@ -140,7 +134,7 @@ const DiplomaPrograms = () => {
       university: "DSEU University India",
       eligibility: "X Passed with min. 50%",
       duration: "3 Years",
-      fee: "INR 50,000 per year",
+      fee: "₹10,000 per semester",
     },
     {
       title: "Diploma in Mechanical Engineering ",
@@ -150,7 +144,7 @@ const DiplomaPrograms = () => {
       university: "DSEU University India",
       eligibility: "X Passed with min. 50%",
       duration: "3 Years",
-      fee: "INR 50,000 per year",
+      fee: "₹10,000 per semester",
     },
     {
       title: "Diploma in Petrochemicals ",
@@ -160,7 +154,7 @@ const DiplomaPrograms = () => {
       university: "DSEU University India",
       eligibility: "X Passed with min. 50%",
       duration: "3 Years",
-      fee: "INR 50,000 per year",
+      fee: "₹10,000 per semester",
     },
     {
       title: "Diploma in Polymer Technology ",
@@ -170,7 +164,7 @@ const DiplomaPrograms = () => {
       university: "DSEU University India",
       eligibility: "X Passed with min. 50%",
       duration: "3 Years",
-      fee: "INR 50,000 per year",
+      fee: "₹10,000 per semester",
     },
     {
       title: "  Diploma in Precision Engineering",
@@ -180,7 +174,7 @@ const DiplomaPrograms = () => {
       university: "DSEU University India",
       eligibility: "X Passed with min. 50%",
       duration: "3 Years",
-      fee: "INR 50,000 per year",
+      fee: "₹10,000 per semester",
     },
     {
       title: "Diploma in Printing Technology ",
@@ -190,7 +184,7 @@ const DiplomaPrograms = () => {
       university: "DSEU University India",
       eligibility: "X Passed with min. 50%",
       duration: "3 Years",
-      fee: "INR 50,000 per year",
+      fee: "₹10,000 per semester",
     },
     {
       title: " Diploma in Robotic and Process Automation",
@@ -200,7 +194,7 @@ const DiplomaPrograms = () => {
       university: "DSEU University India",
       eligibility: "X Passed with min. 50%",
       duration: "3 Years",
-      fee: "INR 50,000 per year",
+      fee: "₹10,000 per semester",
     },
     {
       title: " Four Year UG Diploma in Tool and Die Making",
@@ -210,7 +204,7 @@ const DiplomaPrograms = () => {
       university: "DSEU University India",
       eligibility: "X Passed with min. 50%",
       duration: "3 Years",
-      fee: "INR 50,000 per year",
+      fee: "₹10,000 per semester",
     },
     {
       title: " Diploma in Architecture ",
@@ -220,198 +214,155 @@ const DiplomaPrograms = () => {
       university: "DSEU University India",
       eligibility: "X Passed with min. 50%",
       duration: "3 Years",
-      fee: "INR 50,000 per year",
+      fee: "₹10,000 per semester",
     },
   ]
 
   const ugDiplomaPrograms = [
     {
-      title: "UG Diploma in Advanced Engineering",
-      code: "201103",
-      campus: "BPIBS DSEU Campus-III",
-      institute: "DSEU University India",
-      university: "DSEU University India",
-      eligibility: "XII Passed with min. 60%",
-      duration: "4 Years",
-      fee: "INR 75,000 per year",
+      "title": "UG Diploma in Sports Fitness and Yoga Applications",
+      "code": "201103",
+      "campus": "DSEU Siri Fort Campus",
+      "eligibility": "XII Passed with min. 60%",
+      "duration": "2 Years",
+      "fee": "INR 25,000 per semester"
     },
     {
-      title: "UG Diploma in Sports Fitness and Yoga Applications",
-      code: "201103",
-      campus: "BPIBS DSEU Campus-III",
-      institute: "DSEU University India",
-      university: "DSEU University India",
-      eligibility: "XII Passed with min. 60%",
-      duration: "4 Years",
-      fee: "INR 75,000 per year",
-    }, {
-      title: "UG Diploma in Hospitality Operations",
-      code: "201103",
-      campus: "BPIBS DSEU Campus-III",
-      institute: "DSEU University India",
-      university: "DSEU University India",
-      eligibility: "XII Passed with min. 60%",
-      duration: "4 Years",
-      fee: "INR 75,000 per year",
+      "title": "UG Diploma in Hospitality Operations",
+      "code": "201103",
+      "campus": "DSEU Siri Fort Campus",
+      "eligibility": "XII Passed with min. 60%",
+      "duration": "2 Years",
+      "fee": "INR 25,000 per semester"
     },
     {
-      title: "UG Diploma in Beauty and Wellness",
-      code: "201103",
-      campus: "BPIBS DSEU Campus-III",
-      institute: "DSEU University India",
-      university: "DSEU University India",
-      eligibility: "XII Passed with min. 60%",
-      duration: "4 Years",
-      fee: "INR 75,000 per year",
+      "title": "UG Diploma in Beauty and Wellness",
+      "code": "201103",
+      "campus": "Ambedkar DSEU Shakarpur Campus-I",
+      "eligibility": "XII Passed with min. 60%",
+      "duration": "2 Years",
+      "fee": "INR 10,000 per semester"
     },
     {
-      title: "UG Diploma in Electronics System Design & Manufacturing",
-      code: "201103",
-      campus: "BPIBS DSEU Campus-III",
-      institute: "DSEU University India",
-      university: "DSEU University India",
-      eligibility: "XII Passed with min. 60%",
-      duration: "4 Years",
-      fee: "INR 75,000 per year",
+      "title": "UG Diploma in Electronics System Design & Manufacturing",
+      "code": "201103",
+      "campus": "Ambedkar DSEU Shakarpur Campus-I",
+      "eligibility": "XII Passed with min. 60%",
+      "duration": "2 Years",
+      "fee": "INR 25,000 per semester"
     },
     {
-      title: "UG Diploma in Video Production",
-      code: "201103",
-      campus: "BPIBS DSEU Campus-III",
-      institute: "DSEU University India",
-      university: "DSEU University India",
-      eligibility: "XII Passed with min. 60%",
-      duration: "4 Years",
-      fee: "INR 75,000 per year",
+      "title": "UG Diploma in Video Production",
+      "code": "201103",
+      "campus": "Bhai Parmanand DSEU Shakarpur-II",
+      "eligibility": "XII Passed with min. 60%",
+      "duration": "2 Years",
+      "fee": "INR 50,000 per semester"
     },
     {
-      title: "UG Diploma in Precision Engineering ",
-      code: "201103",
-      campus: "BPIBS DSEU Campus-III",
-      institute: "DSEU University India",
-      university: "DSEU University India",
-      eligibility: "XII Passed with min. 60%",
-      duration: "4 Years",
-      fee: "INR 75,000 per year",
+      "title": "UG Diploma in Precision Engineering",
+      "code": "201103",
+      "campus": "Aryabhatt DSEU Ashok Vihar",
+      "eligibility": "XII Passed with min. 60%",
+      "duration": "2 Years",
+      "fee": "INR 25,000 per semester"
     },
     {
-      title: "UG Diploma in garment Manufacturing and Quality Assurance ",
-      code: "201103",
-      campus: "BPIBS DSEU Campus-III",
-      institute: "DSEU University India",
-      university: "DSEU University India",
-      eligibility: "XII Passed with min. 60%",
-      duration: "4 Years",
-      fee: "INR 75,000 per year",
+      "title": "UG Diploma in Garment Manufacturing and Quality Assurance",
+      "code": "201103",
+      "campus": "Aryabhatt DSEU Ashok Vihar",
+      "eligibility": "XII Passed with min. 60%",
+      "duration": "2 Years",
+      "fee": "INR 25,000 per semester"
     },
     {
-      title: "UG Diploma in Tool and Die Making ",
-      code: "201103",
-      campus: "BPIBS DSEU Campus-III",
-      institute: "DSEU University India",
-      university: "DSEU University India",
-      eligibility: "XII Passed with min. 60%",
-      duration: "4 Years",
-      fee: "INR 75,000 per year",
+      "title": "UG Diploma in Tool and Die Making",
+      "code": "201103",
+      "campus": "DSEU Wazirpur Campus-I",
+      "eligibility": "XII Passed with min. 60%",
+      "duration": "2 Years",
+      "fee": "INR 25,000 per semester"
     },
     {
-      title: "UG Diploma in Food Production ",
-      code: "201103",
-      campus: "BPIBS DSEU Campus-III",
-      institute: "DSEU University India",
-      university: "DSEU University India",
-      eligibility: "XII Passed with min. 60%",
-      duration: "4 Years",
-      fee: "INR 75,000 per year",
+      "title": "UG Diploma in Food Production",
+      "code": "201103",
+      "campus": "DSEU Wazirpur-II Campus (SSE Wazirpur)",
+      "eligibility": "XII Passed with min. 60%",
+      "duration": "2 Years",
+      "fee": "INR 25,000 per semester"
     },
     {
-      title: "UG Diploma in Light Vehicles ",
-      code: "201103",
-      campus: "BPIBS DSEU Campus-III",
-      institute: "DSEU University India",
-      university: "DSEU University India",
-      eligibility: "XII Passed with min. 60%",
-      duration: "4 Years",
-      fee: "INR 75,000 per year",
+      "title": "UG Diploma in Light Vehicles",
+      "code": "201103",
+      "campus": "G.B. Pant DSEU Okhla I Campus",
+      "eligibility": "XII Passed with min. 60%",
+      "duration": "2 Years",
+      "fee": "INR 25,000 per semester"
     },
     {
-      title: "UG Diploma in Heavy Vehicles",
-      code: "201103",
-      campus: "BPIBS DSEU Campus-III",
-      institute: "DSEU University India",
-      university: "DSEU University India",
-      eligibility: "XII Passed with min. 60%",
-      duration: "4 Years",
-      fee: "INR 75,000 per year",
+      "title": "UG Diploma in Heavy Vehicles",
+      "code": "201103",
+      "campus": "G.B. Pant DSEU Okhla I Campus",
+      "eligibility": "XII Passed with min. 60%",
+      "duration": "2 Years",
+      "fee": "INR 25,000 per semester"
     },
     {
-      title: "UG Diploma in German Language",
-      code: "201103",
-      campus: "BPIBS DSEU Campus-III",
-      institute: "DSEU University India",
-      university: "DSEU University India",
-      eligibility: "XII Passed with min. 60%",
-      duration: "4 Years",
-      fee: "INR 75,000 per year",
+      "title": "UG Diploma in German Language",
+      "code": "201103",
+      "campus": "G.B. Pant DSEU Okhla I Campus",
+      "eligibility": "XII Passed with min. 60%",
+      "duration": "2 Years",
+      "fee": "INR 25,000 per semester"
     },
     {
-      title: "UG Diploma in Japanese Language",
-      code: "201103",
-      campus: "BPIBS DSEU Campus-III",
-      institute: "DSEU University India",
-      university: "DSEU University India",
-      eligibility: "XII Passed with min. 60%",
-      duration: "4 Years",
-      fee: "INR 75,000 per year",
+      "title": "UG Diploma in Japanese Language",
+      "code": "201103",
+      "campus": "DSEU Okhla-II Campus",
+      "eligibility": "XII Passed with min. 60%",
+      "duration": "2 Years",
+      "fee": "INR 25,000 per semester"
     },
     {
-      title: "UG Diploma in French Language",
-      code: "201103",
-      campus: "BPIBS DSEU Campus-III",
-      institute: "DSEU University India",
-      university: "DSEU University India",
-      eligibility: "XII Passed with min. 60%",
-      duration: "4 Years",
-      fee: "INR 75,000 per year",
+      "title": "UG Diploma in French Language",
+      "code": "201103",
+      "campus": "DSEU Dwarka Campus",
+      "eligibility": "XII Passed with min. 60%",
+      "duration": "2 Years",
+      "fee": "INR 25,000 per semester"
     },
     {
-      title: "UG Diploma in Computer System Operator",
-      code: "201103",
-      campus: "BPIBS DSEU Campus-III",
-      institute: "DSEU University India",
-      university: "DSEU University India",
-      eligibility: "XII Passed with min. 60%",
-      duration: "4 Years",
-      fee: "INR 75,000 per year",
+      "title": "UG Diploma in Computer System Operator",
+      "code": "201103",
+      "campus": "Meerabai DSEU Maharani Bagh Campus",
+      "eligibility": "XII Passed with min. 60%",
+      "duration": "2 Years",
+      "fee": "INR 25,000 per semester"
     },
     {
-      title: "UG Diploma in Apparel Retail Management and Merchandising ",
-      code: "201103",
-      campus: "BPIBS DSEU Campus-III",
-      institute: "DSEU University India",
-      university: "DSEU University India",
-      eligibility: "XII Passed with min. 60%",
-      duration: "4 Years",
-      fee: "INR 75,000 per year",
+      "title": "UG Diploma in Apparel Retail Management and Merchandising",
+      "code": "201103",
+      "campus": "DSEU Ranhola Campus",
+      "eligibility": "XII Passed with min. 60%",
+      "duration": "2 Years",
+      "fee": "INR 25,000 per semester"
     },
     {
-      title: "Diploma in Pharmacy",
-      code: "201103",
-      campus: "BPIBS DSEU Campus-III",
-      institute: "DSEU University India",
-      university: "DSEU University India",
-      eligibility: "XII Passed with min. 60%",
-      duration: "4 Years",
-      fee: "INR 75,000 per year",
-    },
-  ];
-
+      "title": "Diploma in Pharmacy",
+      "code": "201103",
+      "campus": "Meerabai DSEU Maharani Bagh Campus",
+      "eligibility": "XII Passed with min. 60%",
+      "duration": "2 Years",
+      "fee": "INR 25,000 per semester"
+    }
+  ]
+  
   return (
     <div className="bg-gray-100 min-h-screen p-6">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-3xl font-bold text-blue-900 mb-4">Diploma Programs</h1>
 
-        {/* Diploma Programs */}
+        
         <div className="space-y-4 mb-6">
           {diplomaPrograms.map((program, index) => (
             <div
@@ -424,7 +375,7 @@ const DiplomaPrograms = () => {
           ))}
         </div>
 
-        {/* UG Diploma Programs */}
+        
         <h2 className="text-3xl font-bold text-blue-900  mt-8 mb-8">UG Diploma Programs</h2>
         <div className="space-y-4">
           {ugDiplomaPrograms.map((program, index) => (
@@ -439,7 +390,7 @@ const DiplomaPrograms = () => {
         </div>
       </div>
 
-      {/* Program Details Modal */}
+      
       {selectedProgram && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
           <DiplomaDetailsCard
