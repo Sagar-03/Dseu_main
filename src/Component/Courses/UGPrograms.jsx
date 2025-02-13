@@ -4,6 +4,7 @@ import { X } from "lucide-react";
 
 const CourseDetailsCard = ({ program, onClose }) => {
   const navigate = useNavigate();
+  const pdfUrl = "/Admission_Brochure_Degree__2024-25.pdf"; // PDF file link
 
   const handleViewStructure = () => {
     onClose();
@@ -16,7 +17,7 @@ const CourseDetailsCard = ({ program, onClose }) => {
       <div className="flex justify-between items-start mb-6">
         <div>
           <h1 className="text-blue-900 text-2xl font-bold mb-1">{program.title}</h1>
-          <p className="text-blue-900 text-lg">Program Code {program.code}</p>
+          <p className="text-blue-900 text-lg">Program Code: {program.code}</p>
         </div>
         <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
           <X size={24} />
@@ -29,26 +30,20 @@ const CourseDetailsCard = ({ program, onClose }) => {
             <h2 className="text-black text-lg font-medium mb-2">Campuses</h2>
             <p>{program.campus}</p>
           </div>
-
-          <div className="mb-6">
-            <h2 className="text-black text-lg font-medium mb-2">Institute</h2>
-            <p>{program.institute}</p>
-            <p className="text-blue-600 text-sm cursor-pointer hover:underline">
-              [Click Here] to visit this institute's website
-            </p>
-          </div>
-
           <div>
-            <h2 className="text-black text-lg font-medium mb-2">Eligibility</h2>
-            <p>{program.eligibility}</p>
+            <h2 className="text-black text-lg font-medium mb-2">Information Brochure</h2>
+            <a
+              href={pdfUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 text-sm cursor-pointer hover:underline"
+            >
+              📄 Click here to view the Admission Brochure
+            </a>
           </div>
         </div>
 
         <div>
-          <div className="mb-6">
-            <h2 className="text-black text-lg font-medium mb-2">University</h2>
-            <p>{program.university}</p>
-          </div>
 
           <div className="mb-6">
             <h2 className="text-black text-lg font-medium mb-2">Duration</h2>
@@ -82,177 +77,134 @@ const UGPrograms = () => {
 
   const programs = [
     {
-      title: "B.S. Automative Retail Management",
-      code: "114500",
-      campus: "BPIBS DSEU Campus-II",
-      institute: "DSEU University India",
-      university: "DSEU University India",
-      eligibility: " XII (senior secondary) Grade Pass or (ii) 10th+2-Yr NTC/NAC/CITS  (iii) 40 credits of NSQF level 4.0.",
-      duration: "4 Years",
-      fee : " 25000 Tuition Fees per Semester",
-    },
-    // {
-    //   title: "BBA (Retail Mgmt)",
-    //   code: "114500",
-    //   campus: "BPIBS DSEU Campus-II",
-    //   institute: "DSEU University India",
-    //   university: "DSEU University India",
-    //   eligibility: "X & XII (min 50%) with min. 60% in PCM",
-    //   duration: "4 Years",
-    //   fee: "AED 58000 Or USD 15895 per year",
-    // },
-    // {
-    //   title: "B.Sc (Data Analytics)",
-    //   code: "114500",
-    //   campus: "BPIBS DSEU Campus-II",
-    //   institute: "DSEU University India",
-    //   university: "DSEU University India",
-    //   eligibility: "X & XII (min 50%) with min. 60% in PCM",
-    //   duration: "4 Years",
-    //   fee: "AED 58000 Or USD 15895 per year",
-    // },
-    // {
-    //   title: "BBA (Retail Mgmt)",
-    //   code: "114500",
-    //   campus: "BPIBS DSEU Campus-II",
-    //   institute: "DSEU University India",
-    //   university: "DSEU University India",
-    //   eligibility: "X & XII (min 50%) with min. 60% in PCM",
-    //   duration: "4 Years",
-    //   fee: "AED 58000 Or USD 15895 per year",
-    // },
-    // {
-    //   title: "B.Sc (Data Analytics)",
-    //   code: "114500",
-    //   campus: "BPIBS DSEU Campus-II",
-    //   institute: "DSEU University India",
-    //   university: "DSEU University India",
-    //   eligibility: "X & XII (min 50%) with min. 60% in PCM",
-    //   duration: "4 Years",
-    //   fee: "AED 58000 Or USD 15895 per year",
-    // },
-    // {
-    //   title: "BBA (Retail Mgmt)",
-    //   code: "114500",
-    //   campus: "BPIBS DSEU Campus-II",
-    //   institute: "DSEU University India",
-    //   university: "DSEU University India",
-    //   eligibility: "X & XII (min 50%) with min. 60% in PCM",
-    //   duration: "4 Years",
-    //   fee: "AED 58000 Or USD 15895 per year",
-    // },
-    // {
-    //   title: "BBA (Retail Mgmt)",
-    //   code: "114500",
-    //   campus: "BPIBS DSEU Campus-II",
-    //   institute: "DSEU University India",
-    //   university: "DSEU University India",
-    //   eligibility: "X & XII (min 50%) with min. 60% in PCM",
-    //   duration: "4 Years",
-    //   fee: "AED 58000 Or USD 15895 per year",
-    // },
-    {
-      title:"B.S. Banking, Financial Services and Insurance",
-      code:"114501",
-
+      "title": "B.S. Automotive Retail Management",
+      "code": "114500",
+      "campus": "BPIBS DSEU Campus-II",
+      "duration": "4 Years",
+      "fee": "25000 Tuition Fees per Semester"
     },
     {
-      title:"B.S. E-Commerce Operations and Digital Application",
-      code:""
+      "title": "B.S. Banking, Financial Services and Insurance",
+      "code": "114501",
+      "fee": "50000 Tuition Fees per Semester"
     },
     {
-      title:"B.S. Retail Management",
-      code:""
+      "title": "B.S. E-Commerce Operations and Digital Application",
+      "code": "114502",
+      "fee": "25000 Tuition Fees per Semester"
     },
     {
-      title:"B.S. Supply Chain Management",
-      code:""
+      "title": "B.S. Retail Management",
+      "code": "114503",
+      "fee": "25000 Tuition Fees per Semester"
     },
     {
-      title:"B.S. Hospitality Management",
-      code:""
+      "title": "B.S. Supply Chain Management",
+      "code": "114504",
+      "fee": "25000 Tuition Fees per Semester"
     },
     {
-      title:"B.S. Community Organisation and Development Practice",
-      code:""
-    },
-    
-    {
-      title:"B.S. Digital marketing and DataAnalytics",
-      code:""
-    },
-
-     {
-      title:"B.S. Computer Applications",
-      code:""
-    }, {
-      title:"B.A. (Hons.) Spanish",
-      code:""
+      "title": "B.S. Hospitality Management",
+      "code": "114505",
+      "fee": "87000 Tuition Fees per Semester"
     },
     {
-      title:"B.S. Beauty Therapy",
-      code:""
+      "title": "B.S. Community Organisation and Development Practice",
+      "code": "114506",
+      "fee": "25000 Tuition Fees per Semester"
     },
     {
-      title:"B.Sc. (Hons.) Mathematics",
-      code:""
+      "title": "B.S. Digital Marketing and Data Analytics",
+      "code": "114507",
+      "fee": "50000 Tuition Fees per Semester"
     },
     {
-      title:"B.S. Office Management",
-      code:""
-    },
-
-    {
-      title:"B.A. (Hons) Fine Arts",
-      code:""
-    },
-
-    {
-      title:"B.S. Digital Media Design",
-      code:""
-    }, {
-      title:"B.S. Business Process Management ",
-      code:""
+      "title": "B.S. Computer Applications",
+      "code": "114508",
+      "fee": "50000 Tuition Fees per Semester"
     },
     {
-      title:"B.S. Fashion Design ",
-      code:""
+      "title": "B.A. (Hons.) Spanish",
+      "code": "114509",
+      "fee": "25000 Tuition Fees per Semester"
     },
     {
-      title:"B.S. Interior Design",
-      code:""
-    },
-
-    {
-      title:"B.S. Hospital Facility Management",
-      code:""
+      "title": "B.S. Beauty Therapy",
+      "code": "114510",
+      "fee": "25000 Tuition Fees per Semester"
     },
     {
-      title:"B.S. Optometry ",
-      code:""
+      "title": "B.Sc. (Hons.) Mathematics",
+      "code": "114511",
+      "fee": "25000 Tuition Fees per Semester"
     },
     {
-      title:"B.S. Entrepreneurship",
-      code:""
-    }, {
-      title:"B.S. Dialysis Technology",
-      code:""
+      "title": "B.S. Office Management",
+      "code": "114512",
+      "fee": "25000 Tuition Fees per Semester"
     },
     {
-      title:"B.S. Emergency Medical Technology",
-      code:""
+      "title": "B.A. (Hons) Fine Arts",
+      "code": "114513",
+      "fee": "25000 Tuition Fees per Semester"
     },
     {
-      title:"B.S. Medical Laboratory Sciences",
-      code:""
+      "title": "B.S. Digital Media Design",
+      "code": "114514",
+      "fee": "50000 Tuition Fees per Semester"
     },
     {
-      title:"B.S. Facility Management ",
-      code:""
+      "title": "B.S. Business Process Management",
+      "code": "114515",
+      "fee": "25000 Tuition Fees per Semester"
     },
-
-    
-  ];
+    {
+      "title": "B.S. Fashion Design",
+      "code": "114516",
+      "fee": "25000 Tuition Fees per Semester"
+    },
+    {
+      "title": "B.S. Interior Design",
+      "code": "114517",
+      "fee": "25000 Tuition Fees per Semester"
+    },
+    {
+      "title": "B.S. Hospital Facility Management",
+      "code": "114518",
+      "fee": "50000 Tuition Fees per Semester"
+    },
+    {
+      "title": "B.S. Optometry",
+      "code": "114519",
+      "fee": "50000 Tuition Fees per Semester"
+    },
+    {
+      "title": "B.S. Entrepreneurship",
+      "code": "114520",
+      "fee": "50000 Tuition Fees per Semester"
+    },
+    {
+      "title": "B.S. Dialysis Technology",
+      "code": "114521",
+      "fee": "87000 Tuition Fees per Semester"
+    },
+    {
+      "title": "B.S. Emergency Medical Technology",
+      "code": "114522",
+      "fee": "87000 Tuition Fees per Semester"
+    },
+    {
+      "title": "B.S. Medical Laboratory Sciences",
+      "code": "114523",
+      "fee": "50000 Tuition Fees per Semester"
+    },
+    {
+      "title": "B.S. Facility Management",
+      "code": "114524",
+      "fee": "50000 Tuition Fees per Semester"
+    }
+  ]
+  
 
   return (
     <div className="bg-gray-100 min-h-screen p-6">
@@ -274,10 +226,7 @@ const UGPrograms = () => {
 
       {selectedProgram && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <CourseDetailsCard
-            program={selectedProgram}
-            onClose={() => setSelectedProgram(null)}
-          />
+          <CourseDetailsCard program={selectedProgram} onClose={() => setSelectedProgram(null)} />
         </div>
       )}
     </div>

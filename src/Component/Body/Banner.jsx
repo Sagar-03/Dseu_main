@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-// import banner1 from "../../assets/WhatsApp Image 2024-12-29 at 16.38.40.jpeg"
-import Banner12 from '../../assets/Banner-12.png';
+import dseuPic1 from '../../assets/BannerImg/dseuPic1.jpg'
+
 import Image6 from '../../assets/6.jpg';
 import Image7 from '../../assets/7.png';
+
 
 const HomeBody = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const slides = [
-    // { image: banner1 },
-    { image: Banner12 },
+    { image: dseuPic1},
+    
     { image: Image6 },
     { image: Image7 },
   ];

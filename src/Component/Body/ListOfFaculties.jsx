@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useNavigate } from 'react-router-dom';
-import { useEffect } from "react";
 import { faChalkboard, faFlask, faCalculator, faBalanceScale } from "@fortawesome/free-solid-svg-icons";
 
 const products = [
@@ -9,7 +8,7 @@ const products = [
     name: "Faculties of Arts",
     path: "/arabics",
     href: "#",
-    icon: faChalkboard,  // Added icon
+    icon: faChalkboard,  
     imageSrc: "",
     imageAlt: "Faculties of Arts",
   },
@@ -18,8 +17,8 @@ const products = [
     name: "Faculties of Science",
     path: "/buddhist",
     href: "#",
-    icon: faFlask,  // Added icon
-    imageSrc: "", // Add actual image URL here if available
+    icon: faFlask, 
+    imageSrc: "", 
     imageAlt: "Faculties of Science",
   },
   {
@@ -27,8 +26,8 @@ const products = [
     name: "Faculties of Commerce",
     path: "/commerce",
     href: "#",
-    icon: faCalculator,  // Added icon
-    imageSrc: "", // Add actual image URL here if available
+    icon: faCalculator,  
+    imageSrc: "", 
     imageAlt: "Faculties of Commerce",
   },
   {
@@ -36,8 +35,8 @@ const products = [
     name: "Faculties of Law",
     path: "/law",
     href: "#",
-    icon: faBalanceScale,  // Added icon
-    imageSrc: "", // Add actual image URL here if available
+    icon: faBalanceScale, 
+    imageSrc: "", 
     imageAlt: "Faculties of Law",
   },
   {
@@ -45,8 +44,8 @@ const products = [
     name: "Faculties of Engineering",
     path: "/engineering",
     href: "#",
-    icon: faChalkboard,  // Added icon (same as Arts, but you can change it)
-    imageSrc: "", // Add actual image URL here if available
+    icon: faChalkboard,  
+    imageSrc: "", 
     imageAlt: "Faculties of Engineering",
   },
   {
@@ -54,8 +53,8 @@ const products = [
     name: "Faculties of Medicine",
     path: "/medicine",
     href: "#",
-    icon: faFlask,  // Added icon (same as Science, but you can change it)
-    imageSrc: "", // Add actual image URL here if available
+    icon: faFlask,  
+    imageSrc: "", 
     imageAlt: "Faculties of Medicine",
   },
   {
@@ -63,8 +62,8 @@ const products = [
     name: "Faculties of Social Sciences",
     path: "/social-sciences",
     href: "#",
-    icon: faBalanceScale,  // Added icon (same as Law, but you can change it)
-    imageSrc: "", // Add actual image URL here if available
+    icon: faBalanceScale,  
+    imageSrc: "",
     imageAlt: "Faculties of Social Sciences",
   },
   {
@@ -72,8 +71,8 @@ const products = [
     name: "Faculties of Business",
     path: "/business",
     href: "#",
-    icon: faCalculator,  // Added icon (same as Commerce, but you can change it)
-    imageSrc: "", // Add actual image URL here if available
+    icon: faCalculator, 
+    imageSrc: "", 
     imageAlt: "Faculties of Business",
   },
   {
@@ -81,8 +80,8 @@ const products = [
     name: "Faculties of Engineering",
     path: "/engineering",
     href: "#",
-    icon: faChalkboard,  // Added icon (same as Arts, but you can change it)
-    imageSrc: "", // Add actual image URL here if available
+    icon: faChalkboard,  
+    imageSrc: "", 
     imageAlt: "Faculties of Engineering",
   },
   {
@@ -90,8 +89,8 @@ const products = [
     name: "Faculties of Medicine",
     path: "/medicine",
     href: "#",
-    icon: faFlask,  // Added icon (same as Science, but you can change it)
-    imageSrc: "", // Add actual image URL here if available
+    icon: faFlask,  
+    imageSrc: "", 
     imageAlt: "Faculties of Medicine",
   },
   {
@@ -99,8 +98,8 @@ const products = [
     name: "Faculties of Social Sciences",
     path: "/social-sciences",
     href: "#",
-    icon: faBalanceScale,  // Added icon (same as Law, but you can change it)
-    imageSrc: "", // Add actual image URL here if available
+    icon: faBalanceScale,  
+    imageSrc: "", 
     imageAlt: "Faculties of Social Sciences",
   },
   {
@@ -108,8 +107,8 @@ const products = [
     name: "Faculties of Business",
     path: "/business",
     href: "#",
-    icon: faCalculator,  // Added icon (same as Commerce, but you can change it)
-    imageSrc: "", // Add actual image URL here if available
+    icon: faCalculator, 
+    imageSrc: "", 
     imageAlt: "Faculties of Business",
   },
   
@@ -121,7 +120,6 @@ export default function ListOfFaculties() {
 
   const handleClick = (path) => {
     window.scrollTo(0, 0);
-    // navigate(`/dept/${path}`);
   };
 
   return (
