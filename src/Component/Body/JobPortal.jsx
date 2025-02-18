@@ -79,7 +79,7 @@ const JobListings = () => {
   return (
     <div className="flex min-h-screen bg-gray-50">
       {/* Side Panel */}
-      <div className="w-64 bg-white shadow-lg mt-6">
+      <div className="w-64 bg-white shadow-lg mt-6 ">
         <div className="p-4 bg-blue-700 text-white font-bold text-lg">
           Job Categories
         </div>
