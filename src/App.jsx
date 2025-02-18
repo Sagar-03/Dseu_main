@@ -44,6 +44,7 @@ import BPIBS from "./Component/AllCampusesPage.jsx/BPIBS";
 import MayurVihar from "./Component/AllCampusesPage.jsx/MayurVihar";
 import ShakarpurDSEU from "./Component/AllCampusesPage.jsx/Shakarpur";
 import VivekVihar from "./Component/AllCampusesPage.jsx/VivekVihar";
+import Placement from "./Component/NavItems/Placement";
 
 function App() {
   return (
@@ -98,7 +99,8 @@ function App() {
         <Route path="/BPIBS"  element={<BPIBS/>} />
         <Route path="/MayurVihar" element={<MayurVihar/>} />
         <Route path="/shakarpur2" element={<ShakarpurDSEU/>} />
-        <Route path="/vivekvihar" element={<VivekVihar/>} />  
+        <Route path="/vivekvihar" element={<VivekVihar/>} /> 
+        <Route path="/Placement" element ={<Placement/>} />
       </Routes>
       <Footer />
     </BrowserRouter>

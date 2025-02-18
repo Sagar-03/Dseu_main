@@ -107,7 +107,7 @@ const navItems = [
     dropdownItems: [
       { name: "Facilities", path: "/amenities/Facilities" },
       { name: "Computer Centre", path: "/amenities/Computer-Centre" },
-      { name: "Placement", path: "/amenities/Placement" },
+      { name: "Placement", path: "/Placement" },
       { name: "Medical Services", path: "/amenities/Medical-Services" },
       { name: "Hostels", path: "/amenities/Hostels" },
       { name: "Sports", path: "/amenities/Sports" },
